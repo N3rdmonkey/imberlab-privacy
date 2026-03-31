@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImberLab – Datenschutzerklärung / Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F1E2E;
+    --card: #162840;
+    --accent: #A3E635;
+    --gold: #D4A017;
+    --text: #CBD5E1;
+    --muted: #64748B;
+    --white: #ffffff;
+    --border: #1E3A52;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .logo {
+    width: 44px; height: 44px;
+    background: var(--accent);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+
+  header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  header p {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .lang-tabs {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+  }
+
+  .lang-btn {
+    background: var(--border);
+    border: none;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .lang-btn.active {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 500;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 48px auto;
+    padding: 0 24px 80px;
+  }
+
+  .section {
+    display: none;
+  }
+  .section.active {
+    display: block;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--bg);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .updated {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 40px;
+  }
+
+  .highlight-box {
+    background: var(--card);
+    border: 1px solid var(--accent);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .highlight-box strong {
+    color: var(--accent);
+  }
+
+  .block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .block-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .block h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .block h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 16px 0 6px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .block p {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .block ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .block ul li {
+    font-size: 14px;
+    color: var(--text);
+    padding: 4px 0 4px 18px;
+    position: relative;
+  }
+
+  .block ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 12px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+
+  th {
+    text-align: left;
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    font-size: 13px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  td:first-child {
+    font-family: 'DM Mono', monospace;
+    color: var(--accent);
+    font-size: 12px;
+  }
+
+  .contact-box {
+    background: var(--card);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .contact-icon {
+    width: 36px; height: 36px;
+    background: var(--gold);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .contact-box a {
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+  }
+
+  .contact-box a:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">IL</div>
+  <div>
+    <h1>ImberLab</h1>
+    <p>Datenschutzerklärung · Privacy Policy</p>
+  </div>
+  <div class="lang-tabs">
+    <button class="lang-btn active" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- DEUTSCH -->
+  <div class="section active" id="section-de">
+    <div class="badge">Datenschutzerklärung</div>
+    <h2>Ihre Daten gehören Ihnen.</h2>
+    <p class="updated">Letzte Aktualisierung: April 2026</p>
+
+    <div class="highlight-box">
+      <strong>Kurzfassung:</strong> ImberLab speichert alle Daten ausschließlich lokal auf Ihrem Gerät. Keine Cloud. Keine Werbung. Kein Tracking. Keine Weitergabe an Dritte.
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 01</div>
+      <h3>Verantwortlicher</h3>
+      <p><strong>Christoph Imber</strong><br>
+      Schulterbergstr. 4, Oberösterreich, Österreich<br>
+      <a href="mailto:chr.mathai@gmail.com" style="color:var(--accent)">chr.mathai@gmail.com</a></p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 02</div>
+      <h3>Grundsatz: Keine Cloud, keine Weitergabe</h3>
+      <p>ImberLab speichert <strong>alle Daten ausschließlich lokal auf Ihrem Gerät</strong>. Es werden keine personenbezogenen Daten an externe Server übertragen, verkauft oder weitergegeben. Die App enthält keine Werbung und kein Tracking.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 03</div>
+      <h3>Erhobene Daten und Zweck</h3>
+
+      <h4>3.1 Kamera</h4>
+      <p>Die App kann mit Ihrer Erlaubnis auf die Kamera zugreifen, um Fotos für Logbucheinträge und Chemikalien zu erstellen. Fotos werden ausschließlich lokal gespeichert. Kamerazugriff erfolgt nur auf ausdrückliche Anforderung.</p>
+
+      <h4>3.2 Gespeicherte Labordaten</h4>
+      <p>Folgende Daten werden lokal gespeichert:</p>
+      <ul>
+        <li>Geräte- und Kalibrierdaten</li>
+        <li>Logbucheinträge inkl. optionaler Fotos</li>
+        <li>Berechnungsergebnisse und Analyseresultate</li>
+        <li>Chemikalieninformationen</li>
+        <li>Eigene Formeln</li>
+        <li>Passwörter und Zugangsdaten (lokal im Gerätespeicher)</li>
+      </ul>
+      <p style="margin-top:10px">Diese Daten verlassen das Gerät nur, wenn Sie selbst einen Export oder eine E-Mail-Funktion nutzen.</p>
+
+      <h4>3.3 Backup</h4>
+      <p>Die Backup-Funktion erstellt eine lokale Datei auf Ihrem Gerät. Diese Datei wird nicht automatisch hochgeladen.</p>
+
+      <h4>3.4 In-App-Kauf (Premium)</h4>
+      <p>Der Premium-Kauf wird über <strong>Google Play Billing</strong> abgewickelt. Dabei gelten die Datenschutzbestimmungen von Google. ImberLab selbst erhält keine Zahlungsdaten.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 04</div>
+      <h3>Berechtigungen</h3>
+      <table>
+        <tr><th>Berechtigung</th><th>Zweck</th></tr>
+        <tr><td>Kamera</td><td>Fotos für Logbuch und Chemikalien</td></tr>
+        <tr><td>Speicher</td><td>Backup-Dateien speichern/laden</td></tr>
+        <tr><td>Biometrie</td><td>App-Lock per Fingerabdruck</td></tr>
+      </table>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 05</div>
+      <h3>Datenweitergabe</h3>
+      <p>Es erfolgt <strong>keine Weitergabe</strong> Ihrer Daten an Dritte. Die App kommuniziert mit keinen externen Servern.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 06</div>
+      <h3>Datensicherheit</h3>
+      <p>Ihre Daten sind durch den Android-Geräteschutz gesichert. Der integrierte App-Lock (PIN oder Biometrie) schützt den Zugriff auf die App.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 07</div>
+      <h3>Rechte der Nutzer</h3>
+      <ul>
+        <li><strong>Auskunft</strong> – lokal auf Ihrem Gerät einsehbar</li>
+        <li><strong>Löschung</strong> – alle App-Daten über Android-Einstellungen löschbar</li>
+        <li><strong>Datenportabilität</strong> – über die Backup/Export-Funktion der App</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 08</div>
+      <h3>Kinder</h3>
+      <p>Diese App richtet sich an Erwachsene und ist nicht für Kinder unter 13 Jahren bestimmt.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 09</div>
+      <h3>Änderungen dieser Datenschutzerklärung</h3>
+      <p>Änderungen werden auf der Store-Seite bekannt gegeben. Das Datum der letzten Aktualisierung ist oben angegeben.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 10</div>
+      <h3>Kontakt</h3>
+      <div class="contact-box">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div style="font-size:13px;color:var(--text);margin-bottom:4px">Bei Fragen zum Datenschutz:</div>
+          <a href="mailto:chr.mathai@gmail.com">chr.mathai@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="section" id="section-en">
+    <div class="badge">Privacy Policy</div>
+    <h2>Your data belongs to you.</h2>
+    <p class="updated">Last updated: April 2026</p>
+
+    <div class="highlight-box">
+      <strong>Summary:</strong> ImberLab stores all data exclusively on your device. No cloud. No ads. No tracking. No third-party sharing.
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 01</div>
+      <h3>Controller</h3>
+      <p><strong>Christoph Imber</strong><br>
+      Schulterbergstr. 4, Upper Austria, Austria<br>
+      <a href="mailto:chr.mathai@gmail.com" style="color:var(--accent)">chr.mathai@gmail.com</a></p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 02</div>
+      <h3>Core Principle: No Cloud, No Sharing</h3>
+      <p>ImberLab stores <strong>all data exclusively on your device</strong>. No personal data is transmitted to external servers, sold or shared with third parties. The app contains no advertising and no tracking.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 03</div>
+      <h3>Data Collected and Purpose</h3>
+
+      <h4>3.1 Camera</h4>
+      <p>With your permission, the app can access your camera to take photos for logbook entries and chemical records. Photos are stored locally only. Camera access occurs only upon explicit user request.</p>
+
+      <h4>3.2 Stored Lab Data</h4>
+      <p>The following data is stored locally:</p>
+      <ul>
+        <li>Device and calibration records</li>
+        <li>Logbook entries including optional photos</li>
+        <li>Calculation results and analysis records</li>
+        <li>Chemical information</li>
+        <li>Custom formulas</li>
+        <li>Passwords and credentials (stored locally in device storage)</li>
+      </ul>
+      <p style="margin-top:10px">This data only leaves your device if you explicitly use an export or email-sharing function.</p>
+
+      <h4>3.3 Backup</h4>
+      <p>The backup function creates a local file on your device. This file is not uploaded automatically.</p>
+
+      <h4>3.4 In-App Purchase (Premium)</h4>
+      <p>The Premium purchase is processed via <strong>Google Play Billing</strong>. Google's privacy policy applies. ImberLab itself does not receive any payment data.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 04</div>
+      <h3>Permissions</h3>
+      <table>
+        <tr><th>Permission</th><th>Purpose</th></tr>
+        <tr><td>Camera</td><td>Photos for logbook and chemical entries</td></tr>
+        <tr><td>Storage</td><td>Save/load backup files</td></tr>
+        <tr><td>Biometrics</td><td>App lock via fingerprint</td></tr>
+      </table>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 05</div>
+      <h3>Data Sharing</h3>
+      <p><strong>No data is shared</strong> with any third parties. The app does not communicate with any external servers.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 06</div>
+      <h3>Data Security</h3>
+      <p>Your data is protected by Android device security. The built-in app lock (PIN or biometrics) protects access to the app.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 07</div>
+      <h3>User Rights</h3>
+      <ul>
+        <li><strong>Access</strong> – viewable locally on your device</li>
+        <li><strong>Deletion</strong> – all app data can be deleted via Android Settings</li>
+        <li><strong>Data portability</strong> – via the app's backup/export function</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 08</div>
+      <h3>Children</h3>
+      <p>This app is intended for adults and is not directed at children under 13 years of age.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 09</div>
+      <h3>Changes to This Privacy Policy</h3>
+      <p>Any changes will be announced on the app's store page. The date of the last update is indicated above.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-num">§ 10</div>
+      <h3>Contact</h3>
+      <div class="contact-box">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div style="font-size:13px;color:var(--text);margin-bottom:4px">For privacy-related questions:</div>
+          <a href="mailto:chr.mathai@gmail.com">chr.mathai@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Christoph Imber · ImberLab · chr.mathai@gmail.com
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('section-' + lang).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
