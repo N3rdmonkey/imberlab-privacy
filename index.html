@@ -37,6 +37,12 @@ nav {
 .nav-btn.active { color: var(--accent); background: var(--card); }
 .nav-dl { background: var(--accent); color: var(--dark); border: none; font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; margin-left: 8px; text-decoration: none; display: flex; align-items: center; gap: 6px; }
 .nav-dl:hover { background: #b5f048; transform: translateY(-1px); }
+.nav-hamburger { display: none; background: none; border: none; color: var(--white); font-size: 22px; cursor: pointer; padding: 8px; margin-left: 4px; }
+.mobile-menu { display: none; flex-direction: column; background: var(--card); border-bottom: 1px solid var(--border); }
+.mobile-menu button { background: none; border: none; border-bottom: 1px solid var(--border); color: var(--text); font-family: 'Syne',sans-serif; font-size: 16px; font-weight: 600; padding: 16px 24px; text-align: left; cursor: pointer; }
+.mobile-menu button:hover { color: var(--accent); background: var(--card2); }
+.mobile-menu.open { display: flex; }
+@media (max-width: 768px) { .nav-hamburger { display: block; } }
 
 .page { display: none; }
 .page.active { display: block; }
@@ -156,6 +162,40 @@ footer a:hover { color: var(--accent); }
   .prem-inner { grid-template-columns: 1fr; gap: 40px; }
   nav { padding: 0 16px; }
   .nav-btn { display: none; }
+  /* Global overflow fix */
+  body { overflow-x: hidden; }
+  /* Hero */
+  .hero { padding: 48px 16px; min-height: auto; }
+  h1 { font-size: 42px; letter-spacing: -1px; }
+  .hero-sub { font-size: 15px; margin-bottom: 32px; }
+  .hero-actions { flex-direction: column; align-items: center; width: 100%; }
+  .btn-p, .btn-s { width: 100%; justify-content: center; }
+  /* Sections */
+  .section { padding: 56px 16px; }
+  .help-wrap, .priv-wrap { padding: 40px 16px; }
+  /* Features */
+  .feat-grid { grid-template-columns: 1fr; }
+  /* Screenshot grid */
+  .ss-grid { grid-template-columns: 1fr; }
+  /* Premium */
+  .prem-inner { padding: 40px 16px; }
+  .price-box { padding: 24px 16px; }
+  .price-amt { font-size: 44px; }
+  /* Help modules */
+  .hmod-hdr { padding: 16px; }
+  .hbody { padding: 0 16px 16px; }
+  /* Privacy */
+  .pblock { padding: 16px; }
+  .crow { flex-direction: column; gap: 8px; }
+  /* Footer */
+  footer { padding: 24px 16px; }
+  /* Nav mobile menu - show hamburger hint */
+  .nav-dl { margin-left: auto; }
+}
+@media (max-width: 400px) {
+  h1 { font-size: 34px; }
+  .sec-title { font-size: 26px; }
+  .help-wrap h2, .priv-wrap h2, .phero h2 { font-size: 28px; }
 }
 </style>
 </head>
@@ -172,7 +212,13 @@ footer a:hover { color: var(--accent); }
     <button class="nav-btn" onclick="showPage('privacy')">Privacy</button>
   </div>
   <a class="nav-dl" href="https://play.google.com/store/apps/details?id=com.imber.labor" target="_blank">↓ Get App</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button onclick="showPage('home');toggleMenu()">Home</button>
+  <button onclick="showPage('help');toggleMenu()">Help</button>
+  <button onclick="showPage('privacy');toggleMenu()">Privacy</button>
+</div>
 
 <!-- HOME -->
 <div class="page active" id="page-home">
@@ -419,7 +465,7 @@ footer a:hover { color: var(--accent); }
     <div class="psec active" id="ps-de">
       <div class="phero"><h2>Datenschutzerklärung</h2><div class="upd">Letzte Aktualisierung: April 2026</div></div>
       <div class="phi"><strong>Kurzfassung:</strong> ImberLab speichert alle Daten ausschließlich lokal auf Ihrem Gerät. Keine Cloud. Keine Werbung. Kein Tracking. Keine Weitergabe an Dritte.</div>
-      <div class="pblock"><div class="pnum">§ 01</div><h3>Verantwortlicher</h3><p><strong>Christoph Imber</strong><br>Schulterbergstr. 4, 4742 Pram, Oberösterreich, Österreich<br><span class="cemail">chr.mathai@gmail.com</span></p></div>
+      <div class="pblock"><div class="pnum">§ 01</div><h3>Verantwortlicher</h3><p><strong>Christoph Imber</strong><br>Schulterbergstr. 4, 4742 Pram, Oberösterreich, Österreich<br><span class="cemail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="35565d471b5854415d545c755258545c591b565a58">[email&#160;protected]</a></span></p></div>
       <div class="pblock"><div class="pnum">§ 02</div><h3>Grundsatz: Keine Cloud, keine Weitergabe</h3><p>ImberLab speichert <strong>alle Daten ausschließlich lokal auf Ihrem Gerät</strong>. Es werden keine personenbezogenen Daten an externe Server übertragen, verkauft oder weitergegeben. Die App enthält keine Werbung und kein Tracking.</p></div>
       <div class="pblock"><div class="pnum">§ 03</div><h3>Erhobene Daten und Zweck</h3>
         <h4>3.1 Kamera</h4><p>Die App kann mit Ihrer Erlaubnis auf die Kamera zugreifen. Fotos werden ausschließlich lokal gespeichert.</p>
@@ -433,13 +479,13 @@ footer a:hover { color: var(--accent); }
       <div class="pblock"><div class="pnum">§ 07</div><h3>Rechte der Nutzer</h3><ul><li><strong>Auskunft</strong> – lokal auf Ihrem Gerät einsehbar</li><li><strong>Löschung</strong> – über Android-Einstellungen</li><li><strong>Datenportabilität</strong> – über Backup/Export-Funktion</li></ul></div>
       <div class="pblock"><div class="pnum">§ 08</div><h3>Kinder</h3><p>Nicht für Kinder unter 13 Jahren bestimmt.</p></div>
       <div class="pblock"><div class="pnum">§ 09</div><h3>Änderungen</h3><p>Änderungen werden auf der Store-Seite bekannt gegeben.</p></div>
-      <div class="pblock"><div class="pnum">§ 10</div><h3>Kontakt</h3><div class="crow"><div class="cicon">✉️</div><div><div class="clabel">Bei Fragen zum Datenschutz:</div><div class="cemail">chr.mathai@gmail.com</div></div></div></div>
+      <div class="pblock"><div class="pnum">§ 10</div><h3>Kontakt</h3><div class="crow"><div class="cicon">✉️</div><div><div class="clabel">Bei Fragen zum Datenschutz:</div><div class="cemail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9cac1db87c4c8ddc1c8c0e9cec4c8c0c587cac6c4">[email&#160;protected]</a></div></div></div></div>
     </div>
 
     <div class="psec" id="ps-en">
       <div class="phero"><h2>Privacy Policy</h2><div class="upd">Last updated: April 2026</div></div>
       <div class="phi"><strong>Summary:</strong> ImberLab stores all data exclusively on your device. No cloud. No ads. No tracking. No third-party sharing.</div>
-      <div class="pblock"><div class="pnum">§ 01</div><h3>Controller</h3><p><strong>Christoph Imber</strong><br>Schulterbergstr. 4, 4742 Pram, Upper Austria, Austria<br><span class="cemail">chr.mathai@gmail.com</span></p></div>
+      <div class="pblock"><div class="pnum">§ 01</div><h3>Controller</h3><p><strong>Christoph Imber</strong><br>Schulterbergstr. 4, 4742 Pram, Upper Austria, Austria<br><span class="cemail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6a5aeb4e8aba7b2aea7af86a1aba7afaae8a5a9ab">[email&#160;protected]</a></span></p></div>
       <div class="pblock"><div class="pnum">§ 02</div><h3>Core Principle: No Cloud, No Sharing</h3><p>ImberLab stores <strong>all data exclusively on your device</strong>. No personal data is transmitted, sold or shared. No advertising, no tracking.</p></div>
       <div class="pblock"><div class="pnum">§ 03</div><h3>Data Collected and Purpose</h3>
         <h4>3.1 Camera</h4><p>With permission, the app can take photos for logbook and chemical entries. Photos are stored locally only.</p>
@@ -453,7 +499,7 @@ footer a:hover { color: var(--accent); }
       <div class="pblock"><div class="pnum">§ 07</div><h3>User Rights</h3><ul><li><strong>Access</strong> – viewable locally on your device</li><li><strong>Deletion</strong> – via Android Settings</li><li><strong>Data portability</strong> – via backup/export function</li></ul></div>
       <div class="pblock"><div class="pnum">§ 08</div><h3>Children</h3><p>Not directed at children under 13 years of age.</p></div>
       <div class="pblock"><div class="pnum">§ 09</div><h3>Changes</h3><p>Changes will be announced on the app's store page.</p></div>
-      <div class="pblock"><div class="pnum">§ 10</div><h3>Contact</h3><div class="crow"><div class="cicon">✉️</div><div><div class="clabel">For privacy questions:</div><div class="cemail">chr.mathai@gmail.com</div></div></div></div>
+      <div class="pblock"><div class="pnum">§ 10</div><h3>Contact</h3><div class="crow"><div class="cicon">✉️</div><div><div class="clabel">For privacy questions:</div><div class="cemail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52313a207c3f33263a333b12353f333b3e7c313d3f">[email&#160;protected]</a></div></div></div></div>
     </div>
   </div>
 </div>
@@ -465,31 +511,14 @@ footer a:hover { color: var(--accent); }
     <a onclick="showPage('home')">Home</a> &nbsp;·&nbsp;
     <a onclick="showPage('help')">Help</a> &nbsp;·&nbsp;
     <a onclick="showPage('privacy')">Privacy Policy</a> &nbsp;·&nbsp;
-    chr.mathai@gmail.com
+    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="23404b510d4e42574b424a63444e424a4f0d404c4e">[email&#160;protected]</a>
   </p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function openLB(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').classList.add('open');}
 function closeLB(){document.getElementById('lightbox').classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
 function showPage(name){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
-  document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
-  document.getElementById('page-'+name).classList.add('active');
-  document.querySelectorAll('.nav-btn').forEach(function(b){
-    var oc=b.getAttribute('onclick')||'';
-    if(oc.indexOf("'"+name+"'")!==-1){b.classList.add('active');}
-  });
-  window.scrollTo(0,0);
-}
-function toggleHelp(el){el.classList.toggle('open');}
-function setPL(lang,btn){
-  document.querySelectorAll('.psec').forEach(function(s){s.classList.remove('active');});
-  document.querySelectorAll('.plang-btn').forEach(function(b){b.classList.remove('active');});
-  document.getElementById('ps-'+lang).classList.add('active');
-  btn.classList.add('active');
-}
-</script>
-</body>
-</html>
+  document.querySelect
