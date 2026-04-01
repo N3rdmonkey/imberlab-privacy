@@ -244,7 +244,7 @@ footer a:hover { color: var(--accent); }
       <div class="feat-card"><span class="feat-icon">🧮</span><h3>Calculations</h3><p>Factor, gravimetric and volumetric calculations with auto-saving. Statistical QC with control charts, outlier detection and calibration curves.</p></div>
       <div class="feat-card"><span class="feat-icon">🔣</span><h3>Formula Builder</h3><p>Create, save and reuse your own calculation formulas with custom variables. Never rebuild the same formula twice.</p></div>
       <div class="feat-card"><span class="feat-icon">📋</span><h3>Logbook</h3><p>Track calibrations, maintenance and inspections per device with sequential numbering, photo attachments and direct email export.</p></div>
-      <div class="feat-card"><span class="feat-icon">⚗️</span><h3>Chemicals & GHS</h3><p>250+ chemicals with full GHS pictograms, H/P statements, storage notes and PPE recommendations. Add your own with photos.</p></div>
+      <div class="feat-card"><span class="feat-icon">⚗️</span><h3>Chemicals & GHS</h3><p>80+ chemicals with full GHS pictograms, H/P statements, storage notes and PPE recommendations. Add your own with photos.</p></div>
       <div class="feat-card"><span class="feat-icon">📊</span><h3>Analysis Results</h3><p>All results are auto-saved, searchable and exportable. Attach photos or scan labels via OCR for full traceability.</p></div>
       <div class="feat-card"><span class="feat-icon">🔑</span><h3>Password Manager</h3><p>Store device credentials and lab logins securely with favorites, full dated history and a built-in password generator.</p></div>
       <div class="feat-card"><span class="feat-icon">🔒</span><h3>Security</h3><p>App lock with PIN or fingerprint. Full backup & restore. No cloud, no ads, no data sharing — everything stays on your device.</p></div>
@@ -552,12 +552,12 @@ function setPL(lang,btn){
 <div class="page" id="page-faq">
   <div class="help-wrap">
     <div class="plang" style="margin-bottom:32px">
-      <button class="plang-btn active" id="faq-de-btn" onclick="setFaqLang('de',this)">🇩🇪 Deutsch</button>
-      <button class="plang-btn" id="faq-en-btn" onclick="setFaqLang('en',this)">🇬🇧 English</button>
+      <button class="plang-btn" id="faq-de-btn" onclick="setFaqLang('de',this)">🇩🇪 Deutsch</button>
+      <button class="plang-btn active" id="faq-en-btn" onclick="setFaqLang('en',this)">🇬🇧 English</button>
     </div>
 
     <!-- DE -->
-    <div class="psec active" id="faq-de">
+    <div class="psec" id="faq-de">
       <div class="sec-label">FAQ & Wissenswertes</div>
       <h2 style="font-size:36px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:8px">Häufige Fragen zu ImberLab</h2>
       <p class="help-intro">Antworten auf die wichtigsten Fragen rund um digitales Labormanagement.</p>
@@ -638,7 +638,7 @@ function setPL(lang,btn){
     </div>
 
     <!-- EN -->
-    <div class="psec" id="faq-en">
+    <div class="psec active" id="faq-en">
       <div class="sec-label">FAQ & Knowledge Base</div>
       <h2 style="font-size:36px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:8px">Frequently Asked Questions</h2>
       <p class="help-intro">Answers to the most important questions about digital laboratory management.</p>
