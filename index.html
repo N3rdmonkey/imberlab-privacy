@@ -3,500 +3,440 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ImberLab – Datenschutzerklärung / Privacy Policy</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>ImberLab – Laboratory · Quality Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0F1E2E;
-    --card: #162840;
-    --accent: #A3E635;
-    --gold: #D4A017;
-    --text: #CBD5E1;
-    --muted: #64748B;
-    --white: #ffffff;
-    --border: #1E3A52;
-  }
+:root {
+  --bg:      #0F1E2E;
+  --card:    #162840;
+  --card2:   #1E3A52;
+  --accent:  #A3E635;
+  --gold:    #D4A017;
+  --white:   #ffffff;
+  --text:    #CBD5E1;
+  --muted:   #64748B;
+  --border:  #1E3A52;
+  --dark:    #0A1520;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; font-size: 16px; line-height: 1.7; min-height: 100vh; }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(15,30,46,0.96); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px; display: flex; align-items: center; height: 64px; gap: 8px;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; cursor: pointer; }
+.nav-logo .mark { width: 36px; height: 36px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700; color: var(--dark); flex-shrink: 0; }
+.nav-logo span { font-size: 18px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+.nav-links { display: flex; gap: 4px; }
+.nav-btn { background: none; border: none; color: var(--muted); font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+.nav-btn:hover { color: var(--white); background: var(--card); }
+.nav-btn.active { color: var(--accent); background: var(--card); }
+.nav-dl { background: var(--accent); color: var(--dark); border: none; font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; margin-left: 8px; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.nav-dl:hover { background: #b5f048; transform: translateY(-1px); }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.75;
-    min-height: 100vh;
-  }
+.page { display: none; }
+.page.active { display: block; }
 
-  header {
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
-    padding: 28px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
+/* HERO */
+.hero { min-height: calc(100vh - 64px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 24px; position: relative; overflow: hidden; }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 48px 48px; opacity: 0.4; }
+.hero-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(163,230,53,0.07) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 99px; padding: 6px 16px; font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent); margin-bottom: 32px; position: relative; z-index: 1; animation: fadeUp 0.6s ease both; }
+.hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(1.4); } }
+h1 { font-size: clamp(52px,8vw,96px); font-weight: 800; color: var(--white); letter-spacing: -2px; line-height: 1.05; position: relative; z-index: 1; animation: fadeUp 0.6s 0.1s ease both; }
+h1 .ac { color: var(--accent); }
+.hero-sub { font-size: clamp(16px,2.5vw,21px); color: var(--muted); max-width: 560px; margin: 20px auto 48px; position: relative; z-index: 1; animation: fadeUp 0.6s 0.2s ease both; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; animation: fadeUp 0.6s 0.3s ease both; }
+.btn-p { background: var(--accent); color: var(--dark); border: none; font-family: 'Syne',sans-serif; font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 10px; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-p:hover { background: #b5f048; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(163,230,53,0.25); }
+.btn-s { background: var(--card); color: var(--white); border: 1px solid var(--border); font-family: 'Syne',sans-serif; font-size: 15px; font-weight: 600; padding: 14px 32px; border-radius: 10px; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-s:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-  .logo {
-    width: 44px; height: 44px;
-    background: var(--accent);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Mono', monospace;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--bg);
-    flex-shrink: 0;
-  }
+.section { max-width: 1100px; margin: 0 auto; padding: 96px 24px; }
+.sec-label { font-family: 'Space Mono',monospace; font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+.sec-title { font-size: clamp(28px,4vw,44px); font-weight: 800; color: var(--white); letter-spacing: -1px; margin-bottom: 16px; }
+.sec-sub { font-size: 17px; color: var(--muted); max-width: 520px; margin-bottom: 56px; }
 
-  header h1 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--white);
-  }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(290px,1fr)); gap: 20px; }
+.feat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: all 0.25s; position: relative; overflow: hidden; }
+.feat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,var(--accent),transparent); opacity: 0; transition: opacity 0.25s; }
+.feat-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+.feat-card:hover::before { opacity: 1; }
+.feat-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+.feat-card h3 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.feat-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-  header p {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-  }
+.prem-strip { background: linear-gradient(135deg,var(--card) 0%,#1a3050 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.prem-inner { max-width: 1100px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.prem-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--dark); font-family: 'Space Mono',monospace; font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 4px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+.prem-list { list-style: none; margin: 24px 0 32px; }
+.prem-list li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--text); }
+.prem-list li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: 14px; flex-shrink: 0; }
+.price-box { background: var(--dark); border: 1px solid var(--gold); border-radius: 16px; padding: 36px; text-align: center; }
+.price-amt { font-size: 56px; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 4px; font-family: 'Space Mono',monospace; }
+.price-note { font-size: 13px; color: var(--muted); margin-bottom: 28px; font-family: 'Space Mono',monospace; }
 
-  .lang-tabs {
-    margin-left: auto;
-    display: flex;
-    gap: 8px;
-  }
+/* HELP */
+.help-wrap { max-width: 860px; margin: 0 auto; padding: 64px 24px; }
+.help-wrap h2 { font-size: 40px; font-weight: 800; color: var(--white); letter-spacing: -1px; margin-bottom: 8px; }
+.help-intro { color: var(--muted); margin-bottom: 48px; font-size: 16px; }
+.hmod { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+.hmod-hdr { display: flex; align-items: center; gap: 16px; padding: 20px 24px; cursor: pointer; transition: background 0.2s; user-select: none; }
+.hmod-hdr:hover { background: var(--card2); }
+.hmod-emoji { font-size: 24px; flex-shrink: 0; }
+.hmod-txt { flex: 1; }
+.hmod-txt h3 { font-size: 16px; font-weight: 700; color: var(--white); }
+.hmod-txt p { font-size: 13px; color: var(--muted); }
+.hchev { font-size: 18px; color: var(--muted); transition: transform 0.3s; flex-shrink: 0; }
+.hmod.open .hchev { transform: rotate(180deg); }
+.hbody { display: none; padding: 0 24px 24px; border-top: 1px solid var(--border); }
+.hmod.open .hbody { display: block; }
+.hbody p { font-size: 14px; color: var(--text); margin-top: 16px; margin-bottom: 12px; }
+.hsteps { list-style: none; counter-reset: steps; }
+.hsteps li { counter-increment: steps; display: flex; gap: 14px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text); }
+.hsteps li:last-child { border-bottom: none; }
+.hsteps li::before { content: counter(steps); min-width: 24px; height: 24px; background: var(--accent); color: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; font-family: 'Space Mono',monospace; }
+.htip { background: rgba(163,230,53,0.07); border: 1px solid rgba(163,230,53,0.2); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: var(--text); margin-top: 16px; }
 
-  .lang-btn {
-    background: var(--border);
-    border: none;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
+/* PRIVACY */
+.priv-wrap { max-width: 760px; margin: 0 auto; padding: 64px 24px; }
+.plang { display: flex; gap: 8px; margin-bottom: 40px; }
+.plang-btn { background: var(--card); border: 1px solid var(--border); color: var(--muted); font-family: 'Space Mono',monospace; font-size: 12px; padding: 7px 16px; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+.plang-btn.active { background: var(--accent); color: var(--dark); border-color: var(--accent); font-weight: 700; }
+.psec { display: none; }
+.psec.active { display: block; }
+.phero h2 { font-size: 40px; font-weight: 800; color: var(--white); letter-spacing: -1px; margin-bottom: 6px; }
+.phero .upd { font-family: 'Space Mono',monospace; font-size: 12px; color: var(--muted); margin-bottom: 32px; }
+.phi { background: var(--card); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 40px; font-size: 14px; }
+.phi strong { color: var(--accent); }
+.pblock { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 14px; }
+.pnum { font-family: 'Space Mono',monospace; font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.pblock h3 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+.pblock h4 { font-size: 13px; font-weight: 600; color: var(--gold); margin: 14px 0 6px; font-family: 'Space Mono',monospace; }
+.pblock p { font-size: 14px; color: var(--text); margin-bottom: 8px; }
+.pblock ul { list-style: none; }
+.pblock ul li { font-size: 14px; color: var(--text); padding: 4px 0 4px 18px; position: relative; }
+.pblock ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+.ptab { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.ptab th { text-align: left; font-size: 11px; font-family: 'Space Mono',monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 12px; border-bottom: 1px solid var(--border); }
+.ptab td { font-size: 13px; padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text); }
+.ptab tr:last-child td { border-bottom: none; }
+.ptab td:first-child { font-family: 'Space Mono',monospace; color: var(--accent); font-size: 12px; }
+.crow { background: var(--card); border: 1px solid var(--gold); border-radius: 10px; padding: 20px 24px; display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+.cicon { width: 36px; height: 36px; background: var(--gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.cemail { font-family: 'Space Mono',monospace; font-size: 13px; color: var(--gold); }
+.clabel { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
 
-  .lang-btn.active {
-    background: var(--accent);
-    color: var(--bg);
-    font-weight: 500;
-  }
+footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-family: 'Space Mono',monospace; font-size: 12px; color: var(--muted); }
+footer a { color: var(--muted); text-decoration: none; cursor: pointer; }
+footer a:hover { color: var(--accent); }
+.flogo { font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 8px; font-family: 'Syne',sans-serif; }
 
-  main {
-    max-width: 760px;
-    margin: 48px auto;
-    padding: 0 24px 80px;
-  }
-
-  .section {
-    display: none;
-  }
-  .section.active {
-    display: block;
-  }
-
-  .badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--bg);
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 3px 10px;
-    border-radius: 4px;
-    margin-bottom: 32px;
-  }
-
-  h2 {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
-
-  .updated {
-    font-size: 13px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    margin-bottom: 40px;
-  }
-
-  .highlight-box {
-    background: var(--card);
-    border: 1px solid var(--accent);
-    border-left: 4px solid var(--accent);
-    border-radius: 8px;
-    padding: 18px 20px;
-    margin-bottom: 40px;
-    font-size: 14px;
-    color: var(--text);
-  }
-
-  .highlight-box strong {
-    color: var(--accent);
-  }
-
-  .block {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 24px;
-    margin-bottom: 16px;
-  }
-
-  .block-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .block h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .block h4 {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gold);
-    margin: 16px 0 6px;
-    font-family: 'DM Mono', monospace;
-  }
-
-  .block p {
-    font-size: 14px;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-
-  .block ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .block ul li {
-    font-size: 14px;
-    color: var(--text);
-    padding: 4px 0 4px 18px;
-    position: relative;
-  }
-
-  .block ul li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 12px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 8px;
-  }
-
-  th {
-    text-align: left;
-    font-size: 11px;
-    font-family: 'DM Mono', monospace;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 6px 12px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  td {
-    font-size: 13px;
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text);
-  }
-
-  tr:last-child td { border-bottom: none; }
-
-  td:first-child {
-    font-family: 'DM Mono', monospace;
-    color: var(--accent);
-    font-size: 12px;
-  }
-
-  .contact-box {
-    background: var(--card);
-    border: 1px solid var(--gold);
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .contact-icon {
-    width: 36px; height: 36px;
-    background: var(--gold);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-
-  .contact-box a {
-    color: var(--gold);
-    text-decoration: none;
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-  }
-
-  .contact-box a:hover { text-decoration: underline; }
-
-  footer {
-    text-align: center;
-    padding: 32px;
-    font-size: 12px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    border-top: 1px solid var(--border);
-  }
+@media (max-width: 768px) {
+  .prem-inner { grid-template-columns: 1fr; gap: 40px; }
+  nav { padding: 0 16px; }
+  .nav-btn { display: none; }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">IL</div>
-  <div>
-    <h1>ImberLab</h1>
-    <p>Datenschutzerklärung · Privacy Policy</p>
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="mark">IL</div>
+    <span>ImberLab</span>
   </div>
-  <div class="lang-tabs">
-    <button class="lang-btn active" onclick="setLang('de')">DE</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="showPage('home')">Home</button>
+    <button class="nav-btn" onclick="showPage('help')">Help</button>
+    <button class="nav-btn" onclick="showPage('privacy')">Privacy</button>
   </div>
-</header>
+  <a class="nav-dl" href="https://play.google.com/store/apps/details?id=com.imber.labor" target="_blank">↓ Get App</a>
+</nav>
 
-<main>
-
-  <!-- DEUTSCH -->
-  <div class="section active" id="section-de">
-    <div class="badge">Datenschutzerklärung</div>
-    <h2>Ihre Daten gehören Ihnen.</h2>
-    <p class="updated">Letzte Aktualisierung: April 2026</p>
-
-    <div class="highlight-box">
-      <strong>Kurzfassung:</strong> ImberLab speichert alle Daten ausschließlich lokal auf Ihrem Gerät. Keine Cloud. Keine Werbung. Kein Tracking. Keine Weitergabe an Dritte.
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-badge">v 1.0.0 · Now on Google Play</div>
+    <h1>Your digital<br><span class="ac">lab companion.</span></h1>
+    <p class="hero-sub">Professional tools for analytical chemists and QC labs — calculations, logbook, chemicals, and more. All offline. No cloud.</p>
+    <div class="hero-actions">
+      <a class="btn-p" href="https://play.google.com/store/apps/details?id=com.imber.labor" target="_blank">↓ Download on Google Play</a>
+      <button class="btn-s" onclick="showPage('help')">See how it works →</button>
     </div>
+  </section>
 
-    <div class="block">
-      <div class="block-num">§ 01</div>
-      <h3>Verantwortlicher</h3>
-      <p><strong>Christoph Imber</strong><br>
-      Schulterbergstr. 4, 4742 Pram, Oberösterreich, Österreich<br>
-      <span style="color:var(--accent)">chr.mathai<!-- no -->@gmail.com</span></p>
+  <section class="section">
+    <div class="sec-label">Features</div>
+    <h2 class="sec-title">Everything your lab needs.</h2>
+    <p class="sec-sub">Built for real laboratory work — from quick calculations to full device management.</p>
+    <div class="feat-grid">
+      <div class="feat-card"><span class="feat-icon">🧮</span><h3>Calculations</h3><p>Factor, gravimetric and volumetric calculations with auto-saving. Statistical QC with control charts, outlier detection and calibration curves.</p></div>
+      <div class="feat-card"><span class="feat-icon">🔣</span><h3>Formula Builder</h3><p>Create, save and reuse your own calculation formulas with custom variables. Never rebuild the same formula twice.</p></div>
+      <div class="feat-card"><span class="feat-icon">📋</span><h3>Logbook</h3><p>Track calibrations, maintenance and inspections per device with sequential numbering, photo attachments and direct email export.</p></div>
+      <div class="feat-card"><span class="feat-icon">⚗️</span><h3>Chemicals & GHS</h3><p>250+ chemicals with full GHS pictograms, H/P statements, storage notes and PPE recommendations. Add your own with photos.</p></div>
+      <div class="feat-card"><span class="feat-icon">📊</span><h3>Analysis Results</h3><p>All results are auto-saved, searchable and exportable. Attach photos or scan labels via OCR for full traceability.</p></div>
+      <div class="feat-card"><span class="feat-icon">🔑</span><h3>Password Manager</h3><p>Store device credentials and lab logins securely with favorites, full dated history and a built-in password generator.</p></div>
+      <div class="feat-card"><span class="feat-icon">🔒</span><h3>Security</h3><p>App lock with PIN or fingerprint. Full backup & restore. No cloud, no ads, no data sharing — everything stays on your device.</p></div>
+      <div class="feat-card"><span class="feat-icon">📱</span><h3>Devices & QR</h3><p>Manage your full device inventory with serial numbers, locations, QR codes and complete service history.</p></div>
     </div>
+  </section>
 
-    <div class="block">
-      <div class="block-num">§ 02</div>
-      <h3>Grundsatz: Keine Cloud, keine Weitergabe</h3>
-      <p>ImberLab speichert <strong>alle Daten ausschließlich lokal auf Ihrem Gerät</strong>. Es werden keine personenbezogenen Daten an externe Server übertragen, verkauft oder weitergegeben. Die App enthält keine Werbung und kein Tracking.</p>
-    </div>
-
-    <div class="block">
-      <div class="block-num">§ 03</div>
-      <h3>Erhobene Daten und Zweck</h3>
-
-      <h4>3.1 Kamera</h4>
-      <p>Die App kann mit Ihrer Erlaubnis auf die Kamera zugreifen, um Fotos für Logbucheinträge und Chemikalien zu erstellen. Fotos werden ausschließlich lokal gespeichert. Kamerazugriff erfolgt nur auf ausdrückliche Anforderung.</p>
-
-      <h4>3.2 Gespeicherte Labordaten</h4>
-      <p>Folgende Daten werden lokal gespeichert:</p>
-      <ul>
-        <li>Geräte- und Kalibrierdaten</li>
-        <li>Logbucheinträge inkl. optionaler Fotos</li>
-        <li>Berechnungsergebnisse und Analyseresultate</li>
-        <li>Chemikalieninformationen</li>
-        <li>Eigene Formeln</li>
-        <li>Passwörter und Zugangsdaten (lokal im Gerätespeicher)</li>
-      </ul>
-      <p style="margin-top:10px">Diese Daten verlassen das Gerät nur, wenn Sie selbst einen Export oder eine E-Mail-Funktion nutzen.</p>
-
-      <h4>3.3 Backup</h4>
-      <p>Die Backup-Funktion erstellt eine lokale Datei auf Ihrem Gerät. Diese Datei wird nicht automatisch hochgeladen.</p>
-
-      <h4>3.4 In-App-Kauf (Premium)</h4>
-      <p>Der Premium-Kauf wird über <strong>Google Play Billing</strong> abgewickelt. Dabei gelten die Datenschutzbestimmungen von Google. ImberLab selbst erhält keine Zahlungsdaten.</p>
-    </div>
-
-    <div class="block">
-      <div class="block-num">§ 04</div>
-      <h3>Berechtigungen</h3>
-      <table>
-        <tr><th>Berechtigung</th><th>Zweck</th></tr>
-        <tr><td>Kamera</td><td>Fotos für Logbuch und Chemikalien</td></tr>
-        <tr><td>Speicher</td><td>Backup-Dateien speichern/laden</td></tr>
-        <tr><td>Biometrie</td><td>App-Lock per Fingerabdruck</td></tr>
-      </table>
-    </div>
-
-    <div class="block">
-      <div class="block-num">§ 05</div>
-      <h3>Datenweitergabe</h3>
-      <p>Es erfolgt <strong>keine Weitergabe</strong> Ihrer Daten an Dritte. Die App kommuniziert mit keinen externen Servern.</p>
-    </div>
-
-    <div class="block">
-      <div class="block-num">§ 06</div>
-      <h3>Datensicherheit</h3>
-      <p>Ihre Daten sind durch den Android-Geräteschutz gesichert. Der integrierte App-Lock (PIN oder Biometrie) schützt den Zugriff auf die App.</p>
-    </div>
-
-    <div class="block">
-      <div class="block-num">§ 07</div>
-      <h3>Rechte der Nutzer</h3>
-      <ul>
-        <li><strong>Auskunft</strong> – lokal auf Ihrem Gerät einsehbar</li>
-        <li><strong>Löschung</strong> – alle App-Daten über Android-Einstellungen löschbar</li>
-        <li><strong>Datenportabilität</strong> – über die Backup/Export-Funktion der App</li>
-      </ul>
-    </div>
-
-    <div class="block">
-      <div class="block-num">§ 08</div>
-      <h3>Kinder</h3>
-      <p>Diese App richtet sich an Erwachsene und ist nicht für Kinder unter 13 Jahren bestimmt.</p>
-    </div>
-
-    <div class="block">
-      <div class="block-num">§ 09</div>
-      <h3>Änderungen dieser Datenschutzerklärung</h3>
-      <p>Änderungen werden auf der Store-Seite bekannt gegeben. Das Datum der letzten Aktualisierung ist oben angegeben.</p>
-    </div>
-
-    <div class="block">
-      <div class="block-num">§ 10</div>
-      <h3>Kontakt</h3>
-      <div class="contact-box">
-        <div class="contact-icon">✉️</div>
-        <div>
-          <div style="font-size:13px;color:var(--text);margin-bottom:4px">Bei Fragen zum Datenschutz:</div>
-          <span style="color:var(--accent)">chr.mathai<!-- no -->@gmail.com</span>
-        </div>
+  <div class="prem-strip">
+    <div class="prem-inner">
+      <div>
+        <div class="prem-badge">⭐ Premium</div>
+        <h2 class="sec-title" style="margin-bottom:12px">One-time. No subscription.</h2>
+        <p style="color:var(--muted);font-size:15px">Unlock the full power of ImberLab with a single purchase. Pay once, use forever.</p>
+        <ul class="prem-list">
+          <li>Unlimited photos in Logbook & Analysis Results</li>
+          <li>Unlimited custom formulas in Formula Builder</li>
+          <li>Unlimited Password Manager entries</li>
+        </ul>
+      </div>
+      <div class="price-box">
+        <div class="price-amt">9,99€</div>
+        <div class="price-note">one-time · no subscription</div>
+        <a class="btn-p" style="width:100%;justify-content:center" href="https://play.google.com/store/apps/details?id=com.imber.labor" target="_blank">Get ImberLab</a>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- ENGLISH -->
-  <div class="section" id="section-en">
-    <div class="badge">Privacy Policy</div>
-    <h2>Your data belongs to you.</h2>
-    <p class="updated">Last updated: April 2026</p>
+<!-- HELP -->
+<div class="page" id="page-help">
+  <div class="help-wrap">
+    <div class="sec-label">Documentation</div>
+    <h2>How to use ImberLab</h2>
+    <p class="help-intro">Tap any module to expand the instructions.</p>
 
-    <div class="highlight-box">
-      <strong>Summary:</strong> ImberLab stores all data exclusively on your device. No cloud. No ads. No tracking. No third-party sharing.
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">🧮</span><div class="hmod-txt"><h3>Calculations</h3><p>Factor, Gravimetric & Volumetric</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <p>Three calculation types for analytical chemistry work:</p>
+        <ol class="hsteps">
+          <li>Open <strong>Calculations</strong> from the main menu and choose Factor, Gravimetric or Volumetric.</li>
+          <li>Enter your values in the input fields. Decimal input is supported.</li>
+          <li>Tap <strong>Calculate</strong> to get the result instantly.</li>
+          <li>If <em>Save Results</em> is enabled in Settings, the result is automatically saved to Analysis Results.</li>
+        </ol>
+        <div class="htip">💡 Use the Formula Builder to create your own custom formulas beyond the built-in types.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 01</div>
-      <h3>Controller</h3>
-      <p><strong>Christoph Imber</strong><br>
-      Schulterbergstr. 4, 4742 Pram, Upper Austria, Austria<br>
-      <span style="color:var(--accent)">chr.mathai<!-- no -->@gmail.com</span></p>
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">📊</span><div class="hmod-txt"><h3>ImbaControl</h3><p>Statistical Quality Control</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <p>Four statistical tools for process monitoring and QC:</p>
+        <ol class="hsteps">
+          <li><strong>Control Chart</strong> — Enter measured values to visualize process stability with mean, UCL and LCL lines.</li>
+          <li><strong>Outlier Test</strong> — Detects outliers in your dataset using statistical criteria.</li>
+          <li><strong>Stability Trend</strong> — Analyzes whether your process is trending up, down or stable.</li>
+          <li><strong>Calibration Curve</strong> — Input standard values to generate a linear calibration curve with R² value.</li>
+        </ol>
+        <div class="htip">💡 Results from ImbaControl are auto-saved to Analysis Results if saving is enabled.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 02</div>
-      <h3>Core Principle: No Cloud, No Sharing</h3>
-      <p>ImberLab stores <strong>all data exclusively on your device</strong>. No personal data is transmitted to external servers, sold or shared with third parties. The app contains no advertising and no tracking.</p>
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">🔣</span><div class="hmod-txt"><h3>Formula Builder</h3><p>Custom calculation formulas</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <p>Build and save your own formulas using letters as variables:</p>
+        <ol class="hsteps">
+          <li>Enter a <strong>name</strong> for your formula (e.g. "Yield %").</li>
+          <li>Type your <strong>formula</strong> using letters as variables and operators: <code>+ - * / ^ ( )</code></li>
+          <li>Enter the <strong>result unit</strong> (e.g. g/l, %, mmol).</li>
+          <li>Tap <strong>Detect Variables</strong> — ImberLab automatically finds all variables in your formula.</li>
+          <li>Enter values for each variable and tap <strong>Calculate</strong>.</li>
+          <li>Tap <strong>Save Formula</strong> to store it for reuse. <em>(Premium: unlimited saves)</em></li>
+        </ol>
+        <div class="htip">💡 Example: <code>((V*MG)/(e*d*v*1000))*5</code> — use any letter combinations as variable names.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 03</div>
-      <h3>Data Collected and Purpose</h3>
-
-      <h4>3.1 Camera</h4>
-      <p>With your permission, the app can access your camera to take photos for logbook entries and chemical records. Photos are stored locally only. Camera access occurs only upon explicit user request.</p>
-
-      <h4>3.2 Stored Lab Data</h4>
-      <p>The following data is stored locally:</p>
-      <ul>
-        <li>Device and calibration records</li>
-        <li>Logbook entries including optional photos</li>
-        <li>Calculation results and analysis records</li>
-        <li>Chemical information</li>
-        <li>Custom formulas</li>
-        <li>Passwords and credentials (stored locally in device storage)</li>
-      </ul>
-      <p style="margin-top:10px">This data only leaves your device if you explicitly use an export or email-sharing function.</p>
-
-      <h4>3.3 Backup</h4>
-      <p>The backup function creates a local file on your device. This file is not uploaded automatically.</p>
-
-      <h4>3.4 In-App Purchase (Premium)</h4>
-      <p>The Premium purchase is processed via <strong>Google Play Billing</strong>. Google's privacy policy applies. ImberLab itself does not receive any payment data.</p>
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">📋</span><div class="hmod-txt"><h3>Logbook</h3><p>Device calibration & maintenance records</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <p>Track all service events for your lab devices:</p>
+        <ol class="hsteps">
+          <li>Tap <strong>+ Entry</strong> to create a new entry. Select the device, type, date and optional next due date.</li>
+          <li>Each device gets its own sequential entry numbering (#1, #2, …).</li>
+          <li>Due dates are color-coded: green = OK, orange = due soon, red = overdue.</li>
+          <li>Tap <strong>Photo</strong> (Premium) to attach a photo from camera or gallery.</li>
+          <li>Tap <strong>Device</strong> to jump to the device profile. Tap <strong>Export</strong> to share via email.</li>
+          <li><strong>Long-press</strong> a card to delete all entries for that device.</li>
+        </ol>
+        <div class="htip">💡 Search by device name, date, person or note text using the search bar.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 04</div>
-      <h3>Permissions</h3>
-      <table>
-        <tr><th>Permission</th><th>Purpose</th></tr>
-        <tr><td>Camera</td><td>Photos for logbook and chemical entries</td></tr>
-        <tr><td>Storage</td><td>Save/load backup files</td></tr>
-        <tr><td>Biometrics</td><td>App lock via fingerprint</td></tr>
-      </table>
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">⚗️</span><div class="hmod-txt"><h3>Chemicals & GHS</h3><p>Chemical inventory management</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <p>250+ pre-loaded chemicals with full GHS data:</p>
+        <ol class="hsteps">
+          <li>Browse or search chemicals by name or CAS number.</li>
+          <li>Tap a chemical to see GHS pictograms, H/P statements, storage notes and PPE requirements.</li>
+          <li>Tap <strong>+ Add</strong> to create a custom chemical entry.</li>
+          <li><strong>Long-press</strong> a custom chemical to edit or delete it.</li>
+          <li>Tap the <strong>camera icon</strong> (Premium) to attach a photo.</li>
+          <li>Tap the <strong>?</strong> button for detailed GHS hazard information.</li>
+        </ol>
+        <div class="htip">💡 Custom chemicals are included in Backup/Export.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 05</div>
-      <h3>Data Sharing</h3>
-      <p><strong>No data is shared</strong> with any third parties. The app does not communicate with any external servers.</p>
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">🖥️</span><div class="hmod-txt"><h3>Devices & QR</h3><p>Lab instrument management</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <p>Manage your complete lab device inventory:</p>
+        <ol class="hsteps">
+          <li>Browse devices by category or search across all fields.</li>
+          <li>Tap a device to open its profile: type, serial number, manufacturer, location, description.</li>
+          <li>Each device has a <strong>QR code</strong> generated from its serial number.</li>
+          <li>Tap the <strong>edit icon</strong> to update location or description — changes are auto-logged in the Logbook.</li>
+          <li>Use <strong>Decommission</strong> to retire a device from all lists while preserving its history.</li>
+          <li>Tap <strong>Reactivate</strong> on a decommissioned device's logbook entry to restore it.</li>
+        </ol>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 06</div>
-      <h3>Data Security</h3>
-      <p>Your data is protected by Android device security. The built-in app lock (PIN or biometrics) protects access to the app.</p>
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">📈</span><div class="hmod-txt"><h3>Analysis Results</h3><p>Auto-saved calculation history</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <p>All calculation results are stored here automatically:</p>
+        <ol class="hsteps">
+          <li>Enable <strong>Save Results</strong> in Settings to start auto-saving.</li>
+          <li>Tap a result card to expand and see full details.</li>
+          <li>Tap <strong>Photo</strong> (Premium) to attach a document photo.</li>
+          <li>Tap <strong>Note</strong> to add a free-text comment.</li>
+          <li>Tap <strong>Scan</strong> to scan a label via OCR and auto-fill the label field.</li>
+          <li><strong>Long-press</strong> a card to delete that result.</li>
+        </ol>
+        <div class="htip">💡 Settings → Delete All Results clears the entire history at once.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 07</div>
-      <h3>User Rights</h3>
-      <ul>
-        <li><strong>Access</strong> – viewable locally on your device</li>
-        <li><strong>Deletion</strong> – all app data can be deleted via Android Settings</li>
-        <li><strong>Data portability</strong> – via the app's backup/export function</li>
-      </ul>
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">🔑</span><div class="hmod-txt"><h3>Password Manager</h3><p>Secure credential storage</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <p>Store and manage lab credentials — all data stays on your device:</p>
+        <ol class="hsteps">
+          <li>Tap <strong>+ Add Entry</strong> to create a credential with title, username, password, URL and notes.</li>
+          <li>Tap the <strong>star</strong> to mark an entry as favorite — favorites appear at the top.</li>
+          <li>Tap an entry to expand it. Use the <strong>eye icon</strong> to reveal the password and history together.</li>
+          <li><strong>Password History</strong> is tracked automatically when you edit a password.</li>
+          <li>Tap <strong>Generator</strong> to create a strong random password.</li>
+          <li><strong>Long-press</strong> an entry to edit or delete it.</li>
+        </ol>
+        <div class="htip">💡 Free: up to 3 entries. Premium: unlimited entries.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 08</div>
-      <h3>Children</h3>
-      <p>This app is intended for adults and is not directed at children under 13 years of age.</p>
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">⚙️</span><div class="hmod-txt"><h3>Settings</h3><p>App configuration & backup</p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <ol class="hsteps">
+          <li><strong>Save Results</strong> — toggle auto-saving of all calculation results.</li>
+          <li><strong>App Lock</strong> — protect the app with a PIN or fingerprint.</li>
+          <li><strong>Backup</strong> — export all app data to a local file and restore it anytime.</li>
+          <li><strong>Premium</strong> — purchase or view your Premium status.</li>
+          <li><strong>Delete All Results / Logbook</strong> — permanently clear history data.</li>
+          <li><strong>Rate App</strong> — opens the Play Store review page.</li>
+        </ol>
+        <div class="htip">💡 Always create a Backup before uninstalling or switching devices.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 09</div>
-      <h3>Changes to This Privacy Policy</h3>
-      <p>Any changes will be announced on the app's store page. The date of the last update is indicated above.</p>
+  </div>
+</div>
+
+<!-- PRIVACY -->
+<div class="page" id="page-privacy">
+  <div class="priv-wrap">
+    <div class="plang">
+      <button class="plang-btn active" onclick="setPL('de',this)">🇩🇪 Deutsch</button>
+      <button class="plang-btn" onclick="setPL('en',this)">🇬🇧 English</button>
     </div>
 
-    <div class="block">
-      <div class="block-num">§ 10</div>
-      <h3>Contact</h3>
-      <div class="contact-box">
-        <div class="contact-icon">✉️</div>
-        <div>
-          <div style="font-size:13px;color:var(--text);margin-bottom:4px">For privacy-related questions:</div>
-          <span style="color:var(--gold)">chr.mathai<!-- no -->@gmail.com</span>
+    <div class="psec active" id="ps-de">
+      <div class="phero"><h2>Datenschutzerklärung</h2><div class="upd">Letzte Aktualisierung: April 2026</div></div>
+      <div class="phi"><strong>Kurzfassung:</strong> ImberLab speichert alle Daten ausschließlich lokal auf Ihrem Gerät. Keine Cloud. Keine Werbung. Kein Tracking. Keine Weitergabe an Dritte.</div>
+      <div class="pblock"><div class="pnum">§ 01</div><h3>Verantwortlicher</h3><p><strong>Christoph Imber</strong><br>Schulterbergstr. 4, 4742 Pram, Oberösterreich, Österreich<br><span class="cemail">chr.mathai@gmail.com</span></p></div>
+      <div class="pblock"><div class="pnum">§ 02</div><h3>Grundsatz: Keine Cloud, keine Weitergabe</h3><p>ImberLab speichert <strong>alle Daten ausschließlich lokal auf Ihrem Gerät</strong>. Es werden keine personenbezogenen Daten an externe Server übertragen, verkauft oder weitergegeben. Die App enthält keine Werbung und kein Tracking.</p></div>
+      <div class="pblock"><div class="pnum">§ 03</div><h3>Erhobene Daten und Zweck</h3>
+        <h4>3.1 Kamera</h4><p>Die App kann mit Ihrer Erlaubnis auf die Kamera zugreifen. Fotos werden ausschließlich lokal gespeichert.</p>
+        <h4>3.2 Gespeicherte Labordaten</h4><ul><li>Geräte- und Kalibrierdaten</li><li>Logbucheinträge inkl. optionaler Fotos</li><li>Berechnungsergebnisse und Analyseresultate</li><li>Chemikalieninformationen</li><li>Eigene Formeln</li><li>Passwörter und Zugangsdaten</li></ul>
+        <h4>3.3 Backup</h4><p>Die Backup-Funktion erstellt eine lokale Datei auf Ihrem Gerät. Keine automatische Cloud-Synchronisation.</p>
+        <h4>3.4 In-App-Kauf</h4><p>Abwicklung über <strong>Google Play Billing</strong>. ImberLab erhält keine Zahlungsdaten.</p>
+      </div>
+      <div class="pblock"><div class="pnum">§ 04</div><h3>Berechtigungen</h3><table class="ptab"><tr><th>Berechtigung</th><th>Zweck</th></tr><tr><td>Kamera</td><td>Fotos für Logbuch und Chemikalien</td></tr><tr><td>Speicher</td><td>Backup-Dateien speichern/laden</td></tr><tr><td>Biometrie</td><td>App-Lock per Fingerabdruck</td></tr></table></div>
+      <div class="pblock"><div class="pnum">§ 05</div><h3>Datenweitergabe</h3><p><strong>Keine Weitergabe</strong> an Dritte. Keine Kommunikation mit externen Servern.</p></div>
+      <div class="pblock"><div class="pnum">§ 06</div><h3>Datensicherheit</h3><p>Schutz durch Android-Geräteschutz und integrierten App-Lock (PIN oder Biometrie).</p></div>
+      <div class="pblock"><div class="pnum">§ 07</div><h3>Rechte der Nutzer</h3><ul><li><strong>Auskunft</strong> – lokal auf Ihrem Gerät einsehbar</li><li><strong>Löschung</strong> – über Android-Einstellungen</li><li><strong>Datenportabilität</strong> – über Backup/Export-Funktion</li></ul></div>
+      <div class="pblock"><div class="pnum">§ 08</div><h3>Kinder</h3><p>Nicht für Kinder unter 13 Jahren bestimmt.</p></div>
+      <div class="pblock"><div class="pnum">§ 09</div><h3>Änderungen</h3><p>Änderungen werden auf der Store-Seite bekannt gegeben.</p></div>
+      <div class="pblock"><div class="pnum">§ 10</div><h3>Kontakt</h3><div class="crow"><div class="cicon">✉️</div><div><div class="clabel">Bei Fragen zum Datenschutz:</div><div class="cemail">chr.mathai@gmail.com</div></div></div></div>
+    </div>
+
+    <div class="psec" id="ps-en">
+      <div class="phero"><h2>Privacy Policy</h2><div class="upd">Last updated: April 2026</div></div>
+      <div class="phi"><strong>Summary:</strong> ImberLab stores all data exclusively on your device. No cloud. No ads. No tracking. No third-party sharing.</div>
+      <div class="pblock"><div class="pnum">§ 01</div><h3>Controller</h3><p><strong>Christoph Imber</strong><br>Schulterbergstr. 4, 4742 Pram, Upper Austria, Austria<br><span class="cemail">chr.mathai@gmail.com</span></p></div>
+      <div class="pblock"><div class="pnum">§ 02</div><h3>Core Principle: No Cloud, No Sharing</h3><p>ImberLab stores <strong>all data exclusively on your device</strong>. No personal data is transmitted, sold or shared. No advertising, no tracking.</p></div>
+      <div class="pblock"><div class="pnum">§ 03</div><h3>Data Collected and Purpose</h3>
+        <h4>3.1 Camera</h4><p>With permission, the app can take photos for logbook and chemical entries. Photos are stored locally only.</p>
+        <h4>3.2 Stored Lab Data</h4><ul><li>Device and calibration records</li><li>Logbook entries including optional photos</li><li>Calculation results and analysis records</li><li>Chemical information</li><li>Custom formulas</li><li>Passwords and credentials</li></ul>
+        <h4>3.3 Backup</h4><p>Backup creates a local file on your device. No automatic cloud sync.</p>
+        <h4>3.4 In-App Purchase</h4><p>Processed via <strong>Google Play Billing</strong>. ImberLab does not receive payment data.</p>
+      </div>
+      <div class="pblock"><div class="pnum">§ 04</div><h3>Permissions</h3><table class="ptab"><tr><th>Permission</th><th>Purpose</th></tr><tr><td>Camera</td><td>Photos for logbook and chemicals</td></tr><tr><td>Storage</td><td>Save/load backup files</td></tr><tr><td>Biometrics</td><td>App lock via fingerprint</td></tr></table></div>
+      <div class="pblock"><div class="pnum">§ 05</div><h3>Data Sharing</h3><p><strong>No data shared</strong> with third parties. No external server communication.</p></div>
+      <div class="pblock"><div class="pnum">§ 06</div><h3>Data Security</h3><p>Protected by Android device security and built-in app lock (PIN or biometrics).</p></div>
+      <div class="pblock"><div class="pnum">§ 07</div><h3>User Rights</h3><ul><li><strong>Access</strong> – viewable locally on your device</li><li><strong>Deletion</strong> – via Android Settings</li><li><strong>Data portability</strong> – via backup/export function</li></ul></div>
+      <div class="pblock"><div class="pnum">§ 08</div><h3>Children</h3><p>Not directed at children under 13 years of age.</p></div>
+      <div class="pblock"><div class="pnum">§ 09</div><h3>Changes</h3><p>Changes will be announced on the app's store page.</p></div>
+      <div class="pblock"><div class="pnum">§ 10</div><h3>Contact</h3><div class="crow"><div class="cicon">✉️</div><div><div class="clabel">For privacy questions:</div><div class="cemail">chr.mathai@gmail.com</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="flogo">ImberLab</div>
+  <p>© 2026 Christoph Imber · 4742 Pram, Austria</p>
+  <p style="margin-top:8px">
+    <a onclick="showPage('home')">Home</a> &nbsp;·&nbsp;
+    <a onclick="showPage('help')">Help</a> &nbsp;·&nbsp;
+    <a onclick="showPage('privacy')">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="mailto:chr.mathai@gmail.com">Contact</a>
+  </p>
+</footer>
+
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    if (b.textContent.toLowerCase().trim() === name) b.classList.add('active');
+  });
+  window.scrollTo(0, 0);
+}
+function toggleHelp(el) { el.classList.toggle('open'); }
+function setPL(lang, btn) {
+  document.querySelectorAll('.psec').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.plang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('ps-' + lang).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
