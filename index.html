@@ -209,6 +209,7 @@ footer a:hover { color: var(--accent); }
   <div class="nav-links">
     <button class="nav-btn active" onclick="showPage('home')">Home</button>
     <button class="nav-btn" onclick="showPage('help')">Help</button>
+    <button class="nav-btn" onclick="showPage('faq')">FAQ</button>
     <button class="nav-btn" onclick="showPage('privacy')">Privacy</button>
   </div>
   <a class="nav-dl" href="https://play.google.com/store/apps/details?id=com.imber.labor" target="_blank">↓ Get App</a>
@@ -217,6 +218,7 @@ footer a:hover { color: var(--accent); }
 <div class="mobile-menu" id="mobile-menu">
   <button onclick="showPage('home');toggleMenu()">Home</button>
   <button onclick="showPage('help');toggleMenu()">Help</button>
+  <button onclick="showPage('faq');toggleMenu()">FAQ</button>
   <button onclick="showPage('privacy');toggleMenu()">Privacy</button>
 </div>
 
@@ -510,6 +512,7 @@ footer a:hover { color: var(--accent); }
   <p style="margin-top:8px">
     <a onclick="showPage('home')">Home</a> &nbsp;·&nbsp;
     <a onclick="showPage('help')">Help</a> &nbsp;·&nbsp;
+    <a onclick="showPage('faq')">FAQ</a> &nbsp;·&nbsp;
     <a onclick="showPage('privacy')">Privacy Policy</a> &nbsp;·&nbsp;
     chr&#46;mathai&#64;gmail&#46;com
   </p>
@@ -531,6 +534,12 @@ function showPage(name){
   window.scrollTo(0,0);
 }
 function toggleHelp(el){el.classList.toggle('open');}
+function setFaqLang(lang,btn){
+  document.querySelectorAll('#faq-de,#faq-en').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('#faq-de-btn,#faq-en-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('faq-'+lang).classList.add('active');
+  btn.classList.add('active');
+}
 function setPL(lang,btn){
   document.querySelectorAll('.psec').forEach(function(s){s.classList.remove('active');});
   document.querySelectorAll('.plang-btn').forEach(function(b){b.classList.remove('active');});
@@ -538,5 +547,177 @@ function setPL(lang,btn){
   btn.classList.add('active');
 }
 </script>
+
+<!-- FAQ / SEO PAGE -->
+<div class="page" id="page-faq">
+  <div class="help-wrap">
+    <div class="plang" style="margin-bottom:32px">
+      <button class="plang-btn active" id="faq-de-btn" onclick="setFaqLang('de',this)">🇩🇪 Deutsch</button>
+      <button class="plang-btn" id="faq-en-btn" onclick="setFaqLang('en',this)">🇬🇧 English</button>
+    </div>
+
+    <!-- DE -->
+    <div class="psec active" id="faq-de">
+      <div class="sec-label">FAQ & Wissenswertes</div>
+      <h2 style="font-size:36px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:8px">Häufige Fragen zu ImberLab</h2>
+      <p class="help-intro">Antworten auf die wichtigsten Fragen rund um digitales Labormanagement.</p>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">📋</span><div class="hmod-txt"><h3>Warum ein digitales Kalibrierungslogbuch statt Papier?</h3><p>Kalibrierung · Logbuch · Dokumentation</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>Ein <strong>digitales Kalibrierungslogbuch</strong> bietet gegenüber klassischer Papierdokumentation entscheidende Vorteile im Laboralltag:</p>
+          <ul class="hsteps" style="list-style:none;counter-reset:none">
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Alle Kalibriereinträge eines Geräts auf einen Blick — mit Fälligkeitsstatus (grün/orange/rot)</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Lückenlose Nummerierung pro Gerät — keine verlorenen oder unlesbaren Einträge</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Sofortige Suche nach Gerät, Datum, Person oder Notiz</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Fotos direkt am Eintrag anheften — z.B. Prüfzertifikate oder Messprotokolle</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Export per E-Mail für Audits und Qualitätsprüfungen</li>
+          </ul>
+          <div class="htip">💡 ImberLab speichert alle Logbuchdaten lokal auf deinem Gerät — ohne Cloud, ohne Abonnement.</div>
+        </div>
+      </div>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">⚗️</span><div class="hmod-txt"><h3>Was sind GHS-Piktogramme und wozu brauche ich sie im Labor?</h3><p>GHS · Gefahrstoffkennzeichnung · Chemikalien</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>Das <strong>Global Harmonisierte System (GHS)</strong> zur Einstufung und Kennzeichnung von Chemikalien ist in der EU verpflichtend (CLP-Verordnung). Im Labor bedeutet das:</p>
+          <ul class="hsteps" style="list-style:none;counter-reset:none">
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Jede Chemikalie muss mit den korrekten GHS-Piktogrammen gekennzeichnet sein</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>H-Sätze (Gefahrenhinweise) und P-Sätze (Sicherheitshinweise) müssen bekannt sein</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Lagerhinweise und persönliche Schutzausrüstung (PSA) müssen eingehalten werden</li>
+          </ul>
+          <p>ImberLab enthält über <strong>250 Chemikalien</strong> mit vollständigen GHS-Daten — jederzeit offline abrufbar, auch ohne Internetzugang im Labor.</p>
+          <div class="htip">💡 Eigene Chemikalien können inkl. Foto und GHS-Daten hinzugefügt werden.</div>
+        </div>
+      </div>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">📊</span><div class="hmod-txt"><h3>Was ist statistische Qualitätskontrolle (SQK) im Labor?</h3><p>QC · Regelkarte · Ausreißer · Kalibriergerade</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>Statistische Qualitätskontrolle (<strong>SQK / SPC</strong>) ist ein unverzichtbares Werkzeug in analytischen Labors, um die Zuverlässigkeit von Messwerten zu überwachen:</p>
+          <ul class="hsteps" style="list-style:none;counter-reset:none">
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Regelkarte (Control Chart):</strong> Visualisiert Messwerte über Zeit — erkennt Trends und Kontrollgrenzen-Verletzungen</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Ausreißertest:</strong> Identifiziert statistisch auffällige Messwerte im Datensatz</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Stabilitätstrend:</strong> Analysiert ob ein Prozess stabil, steigend oder fallend ist</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Kalibriergerade:</strong> Lineare Regression mit R²-Wert für Standardkurven</li>
+          </ul>
+          <div class="htip">💡 Alle ImbaControl-Ergebnisse werden automatisch in den Analyseergebnissen gespeichert.</div>
+        </div>
+      </div>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">📱</span><div class="hmod-txt"><h3>Labor-App vs. Excel vs. Papier — was ist besser?</h3><p>Laborverwaltung · digitale Transformation · QM</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>Viele Labors arbeiten noch mit Excel-Tabellen oder Papierformularen. Der Vergleich zeigt klare Vorteile einer spezialisierten <strong>Labor-App</strong>:</p>
+          <table class="ptab" style="margin-top:12px">
+            <tr><th></th><th>Papier</th><th>Excel</th><th>ImberLab</th></tr>
+            <tr><td>Suche</td><td style="color:var(--muted)">Manuell</td><td style="color:var(--muted)">Eingeschränkt</td><td style="color:var(--accent)">Sofort</td></tr>
+            <tr><td>Fotos</td><td style="color:var(--muted)">Separat</td><td style="color:var(--muted)">Umständlich</td><td style="color:var(--accent)">Integriert</td></tr>
+            <tr><td>Fälligkeiten</td><td style="color:var(--muted)">Manuell</td><td style="color:var(--muted)">Makros nötig</td><td style="color:var(--accent)">Automatisch</td></tr>
+            <tr><td>Offline</td><td style="color:var(--accent)">Ja</td><td style="color:var(--muted)">Teilweise</td><td style="color:var(--accent)">Immer</td></tr>
+            <tr><td>Datenschutz</td><td style="color:var(--muted)">Physisch</td><td style="color:var(--muted)">Cloud-Risiko</td><td style="color:var(--accent)">Lokal & sicher</td></tr>
+          </table>
+          <div class="htip">💡 ImberLab ersetzt Papier und Excel ohne Cloud-Zwang — alle Daten bleiben auf deinem Gerät.</div>
+        </div>
+      </div>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">🔒</span><div class="hmod-txt"><h3>Sind meine Labordaten in der App sicher?</h3><p>Datenschutz · DSGVO · Offline · keine Cloud</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>Datenschutz ist im Labor besonders wichtig — gerade bei sensiblen Analysedaten, Gerätegeheimnissen und Zugangsdaten. ImberLab wurde von Grund auf datenschutzfreundlich entwickelt:</p>
+          <ul class="hsteps" style="list-style:none;counter-reset:none">
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>100% offline</strong> — keine Internetverbindung erforderlich, kein Cloud-Upload</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>DSGVO-konform</strong> — alle Daten bleiben auf dem Gerät des Nutzers</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>App-Lock</strong> — PIN oder Fingerabdruck schützt den Zugriff</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Kein Tracking</strong> — keine Werbung, keine Analyse-SDKs, keine Datenweitergabe</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Backup</strong> — manuelle lokale Sicherung jederzeit möglich</li>
+          </ul>
+          <div class="htip">💡 Ideal für Labors mit strengen Datenschutzrichtlinien oder ISO-Zertifizierungsanforderungen.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EN -->
+    <div class="psec" id="faq-en">
+      <div class="sec-label">FAQ & Knowledge Base</div>
+      <h2 style="font-size:36px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:8px">Frequently Asked Questions</h2>
+      <p class="help-intro">Answers to the most important questions about digital laboratory management.</p>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">📋</span><div class="hmod-txt"><h3>Why use a digital calibration logbook instead of paper?</h3><p>Calibration · Logbook · Documentation</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>A <strong>digital calibration logbook</strong> offers significant advantages over paper-based documentation in the lab:</p>
+          <ul class="hsteps" style="list-style:none;counter-reset:none">
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>All calibration entries per device at a glance — with due date status (green/orange/red)</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Sequential numbering per device — no lost or illegible entries</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Instant search by device, date, person or note</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Attach photos directly to entries — e.g. certificates or measurement records</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Export via email for audits and quality reviews</li>
+          </ul>
+          <div class="htip">💡 ImberLab stores all logbook data locally on your device — no cloud, no subscription.</div>
+        </div>
+      </div>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">⚗️</span><div class="hmod-txt"><h3>What are GHS pictograms and why do I need them in the lab?</h3><p>GHS · Hazard labeling · Chemicals</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>The <strong>Globally Harmonized System (GHS)</strong> for classification and labeling of chemicals is mandatory in the EU (CLP Regulation). In the lab this means:</p>
+          <ul class="hsteps" style="list-style:none;counter-reset:none">
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Every chemical must be labeled with the correct GHS pictograms</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>H-statements (hazard) and P-statements (precautionary) must be known</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span>Storage requirements and PPE recommendations must be followed</li>
+          </ul>
+          <p>ImberLab includes over <strong>250 chemicals</strong> with complete GHS data — available offline at any time, even without internet access in the lab.</p>
+          <div class="htip">💡 Add your own chemicals including photos and GHS data.</div>
+        </div>
+      </div>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">📊</span><div class="hmod-txt"><h3>What is statistical quality control (SQC) in the laboratory?</h3><p>QC · Control chart · Outlier · Calibration curve</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p><strong>Statistical Quality Control (SQC / SPC)</strong> is an essential tool in analytical laboratories to monitor the reliability of measurements:</p>
+          <ul class="hsteps" style="list-style:none;counter-reset:none">
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Control Chart:</strong> Visualizes measurements over time — detects trends and control limit violations</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Outlier Test:</strong> Identifies statistically significant outliers in your dataset</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Stability Trend:</strong> Analyzes whether a process is stable, increasing or decreasing</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Calibration Curve:</strong> Linear regression with R² value for standard curves</li>
+          </ul>
+          <div class="htip">💡 All ImbaControl results are automatically saved in Analysis Results.</div>
+        </div>
+      </div>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">📱</span><div class="hmod-txt"><h3>Lab app vs. Excel vs. paper — which is better?</h3><p>Lab management · Digital transformation · QM</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>Many labs still rely on Excel spreadsheets or paper forms. A comparison shows the clear advantages of a dedicated <strong>laboratory app</strong>:</p>
+          <table class="ptab" style="margin-top:12px">
+            <tr><th></th><th>Paper</th><th>Excel</th><th>ImberLab</th></tr>
+            <tr><td>Search</td><td style="color:var(--muted)">Manual</td><td style="color:var(--muted)">Limited</td><td style="color:var(--accent)">Instant</td></tr>
+            <tr><td>Photos</td><td style="color:var(--muted)">Separate</td><td style="color:var(--muted)">Cumbersome</td><td style="color:var(--accent)">Integrated</td></tr>
+            <tr><td>Due dates</td><td style="color:var(--muted)">Manual</td><td style="color:var(--muted)">Needs macros</td><td style="color:var(--accent)">Automatic</td></tr>
+            <tr><td>Offline</td><td style="color:var(--accent)">Yes</td><td style="color:var(--muted)">Partial</td><td style="color:var(--accent)">Always</td></tr>
+            <tr><td>Privacy</td><td style="color:var(--muted)">Physical</td><td style="color:var(--muted)">Cloud risk</td><td style="color:var(--accent)">Local & secure</td></tr>
+          </table>
+          <div class="htip">💡 ImberLab replaces paper and Excel without cloud dependency — all data stays on your device.</div>
+        </div>
+      </div>
+
+      <div class="hmod" onclick="toggleHelp(this)">
+        <div class="hmod-hdr"><span class="hmod-emoji">🔒</span><div class="hmod-txt"><h3>Is my lab data safe in the app?</h3><p>Privacy · GDPR · Offline · no cloud</p></div><span class="hchev">▾</span></div>
+        <div class="hbody">
+          <p>Data privacy is especially important in the lab — particularly for sensitive analysis data, device secrets and credentials. ImberLab was built privacy-first from the ground up:</p>
+          <ul class="hsteps" style="list-style:none;counter-reset:none">
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>100% offline</strong> — no internet required, no cloud upload</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>GDPR compliant</strong> — all data stays on the user's device</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>App lock</strong> — PIN or fingerprint protects access</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>No tracking</strong> — no ads, no analytics SDKs, no data sharing</li>
+            <li style="counter-increment:none"><span style="color:var(--accent);margin-right:8px">✓</span><strong>Backup</strong> — manual local backup available at any time</li>
+          </ul>
+          <div class="htip">💡 Ideal for labs with strict data protection policies or ISO certification requirements.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
