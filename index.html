@@ -476,4 +476,21 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); }
 
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    if ((b.getAttribute('onclick') || '').includes("'" + name + "'")) b.classList.add('active');
+  });
+  window.scrollTo(0, 0);
+}
+function toggleHelp(el) { el.classList.toggle('open'); }
+function setPL(lang, btn) {
+  document.querySelectorAll('.psec').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.plang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('ps-' + lang).classList.add('active');
+  btn.classList.add('active');
+}
+
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b =>
