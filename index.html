@@ -4,181 +4,231 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ImberLab – Laboratory · Quality Control</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0F1E2E;--card:#162840;--card2:#1E3A52;--accent:#A3E635;--gold:#D4A017;--white:#fff;--text:#CBD5E1;--muted:#64748B;--border:#1E3A52;--dark:#0A1520;}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;font-size:16px;line-height:1.7;min-height:100vh;overflow-x:hidden;}
+:root{
+  --bg:#0c1a27;--card:#132233;--card2:#1a2f44;
+  --accent:#4ade80;--accent2:#22d3ee;
+  --gold:#e9b84a;--white:#f1f5f9;
+  --text:#94a3b8;--muted:#4a6380;
+  --border:#1e3248;--dark:#07111c;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;min-height:100vh;overflow-x:hidden}
 
-/* Language system */
-.lang-de{display:none;}
-.lang-en{display:block;}
-body.de .lang-de{display:block;}
-body.de .lang-en{display:none;}
-body.de .lang-de.inline{display:inline;}
-body.de .lang-en.inline{display:none;}
-.lang-en.inline{display:inline;}
+/* ── Language ── */
+.lang-de{display:none}.lang-en{display:block}
+body.de .lang-de{display:block}body.de .lang-en{display:none}
+body.de .lang-de.inline{display:inline}body.de .lang-en.inline{display:none}
+.lang-en.inline{display:inline}
 
-/* Nav */
-nav{position:sticky;top:0;z-index:100;background:rgba(15,30,46,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;height:64px;gap:8px;}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;cursor:pointer;}
-.nav-logo .mark{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:14px;font-weight:700;color:var(--dark);flex-shrink:0;}
-.nav-logo span{font-size:18px;font-weight:800;color:var(--white);letter-spacing:-0.5px;}
-.nav-links{display:flex;gap:4px;}
-.nav-btn{background:none;border:none;color:var(--muted);font-family:'Syne',sans-serif;font-size:14px;font-weight:600;padding:8px 16px;border-radius:8px;cursor:pointer;transition:all 0.2s;}
-.nav-btn:hover{color:var(--white);background:var(--card);}
-.nav-btn.active{color:var(--accent);background:var(--card);}
-.nav-dl{background:var(--accent);color:var(--dark);border:none;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:8px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;margin-left:4px;text-decoration:none;display:flex;align-items:center;gap:6px;}
-.nav-dl:hover{background:#b5f048;transform:translateY(-1px);}
-.lang-toggle{background:var(--card2);border:1px solid var(--border);color:var(--text);font-family:'Space Mono',monospace;font-size:12px;font-weight:700;padding:6px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;margin-left:8px;}
-.lang-toggle:hover{border-color:var(--accent);color:var(--accent);}
-.nav-hamburger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:8px;margin-left:4px;}
-.mobile-menu{display:none;flex-direction:column;background:var(--card);border-bottom:1px solid var(--border);position:fixed;top:64px;left:0;right:0;z-index:99;box-shadow:0 8px 32px rgba(0,0,0,0.4);border-radius:0 0 12px 12px;}
-.mobile-menu button{background:none;border:none;border-bottom:1px solid var(--border);color:var(--text);font-family:'Syne',sans-serif;font-size:16px;font-weight:600;padding:16px 24px;text-align:left;cursor:pointer;}
-.mobile-menu button:hover{color:var(--accent);background:var(--card2);}
-.mobile-menu.open{display:flex;}
+/* ── Nav ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(12,26,39,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;height:62px;gap:8px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;cursor:pointer}
+.nav-logo .mark{width:34px;height:34px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:var(--dark);flex-shrink:0}
+.nav-logo span{font-size:17px;font-weight:700;color:var(--white);letter-spacing:-0.3px}
+.nav-links{display:flex;gap:2px}
+.nav-btn{background:none;border:none;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:7px 14px;border-radius:7px;cursor:pointer;transition:all .2s}
+.nav-btn:hover{color:var(--white);background:var(--card)}
+.nav-btn.active{color:var(--accent);background:var(--card)}
+.nav-dl{background:var(--accent);color:var(--dark);border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;padding:8px 18px;border-radius:8px;cursor:pointer;transition:all .2s;margin-left:8px;text-decoration:none;display:flex;align-items:center;gap:6px}
+.nav-dl:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.lang-toggle{background:var(--card);border:1px solid var(--border);color:var(--text);font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all .2s;margin-left:4px}
+.lang-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.nav-hamburger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:8px;margin-left:4px}
+.mobile-menu{display:none;flex-direction:column;background:var(--card);border-bottom:1px solid var(--border);position:fixed;top:62px;left:0;right:0;z-index:99;box-shadow:0 8px 32px rgba(0,0,0,.5);border-radius:0 0 12px 12px}
+.mobile-menu button{background:none;border:none;border-bottom:1px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;padding:15px 24px;text-align:left;cursor:pointer}
+.mobile-menu button:hover{color:var(--accent);background:var(--card2)}
+.mobile-menu.open{display:flex}
 
-/* Pages */
-.page{display:none;}
-.page.active{display:block;}
+/* ── Pages ── */
+.page{display:none}.page.active{display:block}
 
-/* Hero */
-.hero{min-height:calc(100vh - 64px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;position:relative;overflow:hidden;}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;opacity:0.4;}
-.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(163,230,53,0.07) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:99px;padding:6px 16px;font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:32px;position:relative;z-index:1;animation:fadeUp 0.6s ease both;}
-.hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.4);}}
-h1{font-size:clamp(52px,8vw,96px);font-weight:800;color:var(--white);letter-spacing:-2px;line-height:1.05;position:relative;z-index:1;animation:fadeUp 0.6s 0.1s ease both;}
-h1 .ac{color:var(--accent);}
-.hero-sub{font-size:clamp(16px,2.5vw,21px);color:var(--muted);max-width:560px;margin:20px auto 48px;position:relative;z-index:1;animation:fadeUp 0.6s 0.2s ease both;}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;animation:fadeUp 0.6s 0.3s ease both;}
-.btn-p{background:var(--accent);color:var(--dark);border:none;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;padding:14px 32px;border-radius:10px;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
-.btn-p:hover{background:#b5f048;transform:translateY(-2px);box-shadow:0 8px 32px rgba(163,230,53,0.25);}
-.btn-s{background:var(--card);color:var(--white);border:1px solid var(--border);font-family:'Syne',sans-serif;font-size:15px;font-weight:600;padding:14px 32px;border-radius:10px;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
-.btn-s:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+/* ══ HERO ══ */
+.hero{
+  min-height:calc(100vh - 62px);
+  display:flex;align-items:center;
+  padding:60px 40px 60px 80px;
+  position:relative;overflow:hidden;
+  gap:60px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(74,222,128,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(74,222,128,.025) 1px,transparent 1px);
+  background-size:52px 52px;
+}
+.hero-glow-l{position:absolute;left:-100px;top:40%;transform:translateY(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(74,222,128,.08) 0%,transparent 65%);pointer-events:none}
+.hero-glow-r{position:absolute;right:10%;top:20%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.06) 0%,transparent 70%);pointer-events:none}
 
-/* Sections */
-.section{max-width:1100px;margin:0 auto;padding:96px 24px;}
-.sec-label{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
-.sec-title{font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:16px;}
-.sec-sub{font-size:17px;color:var(--muted);max-width:520px;margin-bottom:56px;}
+/* LEFT */
+.hero-content{flex:0 0 480px;position:relative;z-index:2}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:99px;padding:5px 14px;
+  font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);
+  margin-bottom:28px;letter-spacing:.5px;
+}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+
+h1{font-size:clamp(40px,4.5vw,62px);font-weight:700;line-height:1.1;color:var(--white);letter-spacing:-1.5px;margin-bottom:20px}
+h1 .ac{color:var(--accent)}
+
+.hero-sub{font-size:17px;font-weight:300;line-height:1.7;color:var(--muted);max-width:400px;margin-bottom:36px}
+
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.btn-p{background:var(--accent);color:var(--dark);border:none;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;padding:13px 28px;border-radius:10px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-p:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 28px rgba(74,222,128,.25)}
+.btn-s{background:var(--card);color:var(--white);border:1px solid var(--border);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;padding:13px 28px;border-radius:10px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-s:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+.hero-badges{display:flex;gap:20px;flex-wrap:wrap}
+.hbadge{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}
+.hbadge-icon{font-size:15px}
+.hbadge-sep{width:1px;height:16px;background:var(--border)}
+
+/* RIGHT — phone mockups */
+.hero-phones{
+  flex:1;position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+  min-height:580px;
+}
+.hphone{position:absolute;border-radius:38px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.65)}
+.hphone::after{content:"";position:absolute;inset:0;border-radius:37px;box-shadow:inset 0 0 0 1.5px rgba(74,222,128,.2)}
+.hphone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.hphone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:60px;height:14px;background:var(--dark);border-radius:7px;z-index:5}
+.hp-main{width:230px;height:460px;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3}
+.hp-side{width:190px;height:380px;z-index:2;opacity:.6}
+.hp-side-l{left:calc(50% - 230px);top:50%;transform:translateY(-55%)}
+.hp-side-r{right:calc(50% - 230px);top:50%;transform:translateY(-45%)}
+/* fade sides */
+.hero-phones::before{content:"";position:absolute;left:0;top:0;bottom:0;width:80px;background:linear-gradient(90deg,var(--bg),transparent);z-index:10;pointer-events:none}
+.hero-phones::after{content:"";position:absolute;right:0;top:0;bottom:0;width:80px;background:linear-gradient(-90deg,var(--bg),transparent);z-index:10;pointer-events:none}
+
+/* ── Sections ── */
+.section{max-width:1100px;margin:0 auto;padding:96px 40px}
+.sec-label{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.sec-title{font-size:clamp(26px,3.5vw,40px);font-weight:700;color:var(--white);letter-spacing:-.8px;margin-bottom:14px}
+.sec-sub{font-size:16px;font-weight:300;color:var(--muted);max-width:500px;margin-bottom:52px;line-height:1.7}
 
 /* Feature cards */
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;}
-.feat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all 0.25s;position:relative;overflow:hidden;}
-.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity 0.25s;}
-.feat-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.3);}
-.feat-card:hover::before{opacity:1;}
-.feat-icon{font-size:32px;margin-bottom:16px;display:block;}
-.feat-card h3{font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px;}
-.feat-card p{font-size:14px;color:var(--muted);line-height:1.6;}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px;transition:all .25s;position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .25s}
+.feat-card:hover{border-color:rgba(74,222,128,.3);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.feat-card:hover::before{opacity:1}
+.feat-icon{font-size:28px;margin-bottom:14px;display:block}
+.feat-card h3{font-size:16px;font-weight:600;color:var(--white);margin-bottom:7px}
+.feat-card p{font-size:13px;color:var(--muted);line-height:1.65}
 
 /* Screenshots */
-.ss-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px;}
-@media(max-width:900px){.ss-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:520px){.ss-grid{grid-template-columns:1fr;}}
-.ss-card{border-radius:14px;overflow:hidden;border:2px solid var(--border);transition:all 0.25s;cursor:pointer;background:var(--dark);}
-.ss-card:hover{border-color:var(--accent);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.5);}
-.ss-card img{width:100%;display:block;}
-.ss-label{padding:12px 16px;font-size:13px;font-weight:700;color:var(--text);font-family:'Space Mono',monospace;border-top:1px solid var(--border);}
-.ss-sub{font-size:11px;color:var(--muted);font-weight:400;margin-top:2px;}
-.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:999;align-items:center;justify-content:center;cursor:zoom-out;}
-.lightbox.open{display:flex;}
-.lightbox img{max-height:90vh;max-width:90vw;border-radius:12px;box-shadow:0 32px 80px rgba(0,0,0,0.8);}
+.ss-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+@media(max-width:900px){.ss-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.ss-grid{grid-template-columns:1fr}}
+.ss-card{border-radius:12px;overflow:hidden;border:1.5px solid var(--border);transition:all .25s;cursor:pointer;background:var(--dark)}
+.ss-card:hover{border-color:rgba(74,222,128,.4);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.ss-card img{width:100%;display:block}
+.ss-label{padding:10px 14px;font-size:12px;font-weight:600;color:var(--text);font-family:'Space Mono',monospace;border-top:1px solid var(--border)}
+.ss-sub{font-size:10px;color:var(--muted);font-weight:400;margin-top:2px}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:999;align-items:center;justify-content:center;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-height:90vh;max-width:90vw;border-radius:12px;box-shadow:0 32px 80px rgba(0,0,0,.8)}
 
 /* Premium */
-.prem-strip{background:linear-gradient(135deg,var(--card) 0%,#1a3050 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.prem-inner{max-width:1100px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-.prem-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:5px 12px;border-radius:4px;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;}
-.prem-list{list-style:none;margin:24px 0 32px;}
-.prem-list li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--text);}
-.prem-list li::before{content:'✓';color:var(--accent);font-weight:700;font-size:14px;flex-shrink:0;}
-.price-box{background:var(--dark);border:1px solid var(--gold);border-radius:16px;padding:36px;text-align:center;}
-.price-amt{font-size:56px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:4px;font-family:'Space Mono',monospace;}
-.price-note{font-size:13px;color:var(--muted);margin-bottom:28px;font-family:'Space Mono',monospace;}
+.prem-strip{background:linear-gradient(135deg,var(--card) 0%,#152640 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.prem-inner{max-width:1100px;margin:0 auto;padding:72px 40px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.prem-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:5px 12px;border-radius:4px;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+.prem-list{list-style:none;margin:20px 0 28px}
+.prem-list li{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text)}
+.prem-list li::before{content:'✓';color:var(--accent);font-weight:700;font-size:13px;flex-shrink:0;margin-top:3px}
+.price-box{background:var(--dark);border:1px solid var(--gold);border-radius:14px;padding:32px;text-align:center}
+.price-amt{font-size:52px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px;font-family:'Space Mono',monospace}
+.price-note{font-size:12px;color:var(--muted);margin-bottom:24px;font-family:'Space Mono',monospace}
 
-/* Help */
-.help-wrap{max-width:860px;margin:0 auto;padding:64px 24px;}
-.help-wrap h2{font-size:40px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:8px;}
-.help-intro{color:var(--muted);margin-bottom:48px;font-size:16px;}
-.hmod{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;}
-.hmod-hdr{display:flex;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;transition:background 0.2s;user-select:none;}
-.hmod-hdr:hover{background:var(--card2);}
-.hmod-emoji{font-size:24px;flex-shrink:0;}
-.hmod-txt{flex:1;}
-.hmod-txt h3{font-size:16px;font-weight:700;color:var(--white);}
-.hmod-txt p{font-size:13px;color:var(--muted);}
-.hchev{font-size:18px;color:var(--muted);transition:transform 0.3s;flex-shrink:0;}
-.hmod.open .hchev{transform:rotate(180deg);}
-.hbody{display:none;padding:0 24px 24px;border-top:1px solid var(--border);}
-.hmod.open .hbody{display:block;}
-.hbody p{font-size:14px;color:var(--text);margin-top:16px;margin-bottom:12px;}
-.hsteps{list-style:none;counter-reset:steps;}
-.hsteps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text);}
-.hsteps li:last-child{border-bottom:none;}
-.hsteps li::before{content:counter(steps);min-width:24px;height:24px;background:var(--accent);color:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:'Space Mono',monospace;}
-.htip{background:rgba(163,230,53,0.07);border:1px solid rgba(163,230,53,0.2);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--text);margin-top:16px;}
+/* ── Help / FAQ ── */
+.help-wrap{max-width:820px;margin:0 auto;padding:64px 40px}
+.help-wrap h2{font-size:36px;font-weight:700;color:var(--white);letter-spacing:-.8px;margin-bottom:8px}
+.help-intro{color:var(--muted);margin-bottom:44px;font-size:15px}
+.hmod{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.hmod-hdr{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;transition:background .2s;user-select:none}
+.hmod-hdr:hover{background:var(--card2)}
+.hmod-emoji{font-size:22px;flex-shrink:0}
+.hmod-txt{flex:1}
+.hmod-txt h3{font-size:15px;font-weight:600;color:var(--white)}
+.hmod-txt p{font-size:12px;color:var(--muted)}
+.hchev{font-size:16px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.hmod.open .hchev{transform:rotate(180deg)}
+.hbody{display:none;padding:0 22px 22px;border-top:1px solid var(--border)}
+.hmod.open .hbody{display:block}
+.hbody p{font-size:14px;color:var(--text);margin-top:14px;margin-bottom:10px}
+.hsteps{list-style:none;counter-reset:steps}
+.hsteps li{counter-increment:steps;display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text)}
+.hsteps li:last-child{border-bottom:none}
+.hsteps li::before{content:counter(steps);min-width:22px;height:22px;background:var(--accent);color:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;font-family:'Space Mono',monospace}
+.htip{background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.18);border-radius:7px;padding:11px 14px;font-size:13px;color:var(--text);margin-top:14px}
 
 /* FAQ */
-.faq-wrap{max-width:860px;margin:0 auto;padding:64px 24px;}
-.faq-wrap h2{font-size:40px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:8px;}
+.faq-wrap{max-width:820px;margin:0 auto;padding:64px 40px}
+.faq-wrap h2{font-size:36px;font-weight:700;color:var(--white);letter-spacing:-.8px;margin-bottom:8px}
 
 /* Privacy */
-.priv-wrap{max-width:760px;margin:0 auto;padding:64px 24px;}
-.phero h2{font-size:40px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:6px;}
-.phero .upd{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:32px;}
-.phi{background:var(--card);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:40px;font-size:14px;}
-.phi strong{color:var(--accent);}
-.pblock{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:14px;}
-.pnum{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;}
-.pblock h3{font-size:16px;font-weight:700;color:var(--white);margin-bottom:12px;}
-.pblock h4{font-size:13px;font-weight:600;color:var(--gold);margin:14px 0 6px;font-family:'Space Mono',monospace;}
-.pblock p{font-size:14px;color:var(--text);margin-bottom:8px;}
-.pblock ul{list-style:none;}
-.pblock ul li{font-size:14px;color:var(--text);padding:4px 0 4px 18px;position:relative;}
-.pblock ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:12px;}
-.ptab{width:100%;border-collapse:collapse;margin-top:8px;}
-.ptab th{text-align:left;font-size:11px;font-family:'Space Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;padding:6px 12px;border-bottom:1px solid var(--border);}
-.ptab td{font-size:13px;padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text);}
-.ptab tr:last-child td{border-bottom:none;}
-.ptab td:first-child{font-family:'Space Mono',monospace;color:var(--accent);font-size:12px;}
-.crow{background:var(--card);border:1px solid var(--gold);border-radius:10px;padding:20px 24px;display:flex;align-items:center;gap:14px;margin-top:8px;}
-.cicon{width:36px;height:36px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-.cemail{font-family:'Space Mono',monospace;font-size:13px;color:var(--gold);}
-.clabel{font-size:13px;color:var(--muted);margin-bottom:4px;}
+.priv-wrap{max-width:720px;margin:0 auto;padding:64px 40px}
+.phero h2{font-size:36px;font-weight:700;color:var(--white);letter-spacing:-.8px;margin-bottom:6px}
+.phero .upd{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:28px}
+.phi{background:var(--card);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:32px;font-size:14px}
+.phi strong{color:var(--accent)}
+.pblock{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px;margin-bottom:12px}
+.pnum{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.pblock h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px}
+.pblock h4{font-size:12px;font-weight:600;color:var(--gold);margin:12px 0 5px;font-family:'Space Mono',monospace}
+.pblock p{font-size:14px;color:var(--text);margin-bottom:8px}
+.pblock ul{list-style:none}
+.pblock ul li{font-size:14px;color:var(--text);padding:3px 0 3px 16px;position:relative}
+.pblock ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px}
+.ptab{width:100%;border-collapse:collapse;margin-top:8px}
+.ptab th{text-align:left;font-size:10px;font-family:'Space Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding:6px 10px;border-bottom:1px solid var(--border)}
+.ptab td{font-size:13px;padding:9px 10px;border-bottom:1px solid var(--border);color:var(--text)}
+.ptab tr:last-child td{border-bottom:none}
+.ptab td:first-child{font-family:'Space Mono',monospace;color:var(--accent);font-size:11px}
+.crow{background:var(--card);border:1px solid var(--gold);border-radius:8px;padding:18px 22px;display:flex;align-items:center;gap:12px;margin-top:8px}
+.cicon{width:34px;height:34px;background:var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.cemail{font-family:'Space Mono',monospace;font-size:13px;color:var(--gold)}
+.clabel{font-size:12px;color:var(--muted);margin-bottom:3px}
 
-footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);}
-footer a{color:var(--muted);text-decoration:none;cursor:pointer;}
-footer a:hover{color:var(--accent);}
-.flogo{font-size:18px;font-weight:800;color:var(--white);margin-bottom:8px;font-family:'Syne',sans-serif;}
+footer{border-top:1px solid var(--border);padding:28px 40px;text-align:center;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;cursor:pointer}
+footer a:hover{color:var(--accent)}
+.flogo{font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px;font-family:'DM Sans',sans-serif;letter-spacing:-.3px}
 
-@media(max-width:900px){.ss-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:768px){
-  body{overflow-x:hidden;}
-  .prem-inner{grid-template-columns:1fr;gap:40px;}
-  nav{padding:0 16px;}
-  .nav-btn{display:none;}
-  .nav-hamburger{display:block;}
-  .hero{padding:48px 16px;min-height:auto;}
-  h1{font-size:42px;letter-spacing:-1px;}
-  .hero-sub{font-size:15px;margin-bottom:32px;}
-  .hero-actions{flex-direction:column;align-items:center;width:100%;}
-  .btn-p,.btn-s{width:100%;justify-content:center;}
-  .section{padding:56px 16px;}
-  .help-wrap,.faq-wrap,.priv-wrap{padding:40px 16px;}
-  .feat-grid{grid-template-columns:1fr;}
-  .ss-grid{grid-template-columns:1fr;}
-  .prem-inner{padding:40px 16px;}
-  .price-box{padding:24px 16px;}
-  .price-amt{font-size:44px;}
-  .pblock{padding:16px;}
-  .crow{flex-direction:column;gap:8px;}
-  footer{padding:24px 16px;}
+@media(max-width:1000px){
+  .hero{flex-direction:column;padding:48px 32px;text-align:center;gap:40px;min-height:auto}
+  .hero-content{flex:none;max-width:500px}
+  .hero-sub{max-width:100%}
+  .hero-actions{justify-content:center}
+  .hero-badges{justify-content:center}
+  .hero-phones{min-height:360px;width:100%}
+  .hp-side{display:none}
+  .hp-main{width:200px;height:400px}
 }
-@media(max-width:400px){h1{font-size:34px;}.sec-title{font-size:26px;}}
+@media(max-width:768px){
+  body{overflow-x:hidden}
+  .prem-inner{grid-template-columns:1fr;gap:32px}
+  nav{padding:0 16px}
+  .nav-btn{display:none}
+  .nav-hamburger{display:block}
+  .section{padding:56px 20px}
+  .help-wrap,.faq-wrap,.priv-wrap{padding:40px 20px}
+  .feat-grid{grid-template-columns:1fr}
+  .ss-grid{grid-template-columns:1fr}
+  .prem-inner{padding:40px 20px}
+  .price-box{padding:24px}
+  .price-amt{font-size:44px}
+  footer{padding:24px 20px}
+}
 </style>
 </head>
 <body>
@@ -189,7 +239,7 @@ footer a:hover{color:var(--accent);}
     <span>ImberLab</span>
   </div>
   <div class="nav-links">
-    <button class="nav-btn active" onclick="showPage('home')"><span class="lang-en inline">Home</span><span class="lang-de inline">Home</span></button>
+    <button class="nav-btn active" onclick="showPage('home')">Home</button>
     <button class="nav-btn" onclick="showPage('help')"><span class="lang-en inline">Help</span><span class="lang-de inline">Hilfe</span></button>
     <button class="nav-btn" onclick="showPage('faq')">FAQ</button>
     <button class="nav-btn" onclick="showPage('privacy')"><span class="lang-en inline">Privacy</span><span class="lang-de inline">Datenschutz</span></button>
@@ -199,7 +249,7 @@ footer a:hover{color:var(--accent);}
   <button class="nav-hamburger" onclick="toggleMenu()">☰</button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <button onclick="showPage('home');toggleMenu()"><span class="lang-en inline">Home</span><span class="lang-de inline">Home</span></button>
+  <button onclick="showPage('home');toggleMenu()">Home</button>
   <button onclick="showPage('help');toggleMenu()"><span class="lang-en inline">Help</span><span class="lang-de inline">Hilfe</span></button>
   <button onclick="showPage('faq');toggleMenu()">FAQ</button>
   <button onclick="showPage('privacy');toggleMenu()"><span class="lang-en inline">Privacy</span><span class="lang-de inline">Datenschutz</span></button>
@@ -208,17 +258,45 @@ footer a:hover{color:var(--accent);}
 <!-- ══ HOME ══ -->
 <div class="page active" id="page-home">
   <section class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-badge">v 1.0.0 · <span class="lang-en inline">Now on Google Play</span><span class="lang-de inline">Jetzt auf Google Play</span></div>
-    <h1><span class="lang-en">Your digital<br><span class="ac">lab companion.</span></span><span class="lang-de">Ihr digitaler<br><span class="ac">Labor-Assistent.</span></span></h1>
-    <p class="hero-sub">
-      <span class="lang-en">Professional tools for analytical chemists and QC labs — calculations, logbook, chemicals, and more. All offline. No cloud.</span>
-      <span class="lang-de">Professionelle Werkzeuge für analytische Chemiker und QC-Labors — Berechnungen, Logbuch, Chemikalien und mehr. Vollständig offline. Keine Cloud.</span>
-    </p>
-    <div class="hero-actions">
-      <a class="btn-p" href="https://play.google.com/store/apps/details?id=com.imber.labor" target="_blank">↓ <span class="lang-en inline">Download on Google Play</span><span class="lang-de inline">Auf Google Play laden</span></a>
-      <button class="btn-s" onclick="showPage('help')"><span class="lang-en inline">See how it works →</span><span class="lang-de inline">So funktioniert's →</span></button>
+    <div class="hero-glow-l"></div>
+    <div class="hero-glow-r"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">v 1.0.0 · <span class="lang-en inline">Now on Google Play</span><span class="lang-de inline">Jetzt auf Google Play</span></div>
+      <h1>
+        <span class="lang-en">Your digital<br>lab <span class="ac">cockpit.</span></span>
+        <span class="lang-de">Ihr digitales<br>Labor-<span class="ac">Cockpit.</span></span>
+      </h1>
+      <p class="hero-sub">
+        <span class="lang-en">Professional tools for analytical chemists and QC labs — calculations, logbook, chemicals & more. Fully offline. No subscription.</span>
+        <span class="lang-de">Professionelle Werkzeuge für analytische Chemiker und QC-Labors — Berechnungen, Logbuch, Chemikalien & mehr. Vollständig offline. Kein Abo.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn-p" href="https://play.google.com/store/apps/details?id=com.imber.labor" target="_blank">↓ <span class="lang-en inline">Download on Google Play</span><span class="lang-de inline">Auf Google Play laden</span></a>
+        <button class="btn-s" onclick="showPage('help')"><span class="lang-en inline">See how it works →</span><span class="lang-de inline">So funktioniert's →</span></button>
+      </div>
+      <div class="hero-badges">
+        <div class="hbadge"><span class="hbadge-icon">🔒</span><span class="lang-en inline">100% Offline</span><span class="lang-de inline">100% Offline</span></div>
+        <div class="hbadge-sep"></div>
+        <div class="hbadge"><span class="hbadge-icon">⭐</span><span class="lang-en inline">One-time €6.99</span><span class="lang-de inline">Einmalig €6,99</span></div>
+        <div class="hbadge-sep"></div>
+        <div class="hbadge"><span class="hbadge-icon">🚫</span><span class="lang-en inline">No Ads</span><span class="lang-de inline">Keine Werbung</span></div>
+      </div>
+    </div>
+
+    <div class="hero-phones" id="heroPhones">
+      <div class="hphone hp-side hp-side-l" id="hpL">
+        <div class="hphone-notch"></div>
+        <img id="hpImgL" src="screenshots/03_Formula_Builder.jpg" alt="Formula Builder"/>
+      </div>
+      <div class="hphone hp-main" id="hpM">
+        <div class="hphone-notch"></div>
+        <img id="hpImgM" src="screenshots/01_Home.jpg" alt="ImberLab Home"/>
+      </div>
+      <div class="hphone hp-side hp-side-r" id="hpR">
+        <div class="hphone-notch"></div>
+        <img id="hpImgR" src="screenshots/05_Device_and_QR_Code.jpg" alt="Devices"/>
+      </div>
     </div>
   </section>
 
@@ -227,14 +305,14 @@ footer a:hover{color:var(--accent);}
     <h2 class="sec-title"><span class="lang-en">Everything your lab needs.</span><span class="lang-de">Alles was Ihr Labor braucht.</span></h2>
     <p class="sec-sub"><span class="lang-en">Built for real laboratory work — from quick calculations to full device management.</span><span class="lang-de">Entwickelt für den Laboralltag — von schnellen Berechnungen bis zum vollständigen Gerätemanagement.</span></p>
     <div class="feat-grid">
-      <div class="feat-card"><span class="feat-icon">🧮</span><h3><span class="lang-en">Calculations</span><span class="lang-de">Berechnungen</span></h3><p><span class="lang-en">Factor, gravimetric and volumetric calculations with auto-saving. Statistical QC with control charts, outlier detection and calibration curves.</span><span class="lang-de">Faktor-, gravimetrische und volumetrische Berechnungen mit automatischer Speicherung. Statistische QK mit Regelkarten, Ausreißertest und Kalibriergeraden.</span></p></div>
-      <div class="feat-card"><span class="feat-icon">🔣</span><h3>Formula Builder</h3><p><span class="lang-en">Create, save and reuse your own calculation formulas with custom variables. Build, name and save your own calculation formulas with a live visual preview.</span><span class="lang-de">Erstellen, speichern und verwenden Sie eigene Berechnungsformeln mit benutzerdefinierten Variablen. Eigene Berechnungsformeln erstellen, benennen und mit Live-Vorschau speichern.</span></p></div>
-      <div class="feat-card"><span class="feat-icon">📋</span><h3><span class="lang-en">Logbook</span><span class="lang-de">Logbuch</span></h3><p><span class="lang-en">Track calibrations, maintenance and inspections per device with sequential numbering, photo attachments and direct email export.</span><span class="lang-de">Kalibrierungen, Wartungen und Inspektionen pro Gerät mit laufender Nummerierung, Fotos und direktem E-Mail-Export.</span></p></div>
-      <div class="feat-card"><span class="feat-icon">⚗️</span><h3><span class="lang-en">Chemicals & GHS</span><span class="lang-de">Chemikalien & GHS</span></h3><p><span class="lang-en">80+ chemicals with full GHS pictograms, H/P statements, storage notes and PPE recommendations. Add your own with photos.</span><span class="lang-de">80+ Chemikalien mit vollständigen GHS-Piktogrammen, H/P-Sätzen, Lagerhinweisen und PSA-Empfehlungen. Eigene Chemikalien mit Fotos hinzufügen.</span></p></div>
-      <div class="feat-card"><span class="feat-icon">📊</span><h3><span class="lang-en">Analysis Results</span><span class="lang-de">Analysenergebnisse</span></h3><p><span class="lang-en">All results are auto-saved, searchable and exportable. Attach photos or scan labels via OCR for full traceability.</span><span class="lang-de">Alle Ergebnisse werden automatisch gespeichert, sind durchsuchbar und exportierbar. Fotos anhängen oder Labels per OCR scannen.</span></p></div>
-      <div class="feat-card"><span class="feat-icon">🔑</span><h3><span class="lang-en">Password Manager</span><span class="lang-de">Passwort-Manager</span></h3><p><span class="lang-en">Store device credentials and lab logins securely with favorites, full dated history and a built-in password generator.</span><span class="lang-de">Gerätezugänge und Labor-Logins sicher speichern – mit Favoriten, vollständiger History mit Datum und integriertem Generator.</span></p></div>
-      <div class="feat-card"><span class="feat-icon">🔒</span><h3><span class="lang-en">Security</span><span class="lang-de">Sicherheit</span></h3><p><span class="lang-en">App lock with PIN or fingerprint. Full backup & restore. No cloud, no ads, no data sharing — everything stays on your device.</span><span class="lang-de">App-Lock mit PIN oder Fingerabdruck. Vollständiges Backup & Restore. Keine Cloud, keine Werbung – alle Daten bleiben auf Ihrem Gerät.</span></p></div>
-      <div class="feat-card"><span class="feat-icon">📱</span><h3><span class="lang-en">Devices & QR</span><span class="lang-de">Geräte & QR</span></h3><p><span class="lang-en">Manage your full device inventory with serial numbers, locations, QR codes and complete service history.</span><span class="lang-de">Vollständiges Geräteinventar mit Seriennummern, Standorten, QR-Codes und kompletter Servicehistorie verwalten.</span></p></div>
+      <div class="feat-card"><span class="feat-icon">🧮</span><h3><span class="lang-en">Calculations</span><span class="lang-de">Berechnungen</span></h3><p><span class="lang-en">Factor, gravimetric and volumetric calculations with auto-saving. Statistical QC with control charts, outlier detection and calibration curves.</span><span class="lang-de">Faktor-, gravimetrische und volumetrische Berechnungen mit automatischer Speicherung. Statistische QK mit Regelkarten und Kalibriergeraden.</span></p></div>
+      <div class="feat-card"><span class="feat-icon">🔣</span><h3>Formula Builder</h3><p><span class="lang-en">Create, save and reuse your own calculation formulas with custom variables, live fraction preview and math functions like sqrt(), log(), sin().</span><span class="lang-de">Eigene Formeln erstellen, speichern und wiederverwenden — mit benutzerdefinierten Variablen, Live-Bruchvorschau und Funktionen wie sqrt(), log().</span></p></div>
+      <div class="feat-card"><span class="feat-icon">📋</span><h3><span class="lang-en">Logbook</span><span class="lang-de">Logbuch</span></h3><p><span class="lang-en">Track calibrations, maintenance and inspections per device with sequential numbering, due date alerts, photo attachments and email export.</span><span class="lang-de">Kalibrierungen, Wartungen und Inspektionen pro Gerät mit laufender Nummerierung, Fälligkeitsalerts, Fotos und E-Mail-Export.</span></p></div>
+      <div class="feat-card"><span class="feat-icon">⚗️</span><h3><span class="lang-en">Chemicals & GHS</span><span class="lang-de">Chemikalien & GHS</span></h3><p><span class="lang-en">80+ chemicals with full GHS pictograms, H/P statements, storage notes and PPE recommendations. Add your own with photos.</span><span class="lang-de">80+ Chemikalien mit vollständigen GHS-Piktogrammen, H/P-Sätzen, Lagerhinweisen und PSA. Eigene Chemikalien hinzufügen.</span></p></div>
+      <div class="feat-card"><span class="feat-icon">📊</span><h3><span class="lang-en">Analysis Results</span><span class="lang-de">Analysenergebnisse</span></h3><p><span class="lang-en">All results auto-saved, searchable and exportable. Attach photos, add notes or scan labels for full traceability.</span><span class="lang-de">Alle Ergebnisse automatisch gespeichert, durchsuchbar und exportierbar. Fotos, Notizen und Label-Scan für lückenlose Rückverfolgbarkeit.</span></p></div>
+      <div class="feat-card"><span class="feat-icon">📱</span><h3><span class="lang-en">Devices & QR</span><span class="lang-de">Geräte & QR</span></h3><p><span class="lang-en">Full device inventory with categories, serial numbers, QR codes, locations and complete service logbook. Add, decommission or delete devices.</span><span class="lang-de">Vollständiges Geräteinventar mit Kategorien, Seriennummern, QR-Codes und kompletter Servicehistorie. Geräte hinzufügen, stilllegen oder löschen.</span></p></div>
+      <div class="feat-card"><span class="feat-icon">🔑</span><h3><span class="lang-en">Password Manager</span><span class="lang-de">Passwort-Manager</span></h3><p><span class="lang-en">Store device credentials and lab logins securely with favorites, full dated history and a built-in password generator. Completely free.</span><span class="lang-de">Gerätezugänge sicher speichern – mit Favoriten, History mit Datum und integriertem Generator. Vollständig kostenlos.</span></p></div>
+      <div class="feat-card"><span class="feat-icon">🔒</span><h3><span class="lang-en">Security & Privacy</span><span class="lang-de">Sicherheit & Datenschutz</span></h3><p><span class="lang-en">App lock with PIN or fingerprint. Full backup & restore. No cloud, no ads, no tracking — all data stays on your device.</span><span class="lang-de">App-Lock mit PIN oder Fingerabdruck. Vollständiges Backup & Restore. Keine Cloud, keine Werbung – alle Daten auf Ihrem Gerät.</span></p></div>
     </div>
   </section>
 
@@ -243,11 +321,11 @@ footer a:hover{color:var(--accent);}
     <h2 class="sec-title"><span class="lang-en">See it in action.</span><span class="lang-de">Die App in Aktion.</span></h2>
     <div class="ss-grid">
       <div class="ss-card" onclick="openLB('screenshots/01_Home.jpg')"><img src="screenshots/01_Home.jpg" alt="Home" loading="lazy"><div class="ss-label">Home<div class="ss-sub"><span class="lang-en inline">All features at a glance</span><span class="lang-de inline">Alle Funktionen auf einen Blick</span></div></div></div>
-      <div class="ss-card" onclick="openLB('screenshots/02_Calculations.jpg')"><img src="screenshots/02_Calculations.jpg" alt="Calculations" loading="lazy"><div class="ss-label"><span class="lang-en inline">Calculations</span><span class="lang-de inline">Berechnungen</span><div class="ss-sub"><span class="lang-en inline">Factor · Gravimetric · Volumetric</span><span class="lang-de inline">Faktor · Gravimetrisch · Volumetrisch</span></div></div></div>
-      <div class="ss-card" onclick="openLB('screenshots/03_Formula_Builder.jpg')"><img src="screenshots/03_Formula_Builder.jpg" alt="Formula Builder" loading="lazy"><div class="ss-label"><span class="lang-en inline">Formula Builder</span><span class="lang-de inline">Formel-Builder</span><div class="ss-sub"><span class="lang-en inline">Custom formulas, save &amp; reuse</span><span class="lang-de inline">Eigene Formeln, speichern &amp; wiederverwenden</span></div></div></div>
-      <div class="ss-card" onclick="openLB('screenshots/04_Chemicals.jpg')"><img src="screenshots/04_Chemicals.jpg" alt="Chemicals" loading="lazy"><div class="ss-label"><span class="lang-en inline">Chemicals &amp; GHS</span><span class="lang-de inline">Chemikalien &amp; GHS</span><div class="ss-sub"><span class="lang-en inline">80+ chemicals with GHS pictograms</span><span class="lang-de inline">80+ Chemikalien mit GHS-Piktogrammen</span></div></div></div>
+      <div class="ss-card" onclick="openLB('screenshots/02_Calculations.jpg')"><img src="screenshots/02_Calculations.jpg" alt="Calculations" loading="lazy"><div class="ss-label"><span class="lang-en inline">Calculations</span><span class="lang-de inline">Berechnungen</span><div class="ss-sub">Factor · Gravimetric · Volumetric</div></div></div>
+      <div class="ss-card" onclick="openLB('screenshots/03_Formula_Builder.jpg')"><img src="screenshots/03_Formula_Builder.jpg" alt="Formula Builder" loading="lazy"><div class="ss-label">Formula Builder<div class="ss-sub"><span class="lang-en inline">Custom formulas, save &amp; reuse</span><span class="lang-de inline">Eigene Formeln speichern &amp; wiederverwenden</span></div></div></div>
+      <div class="ss-card" onclick="openLB('screenshots/04_Chemicals.jpg')"><img src="screenshots/04_Chemicals.jpg" alt="Chemicals" loading="lazy"><div class="ss-label"><span class="lang-en inline">Chemicals &amp; GHS</span><span class="lang-de inline">Chemikalien &amp; GHS</span><div class="ss-sub"><span class="lang-en inline">80+ chemicals</span><span class="lang-de inline">80+ Chemikalien</span></div></div></div>
       <div class="ss-card" onclick="openLB('screenshots/05_Device_and_QR_Code.jpg')"><img src="screenshots/05_Device_and_QR_Code.jpg" alt="Device" loading="lazy"><div class="ss-label"><span class="lang-en inline">Device &amp; QR Code</span><span class="lang-de inline">Gerät &amp; QR-Code</span><div class="ss-sub"><span class="lang-en inline">Full device profile</span><span class="lang-de inline">Vollständiges Geräteprofil</span></div></div></div>
-      <div class="ss-card" onclick="openLB('screenshots/06_Analysis_Results.jpg')"><img src="screenshots/06_Analysis_Results.jpg" alt="Analysis Results" loading="lazy"><div class="ss-label"><span class="lang-en inline">Analysis Results</span><span class="lang-de inline">Analysenergebnisse</span><div class="ss-sub"><span class="lang-en inline">Auto-saved · Searchable · Exportable</span><span class="lang-de inline">Automatisch gespeichert · Durchsuchbar · Exportierbar</span></div></div></div>
+      <div class="ss-card" onclick="openLB('screenshots/06_Analysis_Results.jpg')"><img src="screenshots/06_Analysis_Results.jpg" alt="Analysis Results" loading="lazy"><div class="ss-label"><span class="lang-en inline">Analysis Results</span><span class="lang-de inline">Analysenergebnisse</span><div class="ss-sub"><span class="lang-en inline">Auto-saved · Exportable</span><span class="lang-de inline">Auto-gespeichert · Exportierbar</span></div></div></div>
       <div class="ss-card" onclick="openLB('screenshots/07_Password_Manager.jpg')"><img src="screenshots/07_Password_Manager.jpg" alt="Password Manager" loading="lazy"><div class="ss-label"><span class="lang-en inline">Password Manager</span><span class="lang-de inline">Passwort-Manager</span><div class="ss-sub"><span class="lang-en inline">Favorites · History · Generator</span><span class="lang-de inline">Favoriten · History · Generator</span></div></div></div>
     </div>
   </section>
@@ -258,26 +336,25 @@ footer a:hover{color:var(--accent);}
     <div class="prem-inner">
       <div>
         <div class="prem-badge">✓ Free — always</div>
-        <h2 class="sec-title" style="margin-bottom:12px;font-size:28px"><span class="lang-en">Fully functional out of the box — no subscription needed.</span><span class="lang-de">Vollständig einsatzbereit – kein Abo erforderlich.</span></h2>
+        <h2 class="sec-title" style="margin-bottom:10px;font-size:26px"><span class="lang-en">Fully functional out of the box — no subscription needed.</span><span class="lang-de">Vollständig einsatzbereit – kein Abo erforderlich.</span></h2>
         <ul class="prem-list">
           <li><span class="lang-en">All calculations — Factor, Gravimetric, Volumetric</span><span class="lang-de">Alle Berechnungen — Faktor, Gravimetrisch, Volumetrisch</span></li>
           <li><span class="lang-en">Full ImbaControl QC suite — control charts, outlier detection, calibration curves</span><span class="lang-de">Vollständige ImbaControl QK — Regelkarten, Ausreißertest, Kalibriergeraden</span></li>
           <li><span class="lang-en">80+ chemicals with GHS pictograms, H/P statements & storage notes</span><span class="lang-de">80+ Chemikalien mit GHS-Piktogrammen, H/P-Sätzen & Lagerhinweisen</span></li>
-          <li><span class="lang-en">Device management with QR codes & full service history</span><span class="lang-de">Geräteverwaltung mit QR-Codes & vollständiger Servicehistorie</span></li>
+          <li><span class="lang-en">Device management with QR codes, logbook & service history</span><span class="lang-de">Geräteverwaltung mit QR-Codes, Logbuch & Servicehistorie</span></li>
           <li><span class="lang-en">Analysis Results — auto-saved, searchable, exportable</span><span class="lang-de">Analysenergebnisse — automatisch gespeichert, durchsuchbar, exportierbar</span></li>
           <li><span class="lang-en">Formula Builder — 3 saved formulas free</span><span class="lang-de">Formula Builder — 3 gespeicherte Formeln kostenlos</span></li>
-          <li><span class="lang-en">Password Manager — favorites, history & generator</span><span class="lang-de">Passwort-Manager — Favoriten, History & Generator</span></li>
+          <li><span class="lang-en">Password Manager — fully free, favorites, history & generator</span><span class="lang-de">Passwort-Manager — vollständig kostenlos, Favoriten, History & Generator</span></li>
           <li><span class="lang-en">App lock (PIN / fingerprint), full backup & restore</span><span class="lang-de">App-Lock (PIN / Fingerabdruck), vollständiges Backup & Restore</span></li>
           <li style="border-bottom:none"><strong style="color:var(--accent)"><span class="lang-en">No cloud · No ads · No account · No subscription</span><span class="lang-de">Keine Cloud · Keine Werbung · Kein Konto · Kein Abo</span></strong></li>
         </ul>
-        <div style="margin-top:32px">
-        <div class="prem-badge">⭐ Premium</div>
-        <h2 class="sec-title" style="margin-bottom:12px;font-size:24px"><span class="lang-en">Unlock even more — one-time.</span><span class="lang-de">Noch mehr freischalten — einmalig.</span></h2>
-        <ul class="prem-list">
-          <li><span class="lang-en">Unlimited photos in Logbook & Analysis Results</span><span class="lang-de">Unlimitierte Fotos im Logbuch & Analysenergebnisse</span></li>
-          <li><span class="lang-en">Unlimited custom formulas in Formula Builder</span><span class="lang-de">Unbegrenzte eigene Formeln im Formula Builder</span></li>
-          
-        </ul>
+        <div style="margin-top:28px">
+          <div class="prem-badge">⭐ Premium</div>
+          <h2 class="sec-title" style="margin-bottom:10px;font-size:22px"><span class="lang-en">Unlock more — one-time.</span><span class="lang-de">Mehr freischalten — einmalig.</span></h2>
+          <ul class="prem-list">
+            <li><span class="lang-en">Unlimited photos in Logbook & Analysis Results</span><span class="lang-de">Unlimitierte Fotos im Logbuch & Analysenergebnisse</span></li>
+            <li><span class="lang-en">Unlimited custom formulas in Formula Builder</span><span class="lang-de">Unbegrenzte eigene Formeln im Formula Builder</span></li>
+          </ul>
         </div>
       </div>
       <div class="price-box">
@@ -297,25 +374,23 @@ footer a:hover{color:var(--accent);}
     <p class="help-intro"><span class="lang-en">Tap any module to expand the instructions.</span><span class="lang-de">Tippen Sie auf ein Modul, um die Anleitung zu erweitern.</span></p>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">🧮</span><div class="hmod-txt"><h3><span class="lang-en">Calculations</span><span class="lang-de">Berechnungen</span></h3><p><span class="lang-en inline">Factor, Gravimetric & Volumetric</span><span class="lang-de inline">Faktor, Gravimetrisch & Volumetrisch</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">🧮</span><div class="hmod-txt"><h3><span class="lang-en">Calculations</span><span class="lang-de">Berechnungen</span></h3><p><span class="lang-en inline">Factor, Gravimetric &amp; Volumetric</span><span class="lang-de inline">Faktor, Gravimetrisch &amp; Volumetrisch</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
-        <p><span class="lang-en">Three calculation types for analytical chemistry work:</span><span class="lang-de">Drei Berechnungstypen für die analytische Chemie:</span></p>
         <ol class="hsteps">
           <li><span class="lang-en">Open <strong>Calculations</strong> from the main menu and choose Factor, Gravimetric or Volumetric.</span><span class="lang-de">Öffnen Sie <strong>Berechnungen</strong> im Hauptmenü und wählen Sie Faktor, Gravimetrisch oder Volumetrisch.</span></li>
-          <li><span class="lang-en">Enter your values in the input fields. Decimal input is supported.</span><span class="lang-de">Geben Sie Ihre Werte in die Eingabefelder ein. Dezimaleingabe wird unterstützt.</span></li>
+          <li><span class="lang-en">Enter your values in the input fields. Use a period as decimal separator.</span><span class="lang-de">Werte in die Eingabefelder eingeben. Punkt als Dezimaltrennzeichen verwenden.</span></li>
           <li><span class="lang-en">Tap <strong>Calculate</strong> to get the result instantly.</span><span class="lang-de">Tippen Sie auf <strong>Berechnen</strong> für das sofortige Ergebnis.</span></li>
-          <li><span class="lang-en">If <em>Save Results</em> is enabled in Settings, the result is automatically saved.</span><span class="lang-de">Wenn <em>Ergebnisse speichern</em> in den Einstellungen aktiviert ist, wird das Ergebnis automatisch gespeichert.</span></li>
+          <li><span class="lang-en">If <em>Save Results</em> is enabled in Settings, the result is automatically saved to Analysis Results.</span><span class="lang-de">Wenn <em>Ergebnisse speichern</em> in den Einstellungen aktiviert ist, wird das Ergebnis automatisch gespeichert.</span></li>
         </ol>
-        <div class="htip">💡 <span class="lang-en">Use the Formula Builder to create your own custom formulas.</span><span class="lang-de">Verwenden Sie den Formula Builder für eigene Berechnungsformeln.</span></div>
+        <div class="htip">💡 <span class="lang-en">Use the Formula Builder to create your own custom formulas for recurring analyses.</span><span class="lang-de">Verwenden Sie den Formula Builder für eigene Berechnungsformeln bei wiederkehrenden Analysen.</span></div>
       </div>
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
       <div class="hmod-hdr"><span class="hmod-emoji">📊</span><div class="hmod-txt"><h3>ImbaControl</h3><p><span class="lang-en inline">Statistical Quality Control</span><span class="lang-de inline">Statistische Qualitätskontrolle</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
-        <p><span class="lang-en">Four statistical tools for process monitoring:</span><span class="lang-de">Vier statistische Werkzeuge zur Prozessüberwachung:</span></p>
         <ol class="hsteps">
-          <li><span class="lang-en"><strong>Control Chart</strong> — Visualizes measurements over time with mean, UCL and LCL lines.</span><span class="lang-de"><strong>Regelkarte</strong> — Visualisiert Messwerte über die Zeit mit Mittelwert, OGW und UGW.</span></li>
+          <li><span class="lang-en"><strong>Control Chart</strong> — Visualizes measurements over time with mean, UCL and LCL lines.</span><span class="lang-de"><strong>Regelkarte</strong> — Messwerte über Zeit mit Mittelwert, OGW und UGW.</span></li>
           <li><span class="lang-en"><strong>Outlier Test</strong> — Detects statistically significant outliers in your dataset.</span><span class="lang-de"><strong>Ausreißertest</strong> — Erkennt statistisch auffällige Ausreißer im Datensatz.</span></li>
           <li><span class="lang-en"><strong>Stability Trend</strong> — Analyzes whether a process is stable, increasing or decreasing.</span><span class="lang-de"><strong>Stabilitätstrend</strong> — Analysiert ob ein Prozess stabil, steigend oder fallend ist.</span></li>
           <li><span class="lang-en"><strong>Calibration Curve</strong> — Linear regression with R² value for standard curves.</span><span class="lang-de"><strong>Kalibriergerade</strong> — Lineare Regression mit R²-Wert für Standardkurven.</span></li>
@@ -325,58 +400,57 @@ footer a:hover{color:var(--accent);}
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">🔣</span><div class="hmod-txt"><h3>Formula Builder</h3><p><span class="lang-en inline">Custom calculation formulas with live preview &amp; OCR</span><span class="lang-de inline">Eigene Berechnungsformeln mit Live-Vorschau &amp; OCR</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">🔣</span><div class="hmod-txt"><h3>Formula Builder</h3><p><span class="lang-en inline">Custom formulas with live preview</span><span class="lang-de inline">Eigene Formeln mit Live-Vorschau</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
-        <p><span class="lang-en">Build, save and reuse your own calculation formulas — with a live visual fraction preview and automatic variable detection.</span><span class="lang-de">Erstellen, speichern und verwenden Sie eigene Berechnungsformeln – mit visueller Bruchvorschau und automatischer Variablenerkennung.</span></p>
         <ol class="hsteps">
           <li><span class="lang-en">Enter a <strong>name</strong> for your formula (e.g. "Content %", "Combined Uncertainty").</span><span class="lang-de">Geben Sie einen <strong>Namen</strong> für Ihre Formel ein (z.B. "Gehalt %", "Messunsicherheit").</span></li>
-          <li><span class="lang-en">Type your <strong>formula</strong> using letters as variables. Supported operators: <code>+ - * / ^ ( )</code>. Functions: <code>sqrt()</code>, <code>log()</code>, <code>sin()</code> etc.</span><span class="lang-de">Geben Sie Ihre <strong>Formel</strong> ein. Unterstützte Operatoren: <code>+ - * / ^ ( )</code>. Funktionen: <code>sqrt()</code>, <code>log()</code>, <code>sin()</code> usw.</span></li>
-          <li><span class="lang-en">A <strong>live fraction preview</strong> appears automatically as you type — fractions, multipliers and nested brackets are shown visually with a fraction bar.</span><span class="lang-de">Eine <strong>Live-Bruchvorschau</strong> erscheint automatisch beim Tippen – Brüche, Multiplikatoren und Klammern werden visuell mit Bruchstrich dargestellt.</span></li>
-          <li><span class="lang-en">Enter the optional <strong>result unit</strong> (e.g. %, g/l, mmol/l).</span><span class="lang-de">Geben Sie die optionale <strong>Ergebniseinheit</strong> ein (z.B. %, g/l, mmol/l).</span></li>
-          <li><span class="lang-en">Tap <strong>Detect Variables</strong> — ImberLab finds all variable names automatically. Variable names can include hyphens and umlauts (e.g. <code>CL-Milchsäure</code>).</span><span class="lang-de">Tippen Sie auf <strong>Variablen erkennen</strong> — ImberLab findet alle Variablennamen automatisch. Variablennamen dürfen Bindestriche und Umlaute enthalten (z.B. <code>CL-Milchsäure</code>).</span></li>
-          <li><span class="lang-en">Enter values for each variable and tap <strong>Calculate</strong>. Tap <strong>Save Formula</strong> to reuse it anytime from the Calculations menu. Free accounts can save up to 3 formulas — upgrade to Premium for unlimited.</span><span class="lang-de">Werte für jede Variable eingeben und <strong>Berechnen</strong> tippen. Mit <strong>Formel speichern</strong> ist sie jederzeit im Berechnungsmenü verfügbar. Kostenlos sind bis zu 3 Formeln speicherbar – Premium für unbegrenzte Anzahl.</span></li>
+          <li><span class="lang-en">Type your <strong>formula</strong> using letters as variables. Supported: <code>+ - * / ^ ( )</code>, functions: <code>sqrt() log() sin() cos()</code>.</span><span class="lang-de">Formel mit Buchstaben als Variablen eingeben. Unterstützt: <code>+ - * / ^ ( )</code>, Funktionen: <code>sqrt() log() sin() cos()</code>.</span></li>
+          <li><span class="lang-en">A <strong>live fraction preview</strong> appears automatically — fractions and multipliers shown visually.</span><span class="lang-de">Eine <strong>Live-Bruchvorschau</strong> erscheint automatisch – Brüche und Multiplikatoren werden visuell dargestellt.</span></li>
+          <li><span class="lang-en">Enter the optional <strong>result unit</strong> (e.g. %, g/l, mmol/l).</span><span class="lang-de">Optionale <strong>Ergebniseinheit</strong> eingeben (z.B. %, g/l, mmol/l).</span></li>
+          <li><span class="lang-en">Tap <strong>Detect Variables</strong> — variable names can include hyphens and umlauts (e.g. <code>CL-Milchsäure</code>).</span><span class="lang-de">Tippen Sie auf <strong>Variablen erkennen</strong> — Variablennamen dürfen Bindestriche und Umlaute enthalten.</span></li>
+          <li><span class="lang-en">Enter values and tap <strong>Calculate</strong>. Tap <strong>Save Formula</strong> to reuse it anytime. Free: up to 3 formulas — Premium: unlimited.</span><span class="lang-de">Werte eingeben und <strong>Berechnen</strong> tippen. <strong>Formel speichern</strong> für spätere Nutzung. Kostenlos: bis zu 3 Formeln – Premium: unbegrenzt.</span></li>
         </ol>
-        <div class="htip">💡 <span class="lang-en">Example: <code>(CL-Milchsäure)/(EinwaageProbe)*100</code> or <code>sqrt(uA^2+uB^2)</code> for combined uncertainty.</span><span class="lang-de">Beispiel: <code>(CL-Milchsäure)/(EinwaageProbe)*100</code> oder <code>sqrt(uA^2+uB^2)</code> für kombinierte Messunsicherheit.</span></div>
-
-        </div>
+        <div class="htip">💡 <span class="lang-en">Example: <code>sqrt(uA^2+uB^2)</code> for combined uncertainty, or <code>(CL-Milchsäure)/(Einwaage)*100</code> for content %.</span><span class="lang-de">Beispiel: <code>sqrt(uA^2+uB^2)</code> für kombinierte Messunsicherheit, oder <code>(CL-Milchsäure)/(Einwaage)*100</code> für Gehalt %.</span></div>
       </div>
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">📋</span><div class="hmod-txt"><h3><span class="lang-en">Logbook</span><span class="lang-de">Logbuch</span></h3><p><span class="lang-en inline">Device calibration & maintenance records</span><span class="lang-de inline">Kalibrierungs- & Wartungsaufzeichnungen</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">📱</span><div class="hmod-txt"><h3><span class="lang-en">Devices &amp; QR</span><span class="lang-de">Geräte &amp; QR</span></h3><p><span class="lang-en inline">Lab instrument management</span><span class="lang-de inline">Laborgeräteverwaltung</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
         <ol class="hsteps">
-          <li><span class="lang-en">Tap <strong>+ Entry</strong> to create a new entry. Select device, type, date and optional next due date.</span><span class="lang-de">Tippen Sie auf <strong>+ Eintrag</strong>. Gerät, Typ, Datum und optionalen Fälligkeitstermin wählen.</span></li>
-          <li><span class="lang-en">Each device gets its own sequential numbering (#1, #2, …).</span><span class="lang-de">Jedes Gerät erhält eine eigene laufende Nummerierung (#1, #2, …).</span></li>
-          <li><span class="lang-en">Due dates are color-coded: green = OK, orange = due soon, red = overdue.</span><span class="lang-de">Fälligkeitstermine sind farbkodiert: grün = OK, orange = bald fällig, rot = überfällig.</span></li>
-          <li><span class="lang-en">Tap <strong>Photo</strong> (Premium) to attach a photo. Tap <strong>Export</strong> to share via email.</span><span class="lang-de">Tippen Sie auf <strong>Foto</strong> (Premium) für ein Foto. <strong>Export</strong> zum Teilen per E-Mail.</span></li>
-          <li><span class="lang-en"><strong>Long-press</strong> a card to delete all entries for that device.</span><span class="lang-de"><strong>Lang drücken</strong> auf eine Karte löscht alle Einträge für dieses Gerät.</span></li>
+          <li><span class="lang-en">Open <strong>Devices</strong> from the main menu. Devices are grouped by category.</span><span class="lang-de">Öffnen Sie <strong>Geräte</strong> im Hauptmenü. Geräte sind nach Kategorien gruppiert.</span></li>
+          <li><span class="lang-en">Tap <strong>+ Add New Device</strong>, choose a category, enter a name/ID, serial number, manufacturer and location.</span><span class="lang-de">Tippen Sie auf <strong>+ Neues Gerät</strong>, Kategorie wählen, Name/ID, Seriennummer, Hersteller und Standort eingeben.</span></li>
+          <li><span class="lang-en">Tap a device to open its profile with QR code, logbook and service history.</span><span class="lang-de">Tippen Sie auf ein Gerät für das vollständige Profil mit QR-Code, Logbuch und Servicehistorie.</span></li>
+          <li><span class="lang-en">Use <strong>Edit</strong> to update location or description.</span><span class="lang-de">Mit <strong>Bearbeiten</strong> Standort oder Beschreibung aktualisieren.</span></li>
+          <li><span class="lang-en">Use <strong>Decommission</strong> to retire a device — it disappears from lists but the logbook is kept.</span><span class="lang-de">Mit <strong>Stilllegen</strong> ein Gerät außer Betrieb nehmen — es verschwindet aus den Listen, das Logbuch bleibt erhalten.</span></li>
+          <li><span class="lang-en">Use <strong>Delete Device</strong> to permanently remove a device <em>and all its logbook entries</em>. This cannot be undone.</span><span class="lang-de">Mit <strong>Gerät löschen</strong> ein Gerät und <em>alle zugehörigen Logbucheinträge</em> dauerhaft entfernen. Dies kann nicht rückgängig gemacht werden.</span></li>
         </ol>
-        <div class="htip">💡 <span class="lang-en">Search by device name, date, person or note.</span><span class="lang-de">Suche nach Gerätename, Datum, Person oder Notiz.</span></div>
+        <div class="htip">💡 <span class="lang-en">If you want to keep the logbook, use Decommission instead of Delete.</span><span class="lang-de">Wenn Sie das Logbuch behalten möchten, verwenden Sie Stilllegen statt Löschen.</span></div>
       </div>
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">⚗️</span><div class="hmod-txt"><h3><span class="lang-en">Chemicals & GHS</span><span class="lang-de">Chemikalien & GHS</span></h3><p><span class="lang-en inline">Chemical inventory management</span><span class="lang-de inline">Chemikalienverwaltung</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">📋</span><div class="hmod-txt"><h3><span class="lang-en">Logbook</span><span class="lang-de">Logbuch</span></h3><p><span class="lang-en inline">Calibration &amp; maintenance records</span><span class="lang-de inline">Kalibrierungs- &amp; Wartungsaufzeichnungen</span></p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <ol class="hsteps">
+          <li><span class="lang-en">Inside a device profile, tap <strong>+ New Calibration</strong> to add a logbook entry with date, due date, performed by and notes.</span><span class="lang-de">Im Geräteprofil auf <strong>+ Neue Kalibrierung</strong> tippen — Datum, Fälligkeitstermin, Durchführender und Notiz eingeben.</span></li>
+          <li><span class="lang-en">Each device gets its own sequential numbering (#1, #2, …).</span><span class="lang-de">Jedes Gerät erhält eine eigene laufende Nummerierung (#1, #2, …).</span></li>
+          <li><span class="lang-en">Due dates are color-coded: green = OK, orange = due soon, red = overdue.</span><span class="lang-de">Fälligkeitstermine sind farbkodiert: grün = OK, orange = bald fällig, rot = überfällig.</span></li>
+          <li><span class="lang-en">Tap <strong>Photo</strong> (Premium) to attach a photo. Tap <strong>Note</strong> to add a free-text note.</span><span class="lang-de">Tippen Sie auf <strong>Foto</strong> (Premium) für ein Foto. <strong>Notiz</strong> für einen Freitext-Kommentar.</span></li>
+        </ol>
+        <div class="htip">💡 <span class="lang-en">Access the logbook for a specific device from its device profile page.</span><span class="lang-de">Das Logbuch eines Geräts ist direkt im Geräteprofil zugänglich.</span></div>
+      </div>
+    </div>
+
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">⚗️</span><div class="hmod-txt"><h3><span class="lang-en">Chemicals &amp; GHS</span><span class="lang-de">Chemikalien &amp; GHS</span></h3><p><span class="lang-en inline">Chemical inventory management</span><span class="lang-de inline">Chemikalienverwaltung</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
         <ol class="hsteps">
           <li><span class="lang-en">Browse or search chemicals by name or CAS number.</span><span class="lang-de">Chemikalien nach Name oder CAS-Nummer durchsuchen.</span></li>
           <li><span class="lang-en">Tap a chemical to see GHS pictograms, H/P statements, storage notes and PPE requirements.</span><span class="lang-de">Tippen Sie auf eine Chemikalie für GHS-Piktogramme, H/P-Sätze, Lagerhinweise und PSA.</span></li>
-          <li><span class="lang-en">Tap <strong>+ Add</strong> to create a custom chemical entry.</span><span class="lang-de">Tippen Sie auf <strong>+ Hinzufügen</strong> für eine eigene Chemikalie.</span></li>
+          <li><span class="lang-en">Tap <strong>+ Add New Chemical</strong> to create a custom entry with your own data.</span><span class="lang-de">Tippen Sie auf <strong>+ Neue Chemikalie</strong> für einen eigenen Eintrag.</span></li>
           <li><span class="lang-en"><strong>Long-press</strong> a custom chemical to edit or delete it.</span><span class="lang-de"><strong>Lang drücken</strong> auf eine eigene Chemikalie zum Bearbeiten oder Löschen.</span></li>
           <li><span class="lang-en">Tap the <strong>camera icon</strong> (Premium) to attach a photo.</span><span class="lang-de">Tippen Sie auf das <strong>Kamera-Symbol</strong> (Premium) für ein Foto.</span></li>
-        </ol>
-      </div>
-    </div>
-
-    <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">🖥️</span><div class="hmod-txt"><h3><span class="lang-en">Devices & QR</span><span class="lang-de">Geräte & QR</span></h3><p><span class="lang-en inline">Lab instrument management</span><span class="lang-de inline">Laborgeräteverwaltung</span></p></div><span class="hchev">▾</span></div>
-      <div class="hbody">
-        <ol class="hsteps">
-          <li><span class="lang-en">Browse devices by category or search across all fields.</span><span class="lang-de">Geräte nach Kategorie durchsuchen oder alle Felder durchsuchen.</span></li>
-          <li><span class="lang-en">Tap a device to open its profile: type, serial number, manufacturer, location, description.</span><span class="lang-de">Tippen Sie auf ein Gerät für das vollständige Profil: Typ, Seriennummer, Hersteller, Standort.</span></li>
-          <li><span class="lang-en">Each device has a <strong>QR code</strong> generated from its serial number.</span><span class="lang-de">Jedes Gerät hat einen <strong>QR-Code</strong> basierend auf der Seriennummer.</span></li>
-          <li><span class="lang-en">Use <strong>Decommission</strong> to retire a device from all lists.</span><span class="lang-de">Mit <strong>Außer Betrieb</strong> ein Gerät aus allen Listen entfernen.</span></li>
         </ol>
       </div>
     </div>
@@ -385,22 +459,23 @@ footer a:hover{color:var(--accent);}
       <div class="hmod-hdr"><span class="hmod-emoji">📈</span><div class="hmod-txt"><h3><span class="lang-en">Analysis Results</span><span class="lang-de">Analysenergebnisse</span></h3><p><span class="lang-en inline">Auto-saved calculation history</span><span class="lang-de inline">Automatisch gespeicherte Berechnungshistorie</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
         <ol class="hsteps">
-          <li><span class="lang-en">Enable <strong>Save Results</strong> in Settings to start auto-saving.</span><span class="lang-de">Aktivieren Sie <strong>Ergebnisse speichern</strong> in den Einstellungen.</span></li>
-          <li><span class="lang-en">Tap a card to expand and see full details.</span><span class="lang-de">Tippen Sie auf eine Karte für alle Details.</span></li>
-          <li><span class="lang-en">Tap <strong>Photo</strong> (Premium), <strong>Note</strong> or <strong>Scan</strong> to add more information.</span><span class="lang-de">Tippen Sie auf <strong>Foto</strong> (Premium), <strong>Notiz</strong> oder <strong>Scan</strong> für mehr Informationen.</span></li>
+          <li><span class="lang-en">Enable <strong>Save Results</strong> in Settings to start auto-saving all calculations.</span><span class="lang-de">Aktivieren Sie <strong>Ergebnisse speichern</strong> in den Einstellungen.</span></li>
+          <li><span class="lang-en">Tap a card to expand and see full details including inputs.</span><span class="lang-de">Tippen Sie auf eine Karte für alle Details einschließlich Eingabewerte.</span></li>
+          <li><span class="lang-en">Tap <strong>Photo</strong> (Premium), <strong>Note</strong> or <strong>Scan</strong> to add more information to a result.</span><span class="lang-de">Tippen Sie auf <strong>Foto</strong> (Premium), <strong>Notiz</strong> oder <strong>Scan</strong> für mehr Informationen.</span></li>
           <li><span class="lang-en"><strong>Long-press</strong> a card to delete that result.</span><span class="lang-de"><strong>Lang drücken</strong> auf eine Karte zum Löschen.</span></li>
         </ol>
       </div>
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">🔑</span><div class="hmod-txt"><h3><span class="lang-en">Password Manager</span><span class="lang-de">Passwort-Manager</span></h3><p><span class="lang-en inline">Secure credential storage</span><span class="lang-de inline">Sichere Zugangsdatenverwaltung</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">🔑</span><div class="hmod-txt"><h3><span class="lang-en">Password Manager</span><span class="lang-de">Passwort-Manager</span></h3><p><span class="lang-en inline">Secure credential storage — fully free</span><span class="lang-de inline">Sichere Zugangsdaten — vollständig kostenlos</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
         <ol class="hsteps">
-          <li><span class="lang-en">Tap <strong>+ Add Entry</strong> to create a new credential with title, username, password, URL and notes.</span><span class="lang-de">Tippen Sie auf <strong>+ Eintrag</strong> für einen neuen Eintrag mit Titel, Benutzername, Passwort, URL und Notizen.</span></li>
-          <li><span class="lang-en">Tap the <strong>star</strong> to mark an entry as favorite.</span><span class="lang-de">Tippen Sie auf den <strong>Stern</strong> um einen Eintrag als Favorit zu markieren.</span></li>
-          <li><span class="lang-en">Use the <strong>eye icon</strong> to reveal the password and history together.</span><span class="lang-de">Das <strong>Auge-Symbol</strong> zeigt Passwort und History gleichzeitig.</span></li>
-          <li><span class="lang-en">Tap <strong>Generator</strong> to create a strong random password.</span><span class="lang-de">Tippen Sie auf <strong>Generator</strong> für ein starkes Zufallspasswort.</span></li>
+          <li><span class="lang-en">Tap <strong>+ Add Entry</strong> — enter title, username, password, URL and an optional note.</span><span class="lang-de">Tippen Sie auf <strong>+ Eintrag</strong> — Titel, Benutzername, Passwort, URL und optionale Notiz eingeben.</span></li>
+          <li><span class="lang-en">Tap the <strong>star</strong> to mark an entry as favorite — favorites appear at the top.</span><span class="lang-de">Tippen Sie auf den <strong>Stern</strong> um einen Eintrag als Favorit zu markieren.</span></li>
+          <li><span class="lang-en">Tap the <strong>eye icon</strong> to reveal the password. Full password history with dates is shown below.</span><span class="lang-de">Das <strong>Auge-Symbol</strong> zeigt das Passwort. Die vollständige History mit Datum wird darunter angezeigt.</span></li>
+          <li><span class="lang-en">Tap the <strong>URL link</strong> to open it directly in the browser.</span><span class="lang-de">Tippen Sie auf den <strong>URL-Link</strong> um ihn direkt im Browser zu öffnen.</span></li>
+          <li><span class="lang-en">Tap <strong>Generator</strong> to create a strong random password and copy it.</span><span class="lang-de">Tippen Sie auf <strong>Generator</strong> für ein starkes Zufallspasswort.</span></li>
           <li><span class="lang-en"><strong>Long-press</strong> an entry to edit or delete it.</span><span class="lang-de"><strong>Lang drücken</strong> auf einen Eintrag zum Bearbeiten oder Löschen.</span></li>
         </ol>
         <div class="htip">💡 <span class="lang-en">All Password Manager features are completely free — no Premium required.</span><span class="lang-de">Alle Passwort-Manager-Funktionen sind vollständig kostenlos – kein Premium erforderlich.</span></div>
@@ -408,13 +483,13 @@ footer a:hover{color:var(--accent);}
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">⚙️</span><div class="hmod-txt"><h3><span class="lang-en">Settings</span><span class="lang-de">Einstellungen</span></h3><p><span class="lang-en inline">App configuration & backup</span><span class="lang-de inline">App-Konfiguration & Backup</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">⚙️</span><div class="hmod-txt"><h3><span class="lang-en">Settings</span><span class="lang-de">Einstellungen</span></h3><p><span class="lang-en inline">Configuration &amp; backup</span><span class="lang-de inline">Konfiguration &amp; Backup</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
         <ol class="hsteps">
-          <li><span class="lang-en"><strong>Save Results</strong> — toggle auto-saving of calculation results.</span><span class="lang-de"><strong>Ergebnisse speichern</strong> — automatisches Speichern von Berechnungsergebnissen.</span></li>
+          <li><span class="lang-en"><strong>Save Results</strong> — toggle auto-saving of all calculation results.</span><span class="lang-de"><strong>Ergebnisse speichern</strong> — automatisches Speichern aller Berechnungsergebnisse.</span></li>
           <li><span class="lang-en"><strong>App Lock</strong> — protect the app with PIN or fingerprint.</span><span class="lang-de"><strong>App-Lock</strong> — App mit PIN oder Fingerabdruck schützen.</span></li>
-          <li><span class="lang-en"><strong>Backup</strong> — export all data to a local file and restore anytime.</span><span class="lang-de"><strong>Backup</strong> — alle Daten in eine lokale Datei exportieren und jederzeit wiederherstellen.</span></li>
-          <li><span class="lang-en"><strong>Premium</strong> — purchase or view your Premium status.</span><span class="lang-de"><strong>Premium</strong> — Premium kaufen oder Status anzeigen.</span></li>
+          <li><span class="lang-en"><strong>Backup</strong> — export all data to a local file. Restore anytime from that file.</span><span class="lang-de"><strong>Backup</strong> — alle Daten in eine lokale Datei exportieren. Jederzeit wiederherstellen.</span></li>
+          <li><span class="lang-en"><strong>Premium</strong> — view your Premium status or unlock Premium features.</span><span class="lang-de"><strong>Premium</strong> — Premium-Status anzeigen oder freischalten.</span></li>
         </ol>
         <div class="htip">💡 <span class="lang-en">Always create a Backup before uninstalling or switching devices.</span><span class="lang-de">Erstellen Sie immer ein Backup bevor Sie die App deinstallieren oder das Gerät wechseln.</span></div>
       </div>
@@ -427,12 +502,11 @@ footer a:hover{color:var(--accent);}
   <div class="faq-wrap">
     <div class="sec-label">FAQ</div>
     <h2><span class="lang-en">Frequently Asked Questions</span><span class="lang-de">Häufige Fragen</span></h2>
-    <p class="help-intro" style="margin-bottom:48px"><span class="lang-en">Knowledge base for digital laboratory management.</span><span class="lang-de">Wissensbasis für digitales Labormanagement.</span></p>
+    <p class="help-intro" style="margin-bottom:44px"><span class="lang-en">Knowledge base for digital laboratory management.</span><span class="lang-de">Wissensbasis für digitales Labormanagement.</span></p>
 
     <div class="hmod" onclick="toggleHelp(this)">
       <div class="hmod-hdr"><span class="hmod-emoji">📋</span><div class="hmod-txt"><h3><span class="lang-en">Why use a digital calibration logbook instead of paper?</span><span class="lang-de">Warum ein digitales Kalibrierungslogbuch statt Papier?</span></h3><p><span class="lang-en inline">Calibration · Logbook · Documentation</span><span class="lang-de inline">Kalibrierung · Logbuch · Dokumentation</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
-        <p><span class="lang-en">A digital calibration logbook offers significant advantages over paper-based documentation:</span><span class="lang-de">Ein digitales Kalibrierungslogbuch bietet entscheidende Vorteile gegenüber der klassischen Papierdokumentation:</span></p>
         <ol class="hsteps">
           <li><span class="lang-en">All calibration entries per device at a glance — with due date status (green/orange/red)</span><span class="lang-de">Alle Kalibriereinträge eines Geräts auf einen Blick — mit Fälligkeitsstatus (grün/orange/rot)</span></li>
           <li><span class="lang-en">Sequential numbering per device — no lost or illegible entries</span><span class="lang-de">Lückenlose Nummerierung pro Gerät — keine verlorenen oder unlesbaren Einträge</span></li>
@@ -445,56 +519,78 @@ footer a:hover{color:var(--accent);}
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">⚗️</span><div class="hmod-txt"><h3><span class="lang-en">What are GHS pictograms and why do I need them?</span><span class="lang-de">Was sind GHS-Piktogramme und warum brauche ich sie?</span></h3><p><span class="lang-en inline">GHS · Hazard labeling · Chemicals</span><span class="lang-de inline">GHS · Gefahrstoffkennzeichnung · Chemikalien</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">📱</span><div class="hmod-txt"><h3><span class="lang-en">What happens when I delete a device?</span><span class="lang-de">Was passiert wenn ich ein Gerät lösche?</span></h3><p><span class="lang-en inline">Devices · Logbook · Delete vs Decommission</span><span class="lang-de inline">Geräte · Logbuch · Löschen vs. Stilllegen</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
-        <p><span class="lang-en">The Globally Harmonized System (GHS) for classification and labeling of chemicals is mandatory in the EU (CLP Regulation):</span><span class="lang-de">Das Global Harmonisierte System (GHS) zur Einstufung und Kennzeichnung von Chemikalien ist in der EU verpflichtend (CLP-Verordnung):</span></p>
+        <p><span class="lang-en">ImberLab offers two options for removing a device:</span><span class="lang-de">ImberLab bietet zwei Möglichkeiten ein Gerät zu entfernen:</span></p>
         <ol class="hsteps">
-          <li><span class="lang-en">Every chemical must be labeled with the correct GHS pictograms</span><span class="lang-de">Jede Chemikalie muss mit den korrekten GHS-Piktogrammen gekennzeichnet sein</span></li>
-          <li><span class="lang-en">H-statements (hazard) and P-statements (precautionary) must be known</span><span class="lang-de">H-Sätze (Gefahrenhinweise) und P-Sätze (Sicherheitshinweise) müssen bekannt sein</span></li>
-          <li><span class="lang-en">Storage requirements and PPE recommendations must be followed</span><span class="lang-de">Lagerhinweise und persönliche Schutzausrüstung (PSA) müssen eingehalten werden</span></li>
+          <li><span class="lang-en"><strong>Decommission</strong> — the device is hidden from all lists, but its entire logbook is kept. The device can be reactivated at any time.</span><span class="lang-de"><strong>Stilllegen</strong> — das Gerät wird aus allen Listen ausgeblendet, das gesamte Logbuch bleibt erhalten. Das Gerät kann jederzeit reaktiviert werden.</span></li>
+          <li><span class="lang-en"><strong>Delete Device</strong> — permanently removes the device <em>and all its logbook entries</em>. This cannot be undone. A confirmation dialog warns you before deleting.</span><span class="lang-de"><strong>Gerät löschen</strong> — entfernt das Gerät und <em>alle zugehörigen Logbucheinträge</em> dauerhaft. Dies kann nicht rückgängig gemacht werden. Ein Bestätigungsdialog warnt Sie vorher.</span></li>
+        </ol>
+        <div class="htip">💡 <span class="lang-en">If in doubt, use Decommission — it's reversible and keeps the full history.</span><span class="lang-de">Im Zweifel Stilllegen verwenden — reversibel und behält die gesamte Historie.</span></div>
+      </div>
+    </div>
+
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">⚗️</span><div class="hmod-txt"><h3><span class="lang-en">What are GHS pictograms and why do I need them?</span><span class="lang-de">Was sind GHS-Piktogramme und warum brauche ich sie?</span></h3><p><span class="lang-en inline">GHS · Hazard labeling · CLP</span><span class="lang-de inline">GHS · Gefahrstoffkennzeichnung · CLP</span></p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <ol class="hsteps">
+          <li><span class="lang-en">Every chemical must be labeled with the correct GHS pictograms (EU CLP Regulation)</span><span class="lang-de">Jede Chemikalie muss mit den korrekten GHS-Piktogrammen gekennzeichnet sein (EU CLP-Verordnung)</span></li>
+          <li><span class="lang-en">H-statements (hazard) and P-statements (precautionary) must be known by all lab staff</span><span class="lang-de">H-Sätze (Gefahrenhinweise) und P-Sätze (Sicherheitshinweise) müssen dem Laborpersonal bekannt sein</span></li>
+          <li><span class="lang-en">Storage requirements and PPE recommendations must be followed at all times</span><span class="lang-de">Lagerhinweise und persönliche Schutzausrüstung (PSA) müssen eingehalten werden</span></li>
         </ol>
         <p><span class="lang-en">ImberLab includes <strong>80+ chemicals</strong> with complete GHS data — always available offline.</span><span class="lang-de">ImberLab enthält <strong>80+ Chemikalien</strong> mit vollständigen GHS-Daten — jederzeit offline verfügbar.</span></p>
       </div>
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">📊</span><div class="hmod-txt"><h3><span class="lang-en">What is statistical quality control (SQC) in the laboratory?</span><span class="lang-de">Was ist statistische Qualitätskontrolle (SQK) im Labor?</span></h3><p><span class="lang-en inline">QC · Control chart · Outlier · Calibration curve</span><span class="lang-de inline">QK · Regelkarte · Ausreißer · Kalibriergerade</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">📊</span><div class="hmod-txt"><h3><span class="lang-en">What is statistical quality control (SQC)?</span><span class="lang-de">Was ist statistische Qualitätskontrolle (SQK)?</span></h3><p><span class="lang-en inline">QC · Control chart · Outlier · Calibration curve</span><span class="lang-de inline">QK · Regelkarte · Ausreißer · Kalibriergerade</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
-        <p><span class="lang-en">Statistical Quality Control (SQC/SPC) is essential in analytical laboratories to monitor measurement reliability:</span><span class="lang-de">Statistische Qualitätskontrolle (SQK/SPC) ist unverzichtbar in analytischen Labors:</span></p>
         <ol class="hsteps">
-          <li><span class="lang-en"><strong>Control Chart:</strong> Visualizes measurements over time — detects trends and control limit violations</span><span class="lang-de"><strong>Regelkarte:</strong> Visualisiert Messwerte über Zeit — erkennt Trends und Kontrollgrenzen-Verletzungen</span></li>
-          <li><span class="lang-en"><strong>Outlier Test:</strong> Identifies statistically significant outliers in your dataset</span><span class="lang-de"><strong>Ausreißertest:</strong> Identifiziert statistisch auffällige Messwerte im Datensatz</span></li>
-          <li><span class="lang-en"><strong>Stability Trend:</strong> Analyzes whether a process is stable, increasing or decreasing</span><span class="lang-de"><strong>Stabilitätstrend:</strong> Analysiert ob ein Prozess stabil, steigend oder fallend ist</span></li>
+          <li><span class="lang-en"><strong>Control Chart:</strong> Visualizes measurements over time — detects trends and control limit violations</span><span class="lang-de"><strong>Regelkarte:</strong> Messwerte über Zeit — erkennt Trends und Kontrollgrenzen-Verletzungen</span></li>
+          <li><span class="lang-en"><strong>Outlier Test:</strong> Identifies statistically significant outliers in your dataset</span><span class="lang-de"><strong>Ausreißertest:</strong> Identifiziert statistisch auffällige Messwerte</span></li>
+          <li><span class="lang-en"><strong>Stability Trend:</strong> Analyzes whether a process is stable, increasing or decreasing over time</span><span class="lang-de"><strong>Stabilitätstrend:</strong> Analysiert ob ein Prozess stabil, steigend oder fallend ist</span></li>
           <li><span class="lang-en"><strong>Calibration Curve:</strong> Linear regression with R² value for standard curves</span><span class="lang-de"><strong>Kalibriergerade:</strong> Lineare Regression mit R²-Wert für Standardkurven</span></li>
         </ol>
       </div>
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">📱</span><div class="hmod-txt"><h3><span class="lang-en">Lab app vs. Excel vs. paper — which is better?</span><span class="lang-de">Labor-App vs. Excel vs. Papier — was ist besser?</span></h3><p><span class="lang-en inline">Lab management · Digital transformation</span><span class="lang-de inline">Laborverwaltung · Digitale Transformation</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">📱</span><div class="hmod-txt"><h3><span class="lang-en">Lab app vs. Excel vs. paper — which is better?</span><span class="lang-de">Labor-App vs. Excel vs. Papier — was ist besser?</span></h3><p><span class="lang-en inline">Comparison · Digital lab management</span><span class="lang-de inline">Vergleich · Digitale Laborverwaltung</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
         <table class="ptab" style="margin-top:12px">
           <tr><th></th><th><span class="lang-en inline">Paper</span><span class="lang-de inline">Papier</span></th><th>Excel</th><th>ImberLab</th></tr>
           <tr><td><span class="lang-en inline">Search</span><span class="lang-de inline">Suche</span></td><td style="color:var(--muted)"><span class="lang-en inline">Manual</span><span class="lang-de inline">Manuell</span></td><td style="color:var(--muted)"><span class="lang-en inline">Limited</span><span class="lang-de inline">Eingeschränkt</span></td><td style="color:var(--accent)"><span class="lang-en inline">Instant</span><span class="lang-de inline">Sofort</span></td></tr>
           <tr><td><span class="lang-en inline">Photos</span><span class="lang-de inline">Fotos</span></td><td style="color:var(--muted)"><span class="lang-en inline">Separate</span><span class="lang-de inline">Separat</span></td><td style="color:var(--muted)"><span class="lang-en inline">Cumbersome</span><span class="lang-de inline">Umständlich</span></td><td style="color:var(--accent)"><span class="lang-en inline">Integrated</span><span class="lang-de inline">Integriert</span></td></tr>
           <tr><td><span class="lang-en inline">Due dates</span><span class="lang-de inline">Fälligkeiten</span></td><td style="color:var(--muted)"><span class="lang-en inline">Manual</span><span class="lang-de inline">Manuell</span></td><td style="color:var(--muted)"><span class="lang-en inline">Needs macros</span><span class="lang-de inline">Makros nötig</span></td><td style="color:var(--accent)"><span class="lang-en inline">Automatic</span><span class="lang-de inline">Automatisch</span></td></tr>
-          <tr><td>Offline</td><td style="color:var(--accent)"><span class="lang-en inline">Yes</span><span class="lang-de inline">Ja</span></td><td style="color:var(--muted)"><span class="lang-en inline">Partial</span><span class="lang-de inline">Teilweise</span></td><td style="color:var(--accent)"><span class="lang-en inline">Always</span><span class="lang-de inline">Immer</span></td></tr>
-          <tr><td><span class="lang-en inline">Privacy</span><span class="lang-de inline">Datenschutz</span></td><td style="color:var(--muted)"><span class="lang-en inline">Physical</span><span class="lang-de inline">Physisch</span></td><td style="color:var(--muted)"><span class="lang-en inline">Cloud risk</span><span class="lang-de inline">Cloud-Risiko</span></td><td style="color:var(--accent)"><span class="lang-en inline">Local & secure</span><span class="lang-de inline">Lokal & sicher</span></td></tr>
+          <tr><td>Offline</td><td style="color:var(--accent)">✓</td><td style="color:var(--muted)"><span class="lang-en inline">Partial</span><span class="lang-de inline">Teilweise</span></td><td style="color:var(--accent)"><span class="lang-en inline">Always</span><span class="lang-de inline">Immer</span></td></tr>
+          <tr><td><span class="lang-en inline">Privacy</span><span class="lang-de inline">Datenschutz</span></td><td style="color:var(--muted)"><span class="lang-en inline">Physical only</span><span class="lang-de inline">Nur physisch</span></td><td style="color:var(--muted)"><span class="lang-en inline">Cloud risk</span><span class="lang-de inline">Cloud-Risiko</span></td><td style="color:var(--accent)"><span class="lang-en inline">Local &amp; secure</span><span class="lang-de inline">Lokal &amp; sicher</span></td></tr>
         </table>
       </div>
     </div>
 
     <div class="hmod" onclick="toggleHelp(this)">
-      <div class="hmod-hdr"><span class="hmod-emoji">🔒</span><div class="hmod-txt"><h3><span class="lang-en">Is my lab data safe in the app?</span><span class="lang-de">Sind meine Labordaten in der App sicher?</span></h3><p><span class="lang-en inline">Privacy · GDPR · Offline · no cloud</span><span class="lang-de inline">Datenschutz · DSGVO · Offline · keine Cloud</span></p></div><span class="hchev">▾</span></div>
+      <div class="hmod-hdr"><span class="hmod-emoji">🔒</span><div class="hmod-txt"><h3><span class="lang-en">Is my lab data safe in the app?</span><span class="lang-de">Sind meine Labordaten in der App sicher?</span></h3><p><span class="lang-en inline">Privacy · GDPR · Offline · No cloud</span><span class="lang-de inline">Datenschutz · DSGVO · Offline · Keine Cloud</span></p></div><span class="hchev">▾</span></div>
       <div class="hbody">
         <ol class="hsteps">
-          <li><span class="lang-en"><strong>100% offline</strong> — no internet required, no cloud upload</span><span class="lang-de"><strong>100% offline</strong> — keine Internetverbindung erforderlich, kein Cloud-Upload</span></li>
-          <li><span class="lang-en"><strong>GDPR compliant</strong> — all data stays on the user's device</span><span class="lang-de"><strong>DSGVO-konform</strong> — alle Daten bleiben auf dem Gerät des Nutzers</span></li>
+          <li><span class="lang-en"><strong>100% offline</strong> — no internet required, no cloud upload ever</span><span class="lang-de"><strong>100% offline</strong> — keine Internetverbindung erforderlich, kein Cloud-Upload</span></li>
+          <li><span class="lang-en"><strong>GDPR compliant</strong> — all data stays exclusively on your device</span><span class="lang-de"><strong>DSGVO-konform</strong> — alle Daten bleiben ausschließlich auf dem Gerät</span></li>
           <li><span class="lang-en"><strong>App lock</strong> — PIN or fingerprint protects access</span><span class="lang-de"><strong>App-Lock</strong> — PIN oder Fingerabdruck schützt den Zugriff</span></li>
-          <li><span class="lang-en"><strong>No tracking</strong> — no ads, no analytics SDKs, no data sharing</span><span class="lang-de"><strong>Kein Tracking</strong> — keine Werbung, keine Analyse-SDKs, keine Datenweitergabe</span></li>
-          <li><span class="lang-en"><strong>Backup</strong> — manual local backup available at any time</span><span class="lang-de"><strong>Backup</strong> — manuelles lokales Backup jederzeit möglich</span></li>
+          <li><span class="lang-en"><strong>No tracking</strong> — no ads, no analytics SDKs, no data sharing with third parties</span><span class="lang-de"><strong>Kein Tracking</strong> — keine Werbung, keine Analyse-SDKs, keine Datenweitergabe</span></li>
+          <li><span class="lang-en"><strong>Backup</strong> — manual local backup available at any time via Settings</span><span class="lang-de"><strong>Backup</strong> — manuelles lokales Backup jederzeit über Einstellungen möglich</span></li>
         </ol>
         <div class="htip">💡 <span class="lang-en">Ideal for labs with strict data protection or ISO certification requirements.</span><span class="lang-de">Ideal für Labors mit strengen Datenschutzrichtlinien oder ISO-Zertifizierungsanforderungen.</span></div>
+      </div>
+    </div>
+
+    <div class="hmod" onclick="toggleHelp(this)">
+      <div class="hmod-hdr"><span class="hmod-emoji">💾</span><div class="hmod-txt"><h3><span class="lang-en">How do I back up and restore my data?</span><span class="lang-de">Wie sichere und stelle ich meine Daten wieder her?</span></h3><p><span class="lang-en inline">Backup · Restore · Device transfer</span><span class="lang-de inline">Backup · Wiederherstellung · Gerätewechsel</span></p></div><span class="hchev">▾</span></div>
+      <div class="hbody">
+        <ol class="hsteps">
+          <li><span class="lang-en">Go to <strong>Settings → Backup</strong> and tap <strong>Create Backup</strong>. A file is saved to your device storage.</span><span class="lang-de">Öffnen Sie <strong>Einstellungen → Backup</strong> und tippen Sie auf <strong>Backup erstellen</strong>. Eine Datei wird im Gerätespeicher gespeichert.</span></li>
+          <li><span class="lang-en">To restore, tap <strong>Restore from Backup</strong> and select your backup file.</span><span class="lang-de">Zum Wiederherstellen auf <strong>Aus Backup wiederherstellen</strong> tippen und die Backup-Datei auswählen.</span></li>
+          <li><span class="lang-en">To transfer to a new device, copy the backup file to the new device and restore from there.</span><span class="lang-de">Für einen Gerätewechsel die Backup-Datei auf das neue Gerät kopieren und dort wiederherstellen.</span></li>
+        </ol>
+        <div class="htip">💡 <span class="lang-en">Always back up before uninstalling the app or switching devices.</span><span class="lang-de">Immer vor der Deinstallation oder einem Gerätewechsel ein Backup erstellen.</span></div>
       </div>
     </div>
   </div>
@@ -508,40 +604,34 @@ footer a:hover{color:var(--accent);}
       <div class="upd"><span class="lang-en inline">Last updated: April 2026</span><span class="lang-de inline">Letzte Aktualisierung: April 2026</span></div>
     </div>
     <div class="phi"><strong><span class="lang-en inline">Summary:</span><span class="lang-de inline">Kurzfassung:</span></strong> <span class="lang-en">ImberLab stores all data exclusively on your device. No cloud. No ads. No tracking. No third-party sharing.</span><span class="lang-de">ImberLab speichert alle Daten ausschließlich lokal auf Ihrem Gerät. Keine Cloud. Keine Werbung. Kein Tracking. Keine Weitergabe.</span></div>
-
     <div class="pblock"><div class="pnum">§ 01</div><h3><span class="lang-en">Controller</span><span class="lang-de">Verantwortlicher</span></h3><p><strong>Christoph Imber</strong><br>Schulterbergstr. 4, 4742 Pram, <span class="lang-en inline">Upper Austria, Austria</span><span class="lang-de inline">Oberösterreich, Österreich</span><br><span class="cemail">chr.mathai@gmail.com</span></p></div>
-
     <div class="pblock"><div class="pnum">§ 02</div><h3><span class="lang-en">Core Principle: No Cloud, No Sharing</span><span class="lang-de">Grundsatz: Keine Cloud, keine Weitergabe</span></h3><p><span class="lang-en">ImberLab stores <strong>all data exclusively on your device</strong>. No personal data is transmitted, sold or shared. No advertising, no tracking.</span><span class="lang-de">ImberLab speichert <strong>alle Daten ausschließlich lokal auf Ihrem Gerät</strong>. Es werden keine personenbezogenen Daten übertragen, verkauft oder weitergegeben. Keine Werbung, kein Tracking.</span></p></div>
-
     <div class="pblock"><div class="pnum">§ 03</div><h3><span class="lang-en">Data Collected and Purpose</span><span class="lang-de">Erhobene Daten und Zweck</span></h3>
-      <h4><span class="lang-en">3.1 Camera</span><span class="lang-de">3.1 Kamera</span></h4><p><span class="lang-en">With permission, the app can take photos for logbook and chemical entries. Photos are stored locally only.</span><span class="lang-de">Die App kann mit Erlaubnis Fotos für Logbucheinträge und Chemikalien aufnehmen. Fotos werden ausschließlich lokal gespeichert.</span></p>
+      <h4><span class="lang-en">3.1 Camera</span><span class="lang-de">3.1 Kamera</span></h4><p><span class="lang-en">With permission, photos for logbook and chemical entries. Stored locally only.</span><span class="lang-de">Mit Erlaubnis Fotos für Logbucheinträge und Chemikalien. Ausschließlich lokal gespeichert.</span></p>
       <h4><span class="lang-en">3.2 Stored Lab Data</span><span class="lang-de">3.2 Gespeicherte Labordaten</span></h4>
       <ul>
         <li><span class="lang-en">Device and calibration records</span><span class="lang-de">Geräte- und Kalibrierdaten</span></li>
         <li><span class="lang-en">Logbook entries including optional photos</span><span class="lang-de">Logbucheinträge inkl. optionaler Fotos</span></li>
         <li><span class="lang-en">Calculation results and analysis records</span><span class="lang-de">Berechnungsergebnisse und Analyseresultate</span></li>
-        <li><span class="lang-en">Chemical information</span><span class="lang-de">Chemikalieninformationen</span></li>
+        <li><span class="lang-en">Chemical information and custom chemicals</span><span class="lang-de">Chemikalieninformationen und eigene Chemikalien</span></li>
         <li><span class="lang-en">Custom formulas</span><span class="lang-de">Eigene Formeln</span></li>
-        <li><span class="lang-en">Passwords and credentials (stored locally)</span><span class="lang-de">Passwörter und Zugangsdaten (lokal gespeichert)</span></li>
+        <li><span class="lang-en">Passwords and credentials (stored locally, never transmitted)</span><span class="lang-de">Passwörter und Zugangsdaten (lokal gespeichert, nie übertragen)</span></li>
       </ul>
-      <h4><span class="lang-en">3.3 Backup</span><span class="lang-de">3.3 Backup</span></h4><p><span class="lang-en">Backup creates a local file on your device. No automatic cloud sync.</span><span class="lang-de">Backup erstellt eine lokale Datei auf Ihrem Gerät. Keine automatische Cloud-Synchronisation.</span></p>
-      <h4><span class="lang-en">3.4 In-App Purchase</span><span class="lang-de">3.4 In-App-Kauf</span></h4><p><span class="lang-en">Processed via <strong>Google Play Billing</strong>. ImberLab does not receive payment data.</span><span class="lang-de">Abwicklung über <strong>Google Play Billing</strong>. ImberLab erhält keine Zahlungsdaten.</span></p>
+      <h4><span class="lang-en">3.3 In-App Purchase</span><span class="lang-de">3.3 In-App-Kauf</span></h4><p><span class="lang-en">Processed via <strong>Google Play Billing</strong>. ImberLab does not receive or store payment data.</span><span class="lang-de">Abwicklung über <strong>Google Play Billing</strong>. ImberLab erhält keine Zahlungsdaten.</span></p>
     </div>
-
     <div class="pblock"><div class="pnum">§ 04</div><h3><span class="lang-en">Permissions</span><span class="lang-de">Berechtigungen</span></h3>
       <table class="ptab">
         <tr><th><span class="lang-en inline">Permission</span><span class="lang-de inline">Berechtigung</span></th><th><span class="lang-en inline">Purpose</span><span class="lang-de inline">Zweck</span></th></tr>
-        <tr><td><span class="lang-en inline">Camera</span><span class="lang-de inline">Kamera</span></td><td><span class="lang-en">Photos for logbook and chemicals</span><span class="lang-de">Fotos für Logbuch und Chemikalien</span></td></tr>
+        <tr><td><span class="lang-en inline">Camera</span><span class="lang-de inline">Kamera</span></td><td><span class="lang-en">Photos for logbook and chemicals (Premium)</span><span class="lang-de">Fotos für Logbuch und Chemikalien (Premium)</span></td></tr>
         <tr><td><span class="lang-en inline">Storage</span><span class="lang-de inline">Speicher</span></td><td><span class="lang-en">Save/load backup files</span><span class="lang-de">Backup-Dateien speichern/laden</span></td></tr>
         <tr><td><span class="lang-en inline">Biometrics</span><span class="lang-de inline">Biometrie</span></td><td><span class="lang-en">App lock via fingerprint</span><span class="lang-de">App-Lock per Fingerabdruck</span></td></tr>
       </table>
     </div>
-
     <div class="pblock"><div class="pnum">§ 05</div><h3><span class="lang-en">Data Sharing</span><span class="lang-de">Datenweitergabe</span></h3><p><span class="lang-en"><strong>No data shared</strong> with third parties. No external server communication.</span><span class="lang-de"><strong>Keine Weitergabe</strong> an Dritte. Keine Kommunikation mit externen Servern.</span></p></div>
     <div class="pblock"><div class="pnum">§ 06</div><h3><span class="lang-en">Data Security</span><span class="lang-de">Datensicherheit</span></h3><p><span class="lang-en">Protected by Android device security and built-in app lock (PIN or biometrics).</span><span class="lang-de">Schutz durch Android-Geräteschutz und integrierten App-Lock (PIN oder Biometrie).</span></p></div>
-    <div class="pblock"><div class="pnum">§ 07</div><h3><span class="lang-en">User Rights</span><span class="lang-de">Rechte der Nutzer</span></h3><ul><li><span class="lang-en"><strong>Access</strong> – viewable locally on your device</span><span class="lang-de"><strong>Auskunft</strong> – lokal auf Ihrem Gerät einsehbar</span></li><li><span class="lang-en"><strong>Deletion</strong> – via Android Settings</span><span class="lang-de"><strong>Löschung</strong> – über Android-Einstellungen</span></li><li><span class="lang-en"><strong>Data portability</strong> – via backup/export function</span><span class="lang-de"><strong>Datenportabilität</strong> – über Backup/Export-Funktion</span></li></ul></div>
+    <div class="pblock"><div class="pnum">§ 07</div><h3><span class="lang-en">User Rights</span><span class="lang-de">Rechte der Nutzer</span></h3><ul><li><span class="lang-en"><strong>Access</strong> – viewable locally on your device</span><span class="lang-de"><strong>Auskunft</strong> – lokal auf Ihrem Gerät einsehbar</span></li><li><span class="lang-en"><strong>Deletion</strong> – via in-app delete functions or Android Settings</span><span class="lang-de"><strong>Löschung</strong> – über In-App-Löschfunktionen oder Android-Einstellungen</span></li><li><span class="lang-en"><strong>Data portability</strong> – via backup/export function</span><span class="lang-de"><strong>Datenportabilität</strong> – über Backup/Export-Funktion</span></li></ul></div>
     <div class="pblock"><div class="pnum">§ 08</div><h3><span class="lang-en">Children</span><span class="lang-de">Kinder</span></h3><p><span class="lang-en">Not directed at children under 13.</span><span class="lang-de">Nicht für Kinder unter 13 Jahren bestimmt.</span></p></div>
-    <div class="pblock"><div class="pnum">§ 09</div><h3><span class="lang-en">Changes</span><span class="lang-de">Änderungen</span></h3><p><span class="lang-en">Changes will be announced on the app's store page.</span><span class="lang-de">Änderungen werden auf der Store-Seite bekannt gegeben.</span></p></div>
+    <div class="pblock"><div class="pnum">§ 09</div><h3><span class="lang-en">Changes</span><span class="lang-de">Änderungen</span></h3><p><span class="lang-en">Changes will be announced on the app's store page and this website.</span><span class="lang-de">Änderungen werden auf der Store-Seite und dieser Website bekannt gegeben.</span></p></div>
     <div class="pblock"><div class="pnum">§ 10</div><h3><span class="lang-en">Contact</span><span class="lang-de">Kontakt</span></h3>
       <div class="crow"><div class="cicon">✉️</div><div><div class="clabel"><span class="lang-en">For privacy questions:</span><span class="lang-de">Bei Fragen zum Datenschutz:</span></div><div class="cemail">chr.mathai@gmail.com</div></div></div>
     </div>
@@ -561,21 +651,17 @@ footer a:hover{color:var(--accent);}
 </footer>
 
 <script>
-var currentLang = 'en';
-
+var currentLang='en';
 function toggleLang(){
-  currentLang = currentLang === 'en' ? 'de' : 'en';
-  document.body.classList.toggle('de', currentLang === 'de');
-  document.getElementById('langBtn').textContent = currentLang === 'en' ? '🇩🇪 DE' : '🇬🇧 EN';
-  localStorage.setItem('imberlab_lang', currentLang);
+  currentLang=currentLang==='en'?'de':'en';
+  document.body.classList.toggle('de',currentLang==='de');
+  document.getElementById('langBtn').textContent=currentLang==='en'?'🇩🇪 DE':'🇬🇧 EN';
+  localStorage.setItem('imberlab_lang',currentLang);
 }
-
 function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
-
 function openLB(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').classList.add('open');}
 function closeLB(){document.getElementById('lightbox').classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
-
 function showPage(name){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
@@ -585,12 +671,9 @@ function showPage(name){
   });
   window.scrollTo(0,0);
 }
-
 function toggleHelp(el){el.classList.toggle('open');}
-
-// Restore language preference
-var saved = localStorage.getItem('imberlab_lang');
-if(saved === 'de'){toggleLang();}
+var saved=localStorage.getItem('imberlab_lang');
+if(saved==='de'){toggleLang();}
 </script>
 </body>
 </html>
