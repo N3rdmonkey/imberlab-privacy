@@ -146,9 +146,8 @@ h1 .ac{color:var(--accent)}
 .acc-txt p{font-size:11px;color:var(--muted);margin-top:2px}
 .acc-chev{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;font-size:10px;color:var(--muted)}
 .acc.open .acc-chev{background:rgba(74,222,128,.1);color:var(--accent);transform:rotate(180deg)}
-.acc-body{display:none;padding:0 18px 18px}
+.acc-body{display:none;padding:14px 18px 18px;border-top:1px solid var(--border)}
 .acc.open .acc-body{display:block}
-.acc-body .inner{padding-top:14px;border-top:1px solid var(--border)}
 .acc-body p{font-size:14px;color:var(--text);margin-bottom:10px;line-height:1.7}
 
 /* steps inside accordion */
@@ -366,9 +365,9 @@ footer a:hover{color:var(--accent)}
     <h2><span class="lang-en">How to use ImberLab</span><span class="lang-de">So verwenden Sie ImberLab</span></h2>
     <p style="font-size:14px;color:var(--muted);font-weight:300;margin-bottom:44px"><span class="lang-en">Tap any module to expand the instructions.</span><span class="lang-de">Tippen Sie auf ein Modul, um die Anleitung zu erweitern.</span></p>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Calculations</span><span class="lang-de">Berechnungen</span></h3><p><span class="lang-en inline">Factor, Gravimetric &amp; Volumetric</span><span class="lang-de inline">Faktor, Gravimetrisch &amp; Volumetrisch</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Calculations</span><span class="lang-de">Berechnungen</span></h3><p><span class="lang-en inline">Factor, Gravimetric &amp; Volumetric</span><span class="lang-de inline">Faktor, Gravimetrisch &amp; Volumetrisch</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Open <strong>Calculations</strong> from the main menu and choose Factor, Gravimetric or Volumetric.</span><span class="lang-de">Öffnen Sie <strong>Berechnungen</strong> im Hauptmenü und wählen Sie Faktor, Gravimetrisch oder Volumetrisch.</span></li>
           <li><span class="lang-en">Enter your values in the input fields. Use a period as decimal separator.</span><span class="lang-de">Werte in die Eingabefelder eingeben. Punkt als Dezimaltrennzeichen verwenden.</span></li>
@@ -379,9 +378,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10m-6 10V4M6 20v-6"/></svg></div><div class="acc-txt"><h3>ImbaControl</h3><p><span class="lang-en inline">Statistical Quality Control</span><span class="lang-de inline">Statistische Qualitätskontrolle</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10m-6 10V4M6 20v-6"/></svg></div><div class="acc-txt"><h3>ImbaControl</h3><p><span class="lang-en inline">Statistical Quality Control</span><span class="lang-de inline">Statistische Qualitätskontrolle</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en"><strong>Control Chart</strong> — Visualizes measurements over time with mean, UCL and LCL lines.</span><span class="lang-de"><strong>Regelkarte</strong> — Messwerte über Zeit mit Mittelwert, OGW und UGW.</span></li>
           <li><span class="lang-en"><strong>Outlier Test</strong> — Detects statistically significant outliers in your dataset.</span><span class="lang-de"><strong>Ausreißertest</strong> — Erkennt statistisch auffällige Ausreißer im Datensatz.</span></li>
@@ -392,9 +391,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg></div><div class="acc-txt"><h3>Formula Builder</h3><p><span class="lang-en inline">Custom formulas with live preview</span><span class="lang-de inline">Eigene Formeln mit Live-Vorschau</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg></div><div class="acc-txt"><h3>Formula Builder</h3><p><span class="lang-en inline">Custom formulas with live preview</span><span class="lang-de inline">Eigene Formeln mit Live-Vorschau</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Enter a <strong>name</strong> for your formula (e.g. "Content %", "Combined Uncertainty").</span><span class="lang-de">Geben Sie einen <strong>Namen</strong> für Ihre Formel ein (z.B. "Gehalt %", "Messunsicherheit").</span></li>
           <li><span class="lang-en">Type your <strong>formula</strong> using letters as variables. Supported: <code>+ - * / ^ ( )</code>, functions: <code>sqrt() log() sin() cos()</code>.</span><span class="lang-de">Formel mit Buchstaben als Variablen eingeben. Unterstützt: <code>+ - * / ^ ( )</code>, Funktionen: <code>sqrt() log() sin() cos()</code>.</span></li>
@@ -407,9 +406,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="#4ade80" stroke="none"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Devices &amp; QR</span><span class="lang-de">Geräte &amp; QR</span></h3><p><span class="lang-en inline">Lab instrument management</span><span class="lang-de inline">Laborgeräteverwaltung</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="#4ade80" stroke="none"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Devices &amp; QR</span><span class="lang-de">Geräte &amp; QR</span></h3><p><span class="lang-en inline">Lab instrument management</span><span class="lang-de inline">Laborgeräteverwaltung</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Open <strong>Devices</strong> from the main menu. Devices are grouped by category.</span><span class="lang-de">Öffnen Sie <strong>Geräte</strong> im Hauptmenü. Geräte sind nach Kategorien gruppiert.</span></li>
           <li><span class="lang-en">Tap <strong>+ Add New Device</strong>, choose a category, enter a name/ID, serial number, manufacturer and location.</span><span class="lang-de">Tippen Sie auf <strong>+ Neues Gerät</strong>, Kategorie wählen, Name/ID, Seriennummer, Hersteller und Standort eingeben.</span></li>
@@ -422,9 +421,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Logbook</span><span class="lang-de">Logbuch</span></h3><p><span class="lang-en inline">Calibration &amp; maintenance records</span><span class="lang-de inline">Kalibrierungs- &amp; Wartungsaufzeichnungen</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Logbook</span><span class="lang-de">Logbuch</span></h3><p><span class="lang-en inline">Calibration &amp; maintenance records</span><span class="lang-de inline">Kalibrierungs- &amp; Wartungsaufzeichnungen</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Inside a device profile, tap <strong>+ New Calibration</strong> to add a logbook entry with date, due date, performed by and notes.</span><span class="lang-de">Im Geräteprofil auf <strong>+ Neue Kalibrierung</strong> tippen — Datum, Fälligkeitstermin, Durchführender und Notiz eingeben.</span></li>
           <li><span class="lang-en">Each device gets its own sequential numbering (#1, #2, …).</span><span class="lang-de">Jedes Gerät erhält eine eigene laufende Nummerierung (#1, #2, …).</span></li>
@@ -435,9 +434,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 0v5.5L5 17a2 2 0 001.84 2.8h10.32A2 2 0 0019 17l-5-8.5V3"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Chemicals &amp; GHS</span><span class="lang-de">Chemikalien &amp; GHS</span></h3><p><span class="lang-en inline">Chemical inventory management</span><span class="lang-de inline">Chemikalienverwaltung</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 0v5.5L5 17a2 2 0 001.84 2.8h10.32A2 2 0 0019 17l-5-8.5V3"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Chemicals &amp; GHS</span><span class="lang-de">Chemikalien &amp; GHS</span></h3><p><span class="lang-en inline">Chemical inventory management</span><span class="lang-de inline">Chemikalienverwaltung</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Browse or search chemicals by name or CAS number.</span><span class="lang-de">Chemikalien nach Name oder CAS-Nummer durchsuchen.</span></li>
           <li><span class="lang-en">Tap a chemical to see GHS pictograms, H/P statements, storage notes and PPE requirements.</span><span class="lang-de">Tippen Sie auf eine Chemikalie für GHS-Piktogramme, H/P-Sätze, Lagerhinweise und PSA.</span></li>
@@ -448,9 +447,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Analysis Results</span><span class="lang-de">Analysenergebnisse</span></h3><p><span class="lang-en inline">Auto-saved calculation history</span><span class="lang-de inline">Automatisch gespeicherte Berechnungshistorie</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Analysis Results</span><span class="lang-de">Analysenergebnisse</span></h3><p><span class="lang-en inline">Auto-saved calculation history</span><span class="lang-de inline">Automatisch gespeicherte Berechnungshistorie</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Enable <strong>Save Results</strong> in Settings to start auto-saving all calculations.</span><span class="lang-de">Aktivieren Sie <strong>Ergebnisse speichern</strong> in den Einstellungen.</span></li>
           <li><span class="lang-en">Tap a card to expand and see full details including inputs.</span><span class="lang-de">Tippen Sie auf eine Karte für alle Details einschließlich Eingabewerte.</span></li>
@@ -460,9 +459,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M12 11l8-8m-3 0l2 2m-4 0l2 2"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Password Manager</span><span class="lang-de">Passwort-Manager</span></h3><p><span class="lang-en inline">Secure credential storage — fully free</span><span class="lang-de inline">Sichere Zugangsdaten — vollständig kostenlos</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M12 11l8-8m-3 0l2 2m-4 0l2 2"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Password Manager</span><span class="lang-de">Passwort-Manager</span></h3><p><span class="lang-en inline">Secure credential storage — fully free</span><span class="lang-de inline">Sichere Zugangsdaten — vollständig kostenlos</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Tap <strong>+ Add Entry</strong> — enter title, username, password, URL and an optional note.</span><span class="lang-de">Tippen Sie auf <strong>+ Eintrag</strong> — Titel, Benutzername, Passwort, URL und optionale Notiz eingeben.</span></li>
           <li><span class="lang-en">Tap the <strong>star</strong> to mark an entry as favorite — favorites appear at the top.</span><span class="lang-de">Tippen Sie auf den <strong>Stern</strong> um einen Eintrag als Favorit zu markieren.</span></li>
@@ -475,9 +474,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Settings</span><span class="lang-de">Einstellungen</span></h3><p><span class="lang-en inline">Configuration &amp; backup</span><span class="lang-de inline">Konfiguration &amp; Backup</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Settings</span><span class="lang-de">Einstellungen</span></h3><p><span class="lang-en inline">Configuration &amp; backup</span><span class="lang-de inline">Konfiguration &amp; Backup</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en"><strong>Save Results</strong> — toggle auto-saving of all calculation results.</span><span class="lang-de"><strong>Ergebnisse speichern</strong> — automatisches Speichern aller Berechnungsergebnisse.</span></li>
           <li><span class="lang-en"><strong>App Lock</strong> — protect the app with PIN or fingerprint.</span><span class="lang-de"><strong>App-Lock</strong> — App mit PIN oder Fingerabdruck schützen.</span></li>
@@ -497,9 +496,9 @@ footer a:hover{color:var(--accent)}
     <h2><span class="lang-en">Frequently Asked Questions</span><span class="lang-de">Häufige Fragen</span></h2>
     <p style="font-size:14px;color:var(--muted);font-weight:300;margin-bottom:44px"><span class="lang-en">Knowledge base for digital laboratory management.</span><span class="lang-de">Wissensbasis für digitales Labormanagement.</span></p>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Why use a digital calibration logbook instead of paper?</span><span class="lang-de">Warum ein digitales Kalibrierungslogbuch statt Papier?</span></h3><p><span class="lang-en inline">Calibration · Logbook · Documentation</span><span class="lang-de inline">Kalibrierung · Logbuch · Dokumentation</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Why use a digital calibration logbook instead of paper?</span><span class="lang-de">Warum ein digitales Kalibrierungslogbuch statt Papier?</span></h3><p><span class="lang-en inline">Calibration · Logbook · Documentation</span><span class="lang-de inline">Kalibrierung · Logbuch · Dokumentation</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">All calibration entries per device at a glance — with due date status (green/orange/red)</span><span class="lang-de">Alle Kalibriereinträge eines Geräts auf einen Blick — mit Fälligkeitsstatus (grün/orange/rot)</span></li>
           <li><span class="lang-en">Sequential numbering per device — no lost or illegible entries</span><span class="lang-de">Lückenlose Nummerierung pro Gerät — keine verlorenen oder unlesbaren Einträge</span></li>
@@ -511,9 +510,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="#4ade80" stroke="none"/></svg></div><div class="acc-txt"><h3><span class="lang-en">What happens when I delete a device?</span><span class="lang-de">Was passiert wenn ich ein Gerät lösche?</span></h3><p><span class="lang-en inline">Devices · Logbook · Delete vs Decommission</span><span class="lang-de inline">Geräte · Logbuch · Löschen vs. Stilllegen</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="#4ade80" stroke="none"/></svg></div><div class="acc-txt"><h3><span class="lang-en">What happens when I delete a device?</span><span class="lang-de">Was passiert wenn ich ein Gerät lösche?</span></h3><p><span class="lang-en inline">Devices · Logbook · Delete vs Decommission</span><span class="lang-de inline">Geräte · Logbuch · Löschen vs. Stilllegen</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <p><span class="lang-en">ImberLab offers two options for removing a device:</span><span class="lang-de">ImberLab bietet zwei Möglichkeiten ein Gerät zu entfernen:</span></p>
         <ol class="steps">
           <li><span class="lang-en"><strong>Decommission</strong> — the device is hidden from all lists, but its entire logbook is kept. The device can be reactivated at any time.</span><span class="lang-de"><strong>Stilllegen</strong> — das Gerät wird aus allen Listen ausgeblendet, das gesamte Logbuch bleibt erhalten. Das Gerät kann jederzeit reaktiviert werden.</span></li>
@@ -523,9 +522,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 0v5.5L5 17a2 2 0 001.84 2.8h10.32A2 2 0 0019 17l-5-8.5V3"/></svg></div><div class="acc-txt"><h3><span class="lang-en">What are GHS pictograms and why do I need them?</span><span class="lang-de">Was sind GHS-Piktogramme und warum brauche ich sie?</span></h3><p><span class="lang-en inline">GHS · Hazard labeling · CLP</span><span class="lang-de inline">GHS · Gefahrstoffkennzeichnung · CLP</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 0v5.5L5 17a2 2 0 001.84 2.8h10.32A2 2 0 0019 17l-5-8.5V3"/></svg></div><div class="acc-txt"><h3><span class="lang-en">What are GHS pictograms and why do I need them?</span><span class="lang-de">Was sind GHS-Piktogramme und warum brauche ich sie?</span></h3><p><span class="lang-en inline">GHS · Hazard labeling · CLP</span><span class="lang-de inline">GHS · Gefahrstoffkennzeichnung · CLP</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Every chemical must be labeled with the correct GHS pictograms (EU CLP Regulation)</span><span class="lang-de">Jede Chemikalie muss mit den korrekten GHS-Piktogrammen gekennzeichnet sein (EU CLP-Verordnung)</span></li>
           <li><span class="lang-en">H-statements (hazard) and P-statements (precautionary) must be known by all lab staff</span><span class="lang-de">H-Sätze (Gefahrenhinweise) und P-Sätze (Sicherheitshinweise) müssen dem Laborpersonal bekannt sein</span></li>
@@ -535,9 +534,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10m-6 10V4M6 20v-6"/></svg></div><div class="acc-txt"><h3><span class="lang-en">What is statistical quality control (SQC)?</span><span class="lang-de">Was ist statistische Qualitätskontrolle (SQK)?</span></h3><p><span class="lang-en inline">QC · Control chart · Outlier · Calibration curve</span><span class="lang-de inline">QK · Regelkarte · Ausreißer · Kalibriergerade</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10m-6 10V4M6 20v-6"/></svg></div><div class="acc-txt"><h3><span class="lang-en">What is statistical quality control (SQC)?</span><span class="lang-de">Was ist statistische Qualitätskontrolle (SQK)?</span></h3><p><span class="lang-en inline">QC · Control chart · Outlier · Calibration curve</span><span class="lang-de inline">QK · Regelkarte · Ausreißer · Kalibriergerade</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en"><strong>Control Chart:</strong> Visualizes measurements over time — detects trends and control limit violations</span><span class="lang-de"><strong>Regelkarte:</strong> Messwerte über Zeit — erkennt Trends und Kontrollgrenzen-Verletzungen</span></li>
           <li><span class="lang-en"><strong>Outlier Test:</strong> Identifies statistically significant outliers in your dataset</span><span class="lang-de"><strong>Ausreißertest:</strong> Identifiziert statistisch auffällige Messwerte</span></li>
@@ -547,9 +546,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="#4ade80" stroke="none"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Lab app vs. Excel vs. paper — which is better?</span><span class="lang-de">Labor-App vs. Excel vs. Papier — was ist besser?</span></h3><p><span class="lang-en inline">Comparison · Digital lab management</span><span class="lang-de inline">Vergleich · Digitale Laborverwaltung</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="#4ade80" stroke="none"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Lab app vs. Excel vs. paper — which is better?</span><span class="lang-de">Labor-App vs. Excel vs. Papier — was ist besser?</span></h3><p><span class="lang-en inline">Comparison · Digital lab management</span><span class="lang-de inline">Vergleich · Digitale Laborverwaltung</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <table class="ptab" style="margin-top:12px">
           <tr><th></th><th><span class="lang-en inline">Paper</span><span class="lang-de inline">Papier</span></th><th>Excel</th><th>ImberLab</th></tr>
           <tr><td><span class="lang-en inline">Search</span><span class="lang-de inline">Suche</span></td><td style="color:var(--muted)"><span class="lang-en inline">Manual</span><span class="lang-de inline">Manuell</span></td><td style="color:var(--muted)"><span class="lang-en inline">Limited</span><span class="lang-de inline">Eingeschränkt</span></td><td style="color:var(--accent)"><span class="lang-en inline">Instant</span><span class="lang-de inline">Sofort</span></td></tr>
@@ -561,9 +560,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Is my lab data safe in the app?</span><span class="lang-de">Sind meine Labordaten in der App sicher?</span></h3><p><span class="lang-en inline">Privacy · GDPR · Offline · No cloud</span><span class="lang-de inline">Datenschutz · DSGVO · Offline · Keine Cloud</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div><div class="acc-txt"><h3><span class="lang-en">Is my lab data safe in the app?</span><span class="lang-de">Sind meine Labordaten in der App sicher?</span></h3><p><span class="lang-en inline">Privacy · GDPR · Offline · No cloud</span><span class="lang-de inline">Datenschutz · DSGVO · Offline · Keine Cloud</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en"><strong>100% offline</strong> — no internet required, no cloud upload ever</span><span class="lang-de"><strong>100% offline</strong> — keine Internetverbindung erforderlich, kein Cloud-Upload</span></li>
           <li><span class="lang-en"><strong>GDPR compliant</strong> — all data stays exclusively on your device</span><span class="lang-de"><strong>DSGVO-konform</strong> — alle Daten bleiben ausschließlich auf dem Gerät</span></li>
@@ -575,9 +574,9 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <div class="acc" onclick="toggleAcc(this)">
-      <div class="acc-hdr"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg></div><div class="acc-txt"><h3><span class="lang-en">How do I back up and restore my data?</span><span class="lang-de">Wie sichere und stelle ich meine Daten wieder her?</span></h3><p><span class="lang-en inline">Backup · Restore · Device transfer</span><span class="lang-de inline">Backup · Wiederherstellung · Gerätewechsel</span></p></div><div class="acc-chev">▾</div></div>
-      <div class="acc-body"><div class="inner">
+    <div class="acc">
+      <div class="acc-hdr" onclick="toggleAcc(this)"><div class="acc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg></div><div class="acc-txt"><h3><span class="lang-en">How do I back up and restore my data?</span><span class="lang-de">Wie sichere und stelle ich meine Daten wieder her?</span></h3><p><span class="lang-en inline">Backup · Restore · Device transfer</span><span class="lang-de inline">Backup · Wiederherstellung · Gerätewechsel</span></p></div><div class="acc-chev">▾</div></div>
+      <div class="acc-body">
         <ol class="steps">
           <li><span class="lang-en">Go to <strong>Settings → Backup</strong> and tap <strong>Create Backup</strong>. A file is saved to your device storage.</span><span class="lang-de">Öffnen Sie <strong>Einstellungen → Backup</strong> und tippen Sie auf <strong>Backup erstellen</strong>. Eine Datei wird im Gerätespeicher gespeichert.</span></li>
           <li><span class="lang-en">To restore, tap <strong>Restore from Backup</strong> and select your backup file.</span><span class="lang-de">Zum Wiederherstellen auf <strong>Aus Backup wiederherstellen</strong> tippen und die Backup-Datei auswählen.</span></li>
@@ -662,7 +661,7 @@ function showPage(name){
   });
   window.scrollTo(0,0);
 }
-function toggleAcc(el){el.classList.toggle('open');}
+function toggleAcc(el){el.closest('.acc').classList.toggle('open');}
 var saved=localStorage.getItem('imberlab_lang');
 if(saved==='de'){toggleLang();}
 </script>
