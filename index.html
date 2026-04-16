@@ -70,14 +70,13 @@ h1 .ac{color:var(--accent)}
 .hbadge-icon{font-size:14px}
 .hbadge-sep{width:1px;height:14px;background:var(--border)}
 .hero-phones{flex:1;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;min-height:580px}
-.hphone{position:absolute;border-radius:38px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.65)}
-.hphone::after{content:"";position:absolute;inset:0;border-radius:37px;box-shadow:inset 0 0 0 1.5px rgba(74,222,128,.18)}
-.hphone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.hphone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:60px;height:14px;background:var(--dark);border-radius:7px;z-index:5}
-.hp-main{width:230px;height:460px;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3}
-.hp-side{width:190px;height:380px;z-index:2;opacity:.55}
-.hp-side-l{left:calc(50% - 230px);top:50%;transform:translateY(-55%)}
-.hp-side-r{right:calc(50% - 230px);top:50%;transform:translateY(-45%)}
+.hphone{position:absolute;overflow:visible;filter:drop-shadow(0 40px 60px rgba(0,0,0,.7))}
+.hphone img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+.hphone-notch{display:none}
+.hp-main{width:240px;height:488px;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3}
+.hp-side{width:200px;height:406px;z-index:2;opacity:.55}
+.hp-side-l{left:calc(50% - 240px);top:50%;transform:translateY(-55%)}
+.hp-side-r{right:calc(50% - 240px);top:50%;transform:translateY(-45%)}
 .hero-phones::before{content:"";position:absolute;left:0;top:0;bottom:0;width:80px;background:linear-gradient(90deg,var(--bg),transparent);z-index:10;pointer-events:none}
 .hero-phones::after{content:"";position:absolute;right:0;top:0;bottom:0;width:80px;background:linear-gradient(-90deg,var(--bg),transparent);z-index:10;pointer-events:none}
 
@@ -102,10 +101,9 @@ h1 .ac{color:var(--accent)}
 .ss-scroll::-webkit-scrollbar-track{background:var(--border);border-radius:2px}
 .ss-scroll::-webkit-scrollbar-thumb{background:rgba(74,222,128,.3);border-radius:2px}
 .ss-item{flex:0 0 180px;scroll-snap-align:start;cursor:pointer}
-.ss-phone{width:180px;height:360px;border-radius:26px;overflow:hidden;border:1.5px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.55);transition:all .3s;position:relative}
-.ss-phone::before{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:44px;height:9px;background:var(--dark);border-radius:5px;z-index:5}
-.ss-phone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .3s}
-.ss-item:hover .ss-phone{border-color:rgba(74,222,128,.3);box-shadow:0 28px 60px rgba(0,0,0,.7),0 0 24px rgba(74,222,128,.06);transform:translateY(-8px) scale(1.02)}
+.ss-phone{width:180px;height:366px;overflow:visible;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));transition:all .3s;position:relative}
+.ss-phone img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;transition:transform .3s}
+.ss-item:hover .ss-phone{filter:drop-shadow(0 28px 50px rgba(0,0,0,.75)) drop-shadow(0 0 14px rgba(74,222,128,.18));transform:translateY(-8px) scale(1.02)}
 .ss-label{margin-top:10px;text-align:center}
 .ss-label strong{display:block;font-family:'Space Mono',monospace;font-size:10px;color:var(--text);margin-bottom:2px}
 .ss-label span{font-size:10px;color:var(--muted)}
@@ -203,7 +201,7 @@ footer a:hover{color:var(--accent)}
   .hero-badges{justify-content:center}
   .hero-phones{min-height:360px;width:100%}
   .hp-side{display:none}
-  .hp-main{width:200px;height:400px}
+  .hp-main{width:210px;height:427px}
   .prem-inner{grid-template-columns:1fr}
   .price-box{position:static}
   .feat-grid{grid-template-columns:repeat(2,1fr)}
