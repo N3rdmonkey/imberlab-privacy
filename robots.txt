@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://n3rdmonkey.github.io/imberlab-privacy/sitemap.xml
