@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ImberLab — Pipette Calibration & Lab QC App</title>
+  <meta name="description" content="Professional offline lab app for analytical chemists. Pipette verification per EN ISO 8655, GHS chemicals, device logbook, PDF reports. €12.99 one-time.">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://n3rdmonkey.github.io/imberlab-privacy/en/">
+  <link rel="alternate" hreflang="de" href="https://n3rdmonkey.github.io/imberlab-privacy/de/">
+  <link rel="alternate" hreflang="x-default" href="https://n3rdmonkey.github.io/imberlab-privacy/en/">
+  <link rel="canonical" href="https://n3rdmonkey.github.io/imberlab-privacy/en/">
+
+  <!-- Fallback meta refresh in case JS is disabled -->
+  <meta http-equiv="refresh" content="0; url=./en/">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #FAF8F3;
+      color: #0F1E2E;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .loader {
+      max-width: 360px;
+    }
+    .mark {
+      width: 56px; height: 56px;
+      background: #0F1E2E;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: white;
+      position: relative;
+    }
+    .mark::after {
+      content: "";
+      position: absolute;
+      bottom: 12px; left: 12px; right: 12px;
+      height: 3px;
+      background: #A3E635;
+    }
+    h1 { font-size: 22px; font-weight: 500; margin-bottom: 8px; }
+    p { color: #6B7689; font-size: 14px; margin-bottom: 24px; }
+    .links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    a {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #0F1E2E;
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity .15s;
+    }
+    a:hover { opacity: 0.85; }
+    a.lime { background: #A3E635; color: #0F1E2E; }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <div class="mark">IL</div>
+    <h1>ImberLab</h1>
+    <p>Choose your language · Sprache wählen</p>
+    <div class="links">
+      <a href="./en/" class="lime">English</a>
+      <a href="./de/">Deutsch</a>
+    </div>
+  </div>
+
+  <script>
+    // Auto-redirect based on browser language
+    (function() {
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var target = lang.indexOf('de') === 0 ? './de/' : './en/';
+      // Small delay so the page is visible briefly (avoids flash on slow connections)
+      setTimeout(function() { window.location.replace(target); }, 100);
+    })();
+  </script>
+</body>
+</html>

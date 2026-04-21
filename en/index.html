@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0F1E2E">
+
+  <!-- SEO -->
+  <title>ImberLab — Pipette Calibration & Lab QC App | EN ISO 8655 | Offline Android</title>
+  <meta name="description" content="Professional offline lab app for analytical chemists: pipette verification per EN ISO 8655, GHS chemical database, device logbook, control charts, PDF reports. One-time €12.99. No subscription, no cloud.">
+  <meta name="keywords" content="pipette calibration app, lab QC, EN ISO 8655, GHS chemicals, lab logbook, control chart, Levey-Jennings, burette verification, dispenser, analytical chemistry, offline lab notebook, Android lab app, DIN 32645">
+  <meta name="author" content="Christoph Imber">
+  <link rel="canonical" href="https://n3rdmonkey.github.io/imberlab-privacy/en/">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://n3rdmonkey.github.io/imberlab-privacy/en/">
+  <link rel="alternate" hreflang="de" href="https://n3rdmonkey.github.io/imberlab-privacy/de/">
+  <link rel="alternate" hreflang="x-default" href="https://n3rdmonkey.github.io/imberlab-privacy/en/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://n3rdmonkey.github.io/imberlab-privacy/en/">
+  <meta property="og:title" content="ImberLab — Pipette Calibration & Lab QC. Fully Offline.">
+  <meta property="og:description" content="Professional Android app for analytical chemists. Pipette verification per EN ISO 8655, GHS chemicals, device logbook, PDF reports. €12.99 one-time.">
+  <meta property="og:image" content="https://n3rdmonkey.github.io/imberlab-privacy/screenshots/01_main_menu.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ImberLab — Pipette Calibration & Lab QC App">
+  <meta name="twitter:description" content="Professional offline lab app: pipette verification per EN ISO 8655, GHS chemicals, device logbook. €12.99 one-time.">
+  <meta name="twitter:image" content="https://n3rdmonkey.github.io/imberlab-privacy/screenshots/01_main_menu.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1E2E'/%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' fill='white' font-family='Georgia, serif' font-size='17' font-weight='600'%3EIL%3C/text%3E%3Crect x='6' y='24' width='20' height='2' fill='%23A3E635'/%3E%3C/svg%3E">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "ImberLab — Lab Manager",
+    "operatingSystem": "Android",
+    "applicationCategory": "ProductivityApplication",
+    "applicationSubCategory": "Laboratory Software",
+    "description": "Offline Android app for analytical chemists and QC labs. Pipette verification per EN ISO 8655, GHS chemical database, device logbook, control charts (Levey-Jennings), PDF reports.",
+    "url": "https://n3rdmonkey.github.io/imberlab-privacy/en/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.imber.labor",
+    "offers": {
+      "@type": "Offer",
+      "price": "12.99",
+      "priceCurrency": "EUR",
+      "category": "OneTimePurchase"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Christoph Imber",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pram",
+        "addressCountry": "AT"
+      }
+    },
+    "softwareVersion": "1.0.8",
+    "datePublished": "2026-04-19",
+    "inLanguage": "en"
+  }
+  </script>
+</head>
+<body>
+
+<!-- ===================================================================
+     HEADER
+=================================================================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a href="./" class="brand">
+      <span class="brand-mark">IL</span>
+      ImberLab
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#usecases">For your lab</a>
+      <a href="#standards">Standards</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-meta">
+      <div class="lang-switch">
+        <a href="../en/" class="active">EN</a>
+        <a href="../de/">DE</a>
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.imber.labor" class="btn btn-primary btn-sm" rel="noopener">Get App</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================================================================
+     HERO
+=================================================================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="hero-eyebrow">v1.0.8 · Now on Google Play</div>
+      <h1>
+        Lab quality control,<br>
+        <em>without the paperwork.</em>
+      </h1>
+      <p class="hero-lead">
+        ImberLab is the offline Android app for analytical chemists and QC labs.
+        Verify pipettes per EN ISO 8655, manage GHS chemicals, track devices,
+        and generate professional PDF reports — all on your phone.
+      </p>
+      <div class="hero-cta">
+        <a href="https://play.google.com/store/apps/details?id=com.imber.labor" class="btn btn-primary btn-lg" rel="noopener">
+          ↓ Get on Google Play
+          <span class="arrow">→</span>
+        </a>
+        <a href="#features" class="btn btn-ghost btn-lg">See how it works</a>
+      </div>
+      <div class="hero-trust">
+        <span>100% Offline</span>
+        <span>One-time €12.99</span>
+        <span>No Ads · No Tracking</span>
+        <span>Made in Austria</span>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="data-card tl">
+        <div class="label">Pipette 1000 µL</div>
+        <div class="value">±0.6%</div>
+        <div class="meta">Es · acc. to ISO 8655</div>
+      </div>
+      <div class="hero-phone">
+        <img src="../screenshots/02_imbacontrol.png" alt="">
+      </div>
+      <div class="data-card tr">
+        <div class="label">Levey-Jennings</div>
+        <div class="value">CV 0.42</div>
+        <div class="meta">n=10 · within UCL</div>
+      </div>
+      <div class="data-card br">
+        <div class="label">Next due</div>
+        <div class="value">28 d</div>
+        <div class="meta">Eppendorf · S/N A4521</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     STANDARDS BAR
+=================================================================== -->
+<section class="standards-bar" id="standards">
+  <div class="container standards-row">
+    <div class="standards-label">Evaluations acc. to</div>
+    <div class="standards-list">
+      <span>EN ISO 8655-2:2022</span>
+      <span>EN ISO 8655-6:2022</span>
+      <span>DIN 32645</span>
+      <span>DIN 53 804</span>
+      <span>ICH Q1E</span>
+      <span>EU CLP 1272/2008</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     FEATURES
+=================================================================== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Features</div>
+      <h2>Built for the daily reality<br><em>of analytical chemistry.</em></h2>
+      <p>Eight integrated modules covering the workflow from a single calculation to full instrument verification — without leaving the app, without internet, without a subscription.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6L4 21h16L15 9V3M9 3h6M10 14h4"/></svg>
+        </div>
+        <h3>Pipette Verification</h3>
+        <p>Gravimetric routine verification of pipettes, burettes, and dispensers acc. to EN ISO 8655. Calculates Z-factor, systematic error, CV. Exports a verification PDF for internal records.</p>
+        <div class="feature-tag">Air cushion · Direct displacement · Multichannel</div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </div>
+        <h3>Statistical QC</h3>
+        <p>Levey-Jennings control charts with mean ±1s/2s/3s limits. Outlier detection (Grubbs, Dixon Q). Linear regression with R². Stability evaluation acc. to ICH Q1E.</p>
+        <div class="feature-tag">Shewhart · Grubbs · Dixon · Regression</div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+        </div>
+        <h3>GHS Chemicals</h3>
+        <p>Offline database of 80+ lab chemicals with full GHS pictograms, H/P statements, CAS numbers, storage class, and PPE recommendations. Add your own.</p>
+        <div class="feature-tag">EU CLP 1272/2008 · Fully offline</div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 3v18M12 8h4M12 12h4M12 16h2"/></svg>
+        </div>
+        <h3>Device Logbook</h3>
+        <p>Per-instrument calibration history with sequential numbering, due date alerts (green/orange/red), QR codes, photo attachments, and PDF/CSV export.</p>
+        <div class="feature-tag">QR scanner · Auto-numbering · Email export</div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h14l-2 6 2 6-7 6-7-6 2-6-2-6z"/></svg>
+        </div>
+        <h3>Formula Builder</h3>
+        <p>Build custom calculation formulas with named variables. Live fraction preview. Functions: sqrt, log, ln, sin, cos, tan, abs. Save formulas for reuse.</p>
+        <div class="feature-tag">Variables with umlauts · Reusable</div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v6h6M14 3l6 6M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9"/></svg>
+        </div>
+        <h3>PDF Reports</h3>
+        <p>Professional, signature-ready PDFs for verification reports, control charts, and analysis records. Page 2 includes a blank box for balance printout — full paper trail.</p>
+        <div class="feature-tag">A4 · Two-page · Signature fields</div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        </div>
+        <h3>Password Manager</h3>
+        <p>Securely store device logins, LIMS credentials, and intranet passwords on your device. Built-in generator. One-tap copy. Always free.</p>
+        <div class="feature-tag">Local-only · No cloud · Always free</div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/></svg>
+        </div>
+        <h3>Privacy First</h3>
+        <p>App lock with PIN or fingerprint. Full backup &amp; restore to local file. No accounts, no cloud sync, no third-party SDKs, no analytics. Your data, your phone.</p>
+        <div class="feature-tag">GDPR-friendly · No tracking</div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+        </div>
+        <h3>Analysis Results</h3>
+        <p>Every calculation auto-saved with timestamp and full input record. Searchable, exportable as PDF or CSV. Attach photos and notes for traceability.</p>
+        <div class="feature-tag">Auto-save · Searchable · Exportable</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     USE CASES
+=================================================================== -->
+<section class="section usecases-bg" id="usecases">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Built for</div>
+      <h2>Different labs.<br><em>Same workflow.</em></h2>
+      <p>ImberLab is designed around the everyday tasks of professionals who actually do the work — not management dashboards, not enterprise compliance suites.</p>
+    </div>
+
+    <div class="usecase-grid">
+      <article class="usecase">
+        <div class="num">01 / QA TECHNICIAN</div>
+        <h3>Routine pipette &amp; equipment verification</h3>
+        <p>Replace the paper-and-Excel routine with a workflow that fits in a lab coat pocket.</p>
+        <ul>
+          <li>10-weighing pipette check in under 3 min</li>
+          <li>Auto-loaded EN ISO 8655 tolerances</li>
+          <li>Two-page PDF with balance printout box</li>
+        </ul>
+      </article>
+
+      <article class="usecase">
+        <div class="num">02 / ANALYTICAL CHEMIST</div>
+        <h3>Statistical QC &amp; method validation</h3>
+        <p>From routine control charts to LOD/LOQ determinations, all calculations are documented.</p>
+        <ul>
+          <li>Levey-Jennings + Shewhart rules</li>
+          <li>Calibration curve with R² and back-calc</li>
+          <li>Outlier tests (Grubbs, Dixon Q)</li>
+        </ul>
+      </article>
+
+      <article class="usecase">
+        <div class="num">03 / LAB MANAGER</div>
+        <h3>Devices, chemicals &amp; documentation</h3>
+        <p>One app to track instruments, manage GHS chemicals, and ensure due dates aren't missed.</p>
+        <ul>
+          <li>QR-coded instrument inventory</li>
+          <li>Color-coded due date overview</li>
+          <li>Local backup, no IT department needed</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     SHOWCASE / SCREENSHOTS
+=================================================================== -->
+<section class="section" id="screenshots">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">In Action</div>
+      <h2>What it looks like<br><em>on the bench.</em></h2>
+    </div>
+
+    <div class="showcase-grid">
+      <div class="shot">
+        <div class="shot-img"><img src="../screenshots/01_main_menu.png" alt="ImberLab main menu showing all modules"></div>
+        <div class="shot-meta"><div class="label">01 · Main Menu</div><h3>All modules at a glance</h3></div>
+      </div>
+      <div class="shot">
+        <div class="shot-img"><img src="../screenshots/02_imbacontrol.png" alt="Statistical QC dashboard"></div>
+        <div class="shot-meta"><div class="label">02 · ImbaControl</div><h3>Statistical quality control</h3></div>
+      </div>
+      <div class="shot">
+        <div class="shot-img"><img src="../screenshots/03_pdf_report.png" alt="Professional PDF report export"></div>
+        <div class="shot-meta"><div class="label">03 · PDF Export</div><h3>Verification acc. to ISO 8655</h3></div>
+      </div>
+      <div class="shot">
+        <div class="shot-img"><img src="../screenshots/04_chemicals.png" alt="GHS chemical database"></div>
+        <div class="shot-meta"><div class="label">04 · GHS Chemicals</div><h3>Offline safety database</h3></div>
+      </div>
+      <div class="shot">
+        <div class="shot-img"><img src="../screenshots/05_instrument.png" alt="Device profile with QR code and logbook"></div>
+        <div class="shot-meta"><div class="label">05 · Devices</div><h3>QR-coded instrument logbook</h3></div>
+      </div>
+      <div class="shot">
+        <div class="shot-img"><img src="../screenshots/06_formula_builder.png" alt="Formula builder with live preview"></div>
+        <div class="shot-meta"><div class="label">06 · Formulas</div><h3>Build your own equations</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     PRICING
+=================================================================== -->
+<section class="section pricing-wrap" id="pricing">
+  <div class="container">
+    <div class="pricing-grid">
+      <div>
+        <div class="eyebrow" style="margin-bottom: 20px;">Pricing</div>
+        <h2 class="serif" style="margin-bottom: 20px;">One price.<br><em style="color: var(--ink-mute); font-style: italic; font-weight: 300;">No surprises.</em></h2>
+        <p style="font-size: 18px; color: var(--ink-2); line-height: 1.6;">
+          Buy ImberLab once. Use it forever. No subscription, no per-seat licensing,
+          no feature locked behind a paywall except optional photo &amp; formula limits.
+          Free 7-day trial built in — no signup needed.
+        </p>
+      </div>
+
+      <div class="price-card">
+        <div class="price-tag">ImberLab Premium</div>
+        <div class="price-amount">€12<sup>.99</sup></div>
+        <div class="price-cycle">one-time payment · no subscription</div>
+
+        <ul class="price-features">
+          <li>All calculation modules unlocked</li>
+          <li>Full ImbaControl statistical QC suite</li>
+          <li>Pipette / burette / dispenser verification (EN ISO 8655)</li>
+          <li>Unlimited photos in logbook &amp; results</li>
+          <li>Unlimited custom formulas</li>
+          <li>80+ chemicals with GHS data, expandable</li>
+          <li>QR-coded device management</li>
+          <li>PDF &amp; CSV export</li>
+          <li>Local backup &amp; restore</li>
+          <li>Lifetime updates included</li>
+        </ul>
+
+        <div class="price-cta">
+          <a href="https://play.google.com/store/apps/details?id=com.imber.labor" class="btn btn-primary" rel="noopener">↓ Get on Google Play</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     FAQ
+=================================================================== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Common questions<br><em>about ImberLab.</em></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Is ImberLab an accredited calibration tool?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>No.</strong> ImberLab is a self-documentation tool for laboratory professionals. References to standards such as EN ISO 8655, DIN 32645, DIN 53 804 and ICH Q1E describe the methodologies used in the app's calculations — they do not imply certification, approval, or accreditation.</p>
+          <p>The PDF reports generated by ImberLab are intended for internal records and do not replace calibration certificates issued by an accredited body. Use ImberLab to streamline routine in-house verification between official calibrations.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Why an offline app instead of a cloud service?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Three reasons: <strong>data sovereignty</strong> (your QC data never leaves your phone), <strong>reliability</strong> (works in cleanrooms, basements, and labs without WiFi), and <strong>cost</strong> (no monthly fees forever). Offline-first also means no account creation, no GDPR consent flows, and no third-party data processors.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Which pipette types and standards are supported?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Air cushion pipettes (variable and fixed, Form A) acc. to <strong>EN ISO 8655-2:2022</strong>, direct displacement pipettes (Form D) acc. to <strong>EN ISO 8655-3:2002</strong>, multichannel pipettes (8/12-channel), burettes, and dispensers. Tolerance limits for each nominal volume are pre-loaded and applied automatically.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How is ImberLab different from Excel or paper?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <table>
+            <thead><tr><th></th><th>Paper</th><th>Excel</th><th>ImberLab</th></tr></thead>
+            <tbody>
+              <tr><td>Search</td><td>Manual</td><td>Limited</td><td>Instant</td></tr>
+              <tr><td>Photos attached</td><td>Separate</td><td>Cumbersome</td><td>Integrated</td></tr>
+              <tr><td>Due-date alerts</td><td>Manual</td><td>Needs macros</td><td>Automatic</td></tr>
+              <tr><td>Offline use</td><td>✓</td><td>Partial</td><td>Always</td></tr>
+              <tr><td>Privacy</td><td>Physical only</td><td>Cloud risk</td><td>Local &amp; secure</td></tr>
+              <tr><td>ISO 8655 tolerances</td><td>Manual lookup</td><td>Manual entry</td><td>Pre-loaded</td></tr>
+            </tbody>
+          </table>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What does Premium unlock vs the free version?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The free version is fully usable: all calculation modules, the GHS chemical database, device management, the password manager, and 3 saved formulas. Premium (one-time €12.99) unlocks unlimited photos in logbooks, unlimited custom formulas, and the full ImbaControl Pro statistical QC suite (control charts, calibration curves, stability evaluation, instrument verification).</p>
+          <p>A built-in 7-day trial unlocks all Premium features so you can evaluate the full app before purchasing.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Can I export my data and switch devices?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes. The Backup function in Settings exports all your data — devices, logbook, chemicals, formulas, passwords, results — to a single local file. You can copy this file to a new device and restore it via Restore from Backup. All exports are also available as PDF or CSV from individual modules.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Are H/P statements and GHS pictograms up to date?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The chemical database is built on EU CLP Regulation (EC) No 1272/2008. The 80+ pre-loaded chemicals carry complete GHS pictograms, signal words, hazard (H) statements, and precautionary (P) statements. You can add your own chemicals or override built-in entries when supplier data differs.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Does ImberLab collect any data or show ads?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>No.</strong> ImberLab contains no advertising SDKs, no analytics frameworks, no crash reporting tools, and no third-party trackers. The app only uses Google Play Billing for the one-time Premium purchase, which is processed by Google — ImberLab itself does not see or store your payment data. Read the full <a href="privacy.html">privacy policy</a>.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     CTA FOOTER
+=================================================================== -->
+<section class="cta-footer">
+  <div class="container">
+    <h2>Ready to leave the<br>paperwork <em>behind?</em></h2>
+    <p>Download ImberLab on Google Play. €12.99 one-time. 7-day free trial included.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.imber.labor" class="btn btn-primary btn-lg btn-cta" rel="noopener">
+      ↓ Get on Google Play
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===================================================================
+     FOOTER
+=================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark">IL</span>
+          ImberLab
+        </div>
+        <p>Professional offline laboratory management on Android. Built in Austria for analytical chemists, QC technicians and lab managers worldwide.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#usecases">Use cases</a></li>
+          <li><a href="#standards">Standards</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.imber.labor" rel="noopener">Get on Play</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="mailto:chr.mathai@gmail.com">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Language</h4>
+        <ul>
+          <li><a href="../en/">English</a></li>
+          <li><a href="../de/">Deutsch</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Christoph Imber · 4742 Pram, Austria</div>
+      <div>v1.0.8 · MADE WITH PRECISION</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================================================================
+     SCRIPTS
+=================================================================== -->
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
